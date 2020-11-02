@@ -99,6 +99,15 @@ router.post("/user/register", csrfProtection, userValidators, asyncHandler(async
   }
 }));
 
+router.get("/user/login", csrfProtection, (req, res) => {
+  res.render("user-login", {
+    title: "Login",
+    csrfToken: req.csrfToken(),
+  })
+})
+
+const
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
