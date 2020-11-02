@@ -70,6 +70,36 @@ const userValidators = [
     }),
 ];
 
+router.post("/user/register", csrfProtection, userValidators, asyncHandler(async (req, res) => {
+
+  const { emailAddress, firstName, lastName, password } = req.body;
+
+  const user = db.User.build({
+    emailAddress,
+    firstName,
+    lastName
+  });
+
+  const validatorErrors = validationResult(req);
+
+  if (validatorErrors.isEmpty()) {
+    const hashedPassword = await bcrypt.hash(password, 10);
+    user.hashedPassword = hashedPassword;
+    await user.save();
+    loginUser(req, res, user);
+    res.redirect("/");
+  } else {
+    const errors = validatorErrors.array().map((error) => error.msg)
+    res.render("user-register", {
+      title: "Register",
+      user,
+      errors,
+      csrfToken: req.csrfToken(),
+    });
+  }
+}));
+
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
