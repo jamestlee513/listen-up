@@ -8,11 +8,11 @@ const { csrfProtection, asyncHandler } = require("./utils"); //need make utils
 
 const router = express.Router();
 
-router.get("/user/register", csrfProtection, (req, res) => { // route for user register
+router.get("/register", csrfProtection, (req, res) => { // route for user register
 
   const user = db.User.build();
 
-  res.render("user-register", { // make pug template
+  res.render("register", { // make pug template
     title: "Register",
     user,
     csrfToken: req.csrfToken(),
@@ -99,7 +99,7 @@ router.post("/user/register", csrfProtection, userValidators, asyncHandler(async
   }
 }));
 
-router.get("/user/login", csrfProtection, (req, res) => { // route for user login
+router.get("/login", csrfProtection, (req, res) => { // route for user login
   res.render("user-login", { // display pug template
     title: "Login",
     csrfToken: req.csrfToken(),
