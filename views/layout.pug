@@ -2,7 +2,16 @@ doctype html
 html
   head
       block head
-        title="Express Starter App"
+        title="Listen Up Express Starter App"
         link(rel='stylesheet' href='/stylesheets/reset.css')
   body
     block content
+if locals.authenticated
+  span(class='') Welcome #{user.firstName}!
+  form(class='' action='' method='post')
+    button(class='btn btn-sm btn-warning' type='submit') Logout
+else
+  span(class='')
+    a(class='' href='/user/login') Login
+    br
+    a(class='' href='/user/register') Register
