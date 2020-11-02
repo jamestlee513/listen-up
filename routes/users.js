@@ -100,8 +100,15 @@ router.post("/user/register", csrfProtection, userValidators, asyncHandler(async
 }));
 
 router.get("/login", csrfProtection, (req, res) => { // route for user login
+
+  const user = {
+    email: 'testemail@gmail.com',
+  }
+
+
   res.render("user-login", { // display pug template
     title: "Login",
+    user,
     csrfToken: req.csrfToken(),
   })
 })

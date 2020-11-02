@@ -1,20 +1,20 @@
 //- TODO: (When utils & field mixin are complete) Uncomment fields and util includes
 
 extends layout.pug
-//- includes utils.pug
+include utils.pug
 
 block content
-    //- +validationErrorSummaries(errors)
+    +validationErrors(errors)
     //- Make sure that the form action aligns with the server
     form(action='/users/register' method='POST')
-        //- input(type='hidden' name='_csrf' value=csrfToken)
-        //- +field('First Name', 'firstName', user.firstName)
-        //- +field('Last Name', 'lastName', user.lastName)
-        //- +field('Email Address', 'email', user.email)
-        //- +field('Password', 'password', user.password)
-        //- +field('Confirm Password', 'confirmPassword', user.confirmPassword)
+        input(type='hidden' name='_csrf' value=csrfToken)
+        +field('First Name', 'firstName', user.firstName)
+        +field('Last Name', 'lastName', user.lastName)
+        +field('Email Address', 'email', user.email)
+        +field('Password', 'password', user.password)
+        +field('Confirm Password', 'confirmPassword', user.confirmPassword)
         div
             button(type='submit') Register!
 
-        label First Name
-        input(type='text' name='firstName')
+        //- label First Name
+        //- input(type='text' name='firstName')
