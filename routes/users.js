@@ -2,24 +2,24 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const { check, validationResult } = require("express-validator");
 
-const db = require("../db/models")
-const { loginUser, logoutUser } = require("../auth");
-const { csrfProtection, asyncHandler } = require("./utils");
+const db = require("../db/models"); // check to db
+const { loginUser, logoutUser } = require("../auth"); //need make auth
+const { csrfProtection, asyncHandler } = require("./utils"); //need make utils
 
 const router = express.Router();
 
-router.get("/user/register", csrfProtection, (req, res) => {
+router.get("/user/register", csrfProtection, (req, res) => { // route for user register
 
   const user = db.User.build();
 
-  res.render("user-register", {
+  res.render("user-register", { // make pug template
     title: "Register",
     user,
     csrfToken: req.csrfToken(),
   })
 })
 
-const userValidators = [
+const userValidators = [ // check for user valdations
   check("firstName")
     .exists({ checkFalsy: true })
     .withMessage("Please provide a value for First Name")
@@ -70,7 +70,7 @@ const userValidators = [
     }),
 ];
 
-router.post("/user/register", csrfProtection, userValidators, asyncHandler(async (req, res) => {
+router.post("/user/register", csrfProtection, userValidators, asyncHandler(async (req, res) => { // route for user register
 
   const { emailAddress, firstName, lastName, password } = req.body;
 
@@ -90,7 +90,7 @@ router.post("/user/register", csrfProtection, userValidators, asyncHandler(async
     res.redirect("/");
   } else {
     const errors = validatorErrors.array().map((error) => error.msg)
-    res.render("user-register", {
+    res.render("user-register", { // render user register template
       title: "Register",
       user,
       errors,
@@ -99,14 +99,14 @@ router.post("/user/register", csrfProtection, userValidators, asyncHandler(async
   }
 }));
 
-router.get("/user/login", csrfProtection, (req, res) => {
-  res.render("user-login", {
+router.get("/user/login", csrfProtection, (req, res) => { // route for user login
+  res.render("user-login", { // display pug template
     title: "Login",
     csrfToken: req.csrfToken(),
   })
 })
 
-const loginValidators = [
+const loginValidators = [ // login for validations
   check("emailAddress")
     .exists({ checkFalsy: true })
     .withMessage("Please provide a value for Email Address"),
@@ -115,7 +115,7 @@ const loginValidators = [
     .withMessage("Please provide a value for a Password"),
 ];
 
-router.post(
+router.post( // form post action route 
   "/user/login",
   csrfProtection,
   loginValidators,
@@ -145,7 +145,7 @@ router.post(
       errors = validatorErrors.array().map((error) => error.msg);
     }
 
-    res.render("user-login", {
+    res.render("user-login", { // render user login 
       title: "Login",
       emailAddress,
       errors,
@@ -154,7 +154,7 @@ router.post(
   })
 );
 
-router.post("/user/logout", (req, res) => {
+router.post("/user/logout", (req, res) => { // logout route
   logoutUser(req, res);
   res.redirect("/user/login")
 })
