@@ -3,12 +3,14 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const session = require('express-session');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
+const db = require('./db/models');
 const app = express();
-
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // view engine setup
 app.set('view engine', 'pug');
 
@@ -20,6 +22,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+const store = new SequelizeStore({
+  db: db.sequelize,
+});
+app.use(
+  session({
+    secret: 'superSecret',
+    store,
+    resave: false,
+  })
+);
+store.sync();
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
