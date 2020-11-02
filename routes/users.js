@@ -99,7 +99,7 @@ router.post("/user/register", csrfProtection, userValidators, asyncHandler(async
   }
 }));
 
-router.get("/user/login", csrfProtection, (req, res) => { // route for user login
+router.get("/login", csrfProtection, (req, res) => { // route for user login
   res.render("user-login", { // display pug template
     title: "Login",
     csrfToken: req.csrfToken(),
