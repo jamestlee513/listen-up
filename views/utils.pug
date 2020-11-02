@@ -1,0 +1,16 @@
+//- create class name for the divs
+
+mixin validationErrors(errors)
+    if errors   
+        div(class="")
+            p The following error(s) occured:
+            ul
+                each error in errors
+                    li= error
+
+mixin field(labelText, fieldName, fieldValue)
+    div(class="")
+        label(for=fieldName)= labelText
+        input(type="text" id=fieldName name=fieldName value=fieldValue class="")
+    
+            
