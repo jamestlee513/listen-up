@@ -106,7 +106,14 @@ router.get("/user/login", csrfProtection, (req, res) => {
   })
 })
 
-const
+const loginValidators = [
+  check("emailAddress")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide a value for Email Address"),
+  check("password")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide a value for a Password"),
+]
 
 
 /* GET users listing. */
