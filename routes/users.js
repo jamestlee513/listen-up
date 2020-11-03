@@ -115,6 +115,7 @@ router.get("/login", csrfProtection, (req, res) => { // route for user login
 
 router.get("/login-demo",  (req, res) => { // route for demoUser login
   const demoUser = db.User.findOne({where: {email: 'demo@demo.com'}})
+
   loginUser(req, res, demoUser)
   return res.redirect("/");
 })
@@ -149,7 +150,7 @@ router.post( // form post action route
 
         if (passwordMatch) {
           loginUser(req, res, user);
-          return res.redirect("/users/register"); //Todo: change back to root
+          return res.redirect("/");
         }
       }
 
