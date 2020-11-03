@@ -8,7 +8,10 @@ module.exports = (sequelize, DataTypes) => {
 		 * The `models/index` file will call this method automatically.
 		 */
 		static associate(models) {
-			// define association here
+			Podcast.hasMany(models.Link, { foreignKey: "podcastId" });
+			Podcast.hasMany(models.PlaylistPodcastJoin, { foreignKey: "podcastId" });
+			Podcast.hasMany(models.Review, { foreignKey: "podcastId" });
+			Podcast.hasMany(models.Rating, { foreignKey: "podcastId" });
 		}
 	}
 	Podcast.init(
