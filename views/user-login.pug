@@ -1,15 +1,31 @@
-extends layout.pug
+extends user-auth-layout.pug
 include utils.pug
 
 block content
-    +validationErrors(errors)
-    //- Make sure that the form action aligns with the server
-    form(action='/users/login' method='POST')
-        input(type='hidden' name='_csrf' value=csrfToken)
-        +field('Email Address', 'email', user.email)
-        +field('Password', 'password', null, 'password')
-        div
-            button(type='submit') Log in!
+    body
+        +validationErrors(errors)
+        //- Make sure that the form action aligns with the server
+        section(class="body_container")
+            section(class="form_container")
+                h1
+                    span(class="form_container-logo-light") Listen
+                    span(class="form_container-logo-bold") up
+                h1(class="form_container-form-title") log in to Listenup
+                button(button class="form_container-demo-button")
+                    i(class="fas fa-headphones") 
+                    span(class="form_container-demo-button-text") Continue as a Demo User
+                div(class="form_container-divider")
+                    hr(class="form_container-hr-right")
+                    span(class="form_container-divider-text") or
+                    hr(class="form_container-hr-left")
+                form(class="form_container-form" action='/users/login' method='POST')
+                    input(class="form_container-form-input" type='hidden' name='_csrf' value=csrfToken)
+                    +field('Email Address', 'email', user.email)
+                    +field('Password', 'password', null, 'password')
+                    button(class="form_container-form-button" type='submit') Log in!
+                div(class="form_container-divider")
+                    span(class="form_container-divider-text") Not a member?
+                        a(class="form_container-divider-a-text" href="/users/register") Sign up
 
-        label Log In
-        input(type='text' name='login')
+                //- label Log In
+                //- input(type='text' name='login')
