@@ -20,7 +20,7 @@ block content
                     hr(class="form_container-hr-right")
                     span(class="form_container-divider-text") or
                     hr(class="form_container-hr-left")
-                form(class="form_container-form" action='/users/login' method='POST')
+                form(class="form_container-form" action='/users/register' method='POST')
                     input(type='hidden' name='_csrf' value=csrfToken)
                     +field('First Name', 'firstName', user.firstName)
                     +field('Last Name', 'lastName', user.lastName)

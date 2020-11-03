@@ -100,14 +100,8 @@ router.post("/register", csrfProtection, userValidators, asyncHandler(async (req
 
 router.get("/login", csrfProtection, (req, res) => { // route for user login
 
-  const user = {
-    email: 'testemail@gmail.com',
-  }
-
-
   res.render("user-login", { // display pug template
     title: "Login",
-    user,
     csrfToken: req.csrfToken(),
   })
 })
@@ -122,7 +116,7 @@ const loginValidators = [ // login for validations
 ];
 
 router.post( // form post action route 
-  "/user/login",
+  "/login",
   csrfProtection,
   loginValidators,
   asyncHandler(async (req, res) => {
