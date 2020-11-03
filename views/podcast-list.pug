@@ -1,0 +1,14 @@
+extends layout.pug
+block content
+  div(class="mainContentContainer")
+    div(class="mainContent")
+    h1 All Podcasts
+extends layout.pug
+block content
+  div(class="mainContentContainer")
+    div(class="mainContent")
+    h1 All Podcasts
+     div(class="podcastRow")
+      for each podcast in podcasts
+       div(class='podcastRow_item')
+         h2=podcast.title
