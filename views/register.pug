@@ -25,8 +25,10 @@ block content
                     +field('First Name', 'firstName', user.firstName)
                     +field('Last Name', 'lastName', user.lastName)
                     +field('Email Address', 'email', user.email)
-                    +field('Password', 'password', user.password)
-                    +field('Confirm Password', 'confirmPassword', user.confirmPassword)
+                    label(class="form_container-form-input-label" for="password") Password
+                    input(class="form_container-form-input" type="password" id="password" name="password" style="color: black")
+                    label(class="form_container-form-input-label" for="confirmPassword") Confirm Password
+                    input(class="form_container-form-input" type="password" id="confirmPassword" name="confirmPassword" style="color: black")
                     button(class="form_container-form-button" type='submit') Register!
 
             //- label First Name
