@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
 		{}
 	);
 	Playlist.associate = function (models) {
-		Playlist.hasMany(models.PlaylistPodcastJoin, {
+		Playlist.hasMany(models.PodcastPlaylistJoin, {
 			foreignKey: "playlistId",
 		});
 		Playlist.belongsTo(models.User, { foreignKey: "userId" });

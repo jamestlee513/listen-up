@@ -9,10 +9,10 @@ module.exports = (sequelize, DataTypes) => {
 		{}
 	);
 	PodcastPlaylistJoin.associate = function (models) {
-		PlaylistPodcastJoin.belongsTo(models.Playlist, {
+		PodcastPlaylistJoin.belongsTo(models.Playlist, {
 			foreignKey: "playlistId",
 		});
-		PlaylistPodcastJoin.belongsTo(models.Podcast, {
+		PodcastPlaylistJoin.belongsTo(models.Podcast, {
 			foreignKey: "podcastId",
 		});
 	};
