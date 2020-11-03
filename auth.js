@@ -1,7 +1,10 @@
 const db = require("./db/models");
 
 const loginUser = (req, res, user) => {
-    req.session.auth = {
+    console.log("REQ", req);
+    console.log("REQ.SESSION", req.session);
+    //TODO: figure out how to use session store given by JM
+    req.session.store = {
         userId: user.id,
     };
 };

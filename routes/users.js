@@ -30,7 +30,7 @@ const userValidators = [ // check for user valdations
     .withMessage("Please provide a value for Last Name")
     .isLength({ max: 50 })
     .withMessage("Last Name must not be more than 50 characters long"),
-  check("emailAddress")
+  check("email")
     .exists({ checkFalsy: true })
     .withMessage("Please provide a value for Email Address")
     .isLength({ max: 255 })
@@ -38,7 +38,7 @@ const userValidators = [ // check for user valdations
     .isEmail()
     .withMessage("Email Address is not a valid email")
     .custom((value) => {
-      return db.User.findOne({ where: { emailAddress: value } }).then(
+      return db.User.findOne({ where: { email: value } }).then(
         (user) => {
           if (user) {
             return Promise.reject(
@@ -70,15 +70,14 @@ const userValidators = [ // check for user valdations
     }),
 ];
 
-router.post("/user/register", csrfProtection, userValidators, asyncHandler(async (req, res) => { // route for user register
+router.post("/register", csrfProtection, userValidators, asyncHandler(async (req, res) => { // route for user register
 
-  const { emailAddress, firstName, lastName, password } = req.body;
-
-  const user = db.User.build({
-    emailAddress,
+  const { email, firstName, lastName, password } = req.body;
+  const user =  db.User.build({
+    email,
     firstName,
     lastName
-  });
+  })
 
   const validatorErrors = validationResult(req);
 
@@ -90,7 +89,7 @@ router.post("/user/register", csrfProtection, userValidators, asyncHandler(async
     res.redirect("/");
   } else {
     const errors = validatorErrors.array().map((error) => error.msg)
-    res.render("user-register", { // render user register template
+    res.render("register", { // render user register template
       title: "Register",
       user,
       errors,
@@ -114,7 +113,7 @@ router.get("/login", csrfProtection, (req, res) => { // route for user login
 })
 
 const loginValidators = [ // login for validations
-  check("emailAddress")
+  check("email")
     .exists({ checkFalsy: true })
     .withMessage("Please provide a value for Email Address"),
   check("password")
@@ -127,13 +126,13 @@ router.post( // form post action route
   csrfProtection,
   loginValidators,
   asyncHandler(async (req, res) => {
-    const { emailAddress, password } = req.body;
+    const { email, password } = req.body;
 
     let errors = [];
     const validatorErrors = validationResult(req);
 
     if (validatorErrors.isEmpty()) {
-      const user = await db.User.findOne({ where: { emailAddress } });
+      const user = await db.User.findOne({ where: { email } });
 
       if (user !== null) {
         const passwordMatch = await bcrypt.compare(
@@ -154,7 +153,7 @@ router.post( // form post action route
 
     res.render("user-login", { // render user login 
       title: "Login",
-      emailAddress,
+      email,
       errors,
       csrfToken: req.csrfToken(),
     });
