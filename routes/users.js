@@ -112,6 +112,14 @@ router.get("/login", csrfProtection, (req, res) => { // route for user login
   })
 })
 
+
+router.get("/login-demo", (req, res) => { // route for demoUser login
+  const demoUser = db.User.findOne({where: {email: 'demo@demo.com'}})
+  console.log(demoUser)
+  loginUser(req, res, demoUser)
+  return res.redirect("/");
+})
+
 const loginValidators = [ // login for validations
   check("email")
     .exists({ checkFalsy: true })
@@ -121,7 +129,7 @@ const loginValidators = [ // login for validations
     .withMessage("Please provide a value for a Password"),
 ];
 
-router.post( // form post action route 
+router.post( // form post action route
   "/user/login",
   csrfProtection,
   loginValidators,
@@ -151,7 +159,7 @@ router.post( // form post action route
       errors = validatorErrors.array().map((error) => error.msg);
     }
 
-    res.render("user-login", { // render user login 
+    res.render("user-login", { // render user login
       title: "Login",
       email,
       errors,
