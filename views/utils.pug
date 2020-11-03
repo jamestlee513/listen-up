@@ -2,14 +2,14 @@
 
 mixin validationErrors(errors)
     if errors   
-        div(class="")
+        div(class=" *******cannot make any errors change later***********") 
             p The following error(s) occured:
             ul
                 each error in errors
                     li= error
 
 mixin field(labelText, fieldName, fieldValue)
-    div(class="")
+    div(class="form_container-form-input")
         label(for=fieldName)= labelText
         input(type="text" id=fieldName name=fieldName value=fieldValue class="")
     
