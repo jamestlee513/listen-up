@@ -129,7 +129,7 @@ const loginValidators = [ // login for validations
     .withMessage("Please provide a value for a Password"),
 ];
 
-router.post( // form post action route
+router.post( // form post action route 
   "/login",
   csrfProtection,
   loginValidators,
@@ -168,9 +168,9 @@ router.post( // form post action route
   })
 );
 
-router.post("/user/logout", (req, res) => { // logout route
+router.post("/logout", (req, res) => { // logout route
   logoutUser(req, res);
-  res.redirect("/user/login")
+  res.redirect("/users/login")
 })
 
 module.exports = router;

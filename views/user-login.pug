@@ -3,10 +3,10 @@ include utils.pug
 
 block content
     body
-        +validationErrors(errors)
         //- Make sure that the form action aligns with the server
         section(class="body_container")
             section(class="form_container")
+                +validationErrors(errors)
                 h1
                     span(class="form_container-logo-light") Listen
                     span(class="form_container-logo-bold") up
