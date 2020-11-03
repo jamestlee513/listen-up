@@ -113,9 +113,8 @@ router.get("/login", csrfProtection, (req, res) => { // route for user login
 })
 
 
-router.get("/login-demo", (req, res) => { // route for demoUser login
+router.get("/login-demo",  (req, res) => { // route for demoUser login
   const demoUser = db.User.findOne({where: {email: 'demo@demo.com'}})
-  console.log(demoUser)
   loginUser(req, res, demoUser)
   return res.redirect("/");
 })
@@ -130,7 +129,7 @@ const loginValidators = [ // login for validations
 ];
 
 router.post( // form post action route
-  "/user/login",
+  "/login",
   csrfProtection,
   loginValidators,
   asyncHandler(async (req, res) => {
@@ -150,7 +149,7 @@ router.post( // form post action route
 
         if (passwordMatch) {
           loginUser(req, res, user);
-          return res.redirect("/");
+          return res.redirect("/users/register"); //Todo: change back to root
         }
       }
 
