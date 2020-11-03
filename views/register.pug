@@ -4,17 +4,30 @@ extends user-auth-layout.pug
 include utils.pug
 
 block content
-    +validationErrors(errors)
-    //- Make sure that the form action aligns with the server
-    form(action='/users/register' method='POST')
-        input(type='hidden' name='_csrf' value=csrfToken)
-        +field('First Name', 'firstName', user.firstName)
-        +field('Last Name', 'lastName', user.lastName)
-        +field('Email Address', 'email', user.email)
-        +field('Password', 'password', user.password)
-        +field('Confirm Password', 'confirmPassword', user.confirmPassword)
-        div
-            button(type='submit') Register!
+    body
+        +validationErrors(errors)
+            //- Make sure that the form action aligns with the server
+        section(class="body_container")
+            section(class="form_container")
+                h1
+                    span(class="form_container-logo-light") Listen
+                    span(class="form_container-logo-bold") up
+                h1(class="form_container-form-title") Register to Listenup
+                button(button class="form_container-demo-button")
+                    i(class="fas fa-headphones") 
+                    span(class="form_container-demo-button-text") Continue as a Demo User
+                div(class="form_container-divider")
+                    hr(class="form_container-hr-right")
+                    span(class="form_container-divider-text") or
+                    hr(class="form_container-hr-left")
+                form(class="form_container-form" action='/users/login' method='POST')
+                    input(type='hidden' name='_csrf' value=csrfToken)
+                    +field('First Name', 'firstName', user.firstName)
+                    +field('Last Name', 'lastName', user.lastName)
+                    +field('Email Address', 'email', user.email)
+                    +field('Password', 'password', user.password)
+                    +field('Confirm Password', 'confirmPassword', user.confirmPassword)
+                    button(class="form_container-form-button" type='submit') Register!
 
-        //- label First Name
-        //- input(type='text' name='firstName')
+            //- label First Name
+            //- input(type='text' name='firstName')

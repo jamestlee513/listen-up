@@ -9,8 +9,10 @@ mixin validationErrors(errors)
                     li= error
 
 mixin field(labelText, fieldName, fieldValue)
-    div(class="form_container-form-input")
-        label(for=fieldName)= labelText
-        input(type="text" id=fieldName name=fieldName value=fieldValue class="")
+    div(class="")
+        label(class="form_container-form-input-label" for=fieldName)= labelText
+        br
+        input(type="text" id=fieldName name=fieldName value=fieldValue class="form_container-form-input")
+        br
     
             
