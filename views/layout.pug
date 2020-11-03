@@ -3,15 +3,24 @@ html
   head
       block head
         title="Listen Up Express Starter App"
-        link(rel='stylesheet' href='/stylesheets/reset.css')
+        link(rel='stylesheet' href='/stylesheets/layout.css')
   body
-    block content
-if locals.authenticated
-  span(class='') Welcome #{user.firstName}!
-  form(class='' action='' method='post')
-    button(class='btn btn-sm btn-warning' type='submit') Logout
-else
-  span(class='')
-    a(class='' href='/users/login') Login
-    br
-    a(class='' href='/users/register') Register
+        if locals.authenticated
+          nav(class="navbar_container")
+            span(class='') Welcome #{user.firstName}!
+            form(class='' action='' method='post')
+              button(class='' type='submit') Logout
+        else
+          section(class="body_container")
+            nav(class="navbar_container")
+              h1(class="navbar_conatiner-logo-h1")
+                span(class="navbar_container-logo-light") Listen
+                span(class="navbar_container-logo-bold") up
+              form(class="navbar_container-form" action='/users/login' method='POST')
+                input(class="navbar_container-form-input" type='hidden' name='_csrf' value=csrfToken)
+                label(for="email")
+                input(class="navbar_container-form-input" type="email" id="email" name="email" value=email placeholder="Email address")
+                label(for="password")
+                input(class="navbar_container-form-input" type="email" id="email" name="email" value=email placeholder="Password")
+                button(class="navbar_container-form-button" type='submit') Sign in
+        block content
