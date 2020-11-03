@@ -4,6 +4,8 @@ html
       block head
         title="Listen Up Express Starter App"
         link(rel='stylesheet' href='/stylesheets/layout.css')
+        script(src="/javascripts/formInputs.js" type="module")
+        script(src="/javascripts/navbarInputs.js" type="module")
   body
         if locals.authenticated
           nav(class="navbar_container")
@@ -21,6 +23,6 @@ html
                 label(for="email")
                 input(class="navbar_container-form-input" type="email" id="email" name="email" value=email placeholder="Email address")
                 label(for="password")
-                input(class="navbar_container-form-input" type="email" id="email" name="email" value=email placeholder="Password")
+                input(class="navbar_container-form-input" type="password" id="email" name="email" value=email placeholder="Password")
                 button(class="navbar_container-form-button" type='submit') Sign in
         block content
