@@ -122,7 +122,7 @@ const loginValidators = [ // login for validations
 ];
 
 router.post( // form post action route 
-  "/user/login",
+  "/login",
   csrfProtection,
   loginValidators,
   asyncHandler(async (req, res) => {
@@ -160,9 +160,9 @@ router.post( // form post action route
   })
 );
 
-router.post("/user/logout", (req, res) => { // logout route
+router.post("/logout", (req, res) => { // logout route
   logoutUser(req, res);
-  res.redirect("/user/login")
+  res.redirect("/users/login")
 })
 
 module.exports = router;
