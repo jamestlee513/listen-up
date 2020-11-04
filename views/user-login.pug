@@ -12,16 +12,17 @@ block content
                     span(class="form_container-logo-bold") up
                 h1(class="form_container-form-title") log in to Listenup
                 button(button class="form_container-demo-button")
-                    i(class="fas fa-headphones")
-                    a(href="/" class="form_container-demo-button-text") Continue as a Demo User
+                    i(class="fas fa-headphones") 
+                    span(class="form_container-demo-button-text") Continue as a Demo User
                 div(class="form_container-divider")
                     hr(class="form_container-hr-right")
                     span(class="form_container-divider-text") or
                     hr(class="form_container-hr-left")
                 form(class="form_container-form" action='/users/login' method='POST')
                     input(class="form_container-form-input" type='hidden' name='_csrf' value=csrfToken)
-                    +field('Email Address', 'email', email)
-                    +field('Password', 'password', null, 'password')
+                    +field('Email Address', 'email', user.email)
+                    label(class="form_container-form-input-label" for="password") Password
+                    input(class="form_container-form-input" type="password" id="password" name="password")
                     button(class="form_container-form-button" type='submit') Log in!
                 div(class="form_container-divider")
                     span(class="form_container-divider-text") Not a member?

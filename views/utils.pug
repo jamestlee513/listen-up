@@ -2,11 +2,11 @@
 
 mixin validationErrors(errors)
     if errors   
-        div(class=" *******cannot make any errors change later***********") 
-            p The following error(s) occured:
+        div(class="form_container-errors") 
+            p(class="form_container-error-title") The following error(s) occured:
             ul
                 each error in errors
-                    li= error
+                    li(class="form_container-error-li")= error
 
 mixin field(labelText, fieldName, fieldValue)
     div(class="")
