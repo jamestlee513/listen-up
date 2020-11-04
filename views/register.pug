@@ -13,7 +13,7 @@ block content
                 h1(class="form_container-form-title") Register to Listenup
                 button(button class="form_container-demo-button")
                     i(class="fas fa-headphones form_container-demo-button-text")
-                    a(href="/" class="form_container-demo-button-text") Continue as a Demo User
+                    a(href="/users/demo-login" class="form_container-demo-button-text") Continue as a Demo User
                 div(class="form_container-divider")
                     hr(class="form_container-hr-right")
                     span(class="form_container-divider-text") or
@@ -29,6 +29,10 @@ block content
                     label(class="form_container-form-input-label" for="confirmPassword") Confirm Password
                     input(class="form_container-form-input" type="password" id="confirmPassword" name="confirmPassword" style="color: black")
                     button(class="form_container-form-button" type='submit') Register!
+                    div(class="form_container-divider")
+                    span(class="form_container-divider-cta") Already a member?
+                        a(class="form_container-divider-a-text" href="/users/login") Login!
+
 
             //- label First Name
             //- input(type='text' name='firstName')
