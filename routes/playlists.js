@@ -2,29 +2,39 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 
 const db = require("../db/models");
+const { Playlist, Podcast, PlaylistPodcastJoin } = db;
 const { requireAuth, restoreUser } = require("../auth");
 const { csrfProtection, asyncHandler } = require("./utils");
 
 const router = express.Router();
 
 // User playlist home page
-router.get("/", restoreUser, requireAuth, (req, res) => {
-    
-    // TODO: Connect to front-end PUG
-    // TODO: Implement me:
-    // const podcasts = db.Podcast.findAll() //TODO order and limit by
+router.get("/", restoreUser, requireAuth, asyncHandler(async (req, res) => {
+    const podcasts = await Playlist.findAll({
+        order: [['title', 'ASC']]
+    })
+    res.render('playlists', { podcasts });
+
     res.send('route localhost:8080/playlists');
-});
+}));
 
 // Returns data of specified playlist
 router.get(
     "/:id(\\d+)",
     restoreUser,
     requireAuth,
-    asyncHandler((req, res) => {
-        //TODO: use AJAX to populate the playlist container
+    asyncHandler(async (req, res) => {
         const id = parseInt(req.params.id, 10);
-        res.end();
+        const playlist = await Playlist.findOne({
+            where: { id },
+            include: [
+                {
+                    model: PlaylistPodcastJoin,
+                    include: [Podcast]
+                }
+            ]
+        });
+        res.json(playlist)
     })
 );
 
