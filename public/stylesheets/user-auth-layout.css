@@ -9,6 +9,7 @@ body {
     height: auto;
     background-size: cover;
     max-height: 100%;
+    margin-bottom: 44px;
 }
 
 .form_container-logo-light {
