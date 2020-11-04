@@ -24,10 +24,10 @@ router.get(
 	asyncHandler(async (req, res) => {
 		const id = parseInt(req.params.id, 10);
 		const podcast = await Podcast.findByPk(id);
-		res.send(`This route works. This is ID: ${req.params.id} `);
+		// res.send(`This route works. This is ID: ${req.params.id} `);
 
 		// TODO: connect to front-end PUG
-		// res.render('podcast', { podcast });
+		res.render('podcast.pug', { podcast });
 	}));
 
 module.exports = router;

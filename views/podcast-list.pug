@@ -1,10 +1,58 @@
 extends layout.pug
+include utils.pug
 
 block content
-  div(class="mainContentContainer")
-    div(class="mainContent")
-    h1 All Podcasts
-    div(class="podcastRow")
-      each podcast in podcasts
-       div(class='podcastRow_item')
-         h2= podcast.title
+  body
+    nav(class="nave2box")
+      div(class="mininav") home
+      div(class="mininav") browse
+      div(class="mininav") podcast
+    div(class="content content--main-sidebar")
+      div(class="content_container")
+        p(class="content_container-text")  All Podcasts
+        p(class="content_container-header")
+          | Explore podcasts you might be interested in.
+        p(class="content_container-para")
+          | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem voluptate beatae, saepe nostrum consectetur, pariatur minus animi nesciunt eveniet molestiae deserunt, voluptatum quisquam. Hic, eveniet? Fugit asperiores consectetur est et.
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic minima sit maxime consectetur nostrum quas sequi distinctio iusto a rem adipisci numquam nam, enim, perferendis sunt esse eum ex laborum.
+          | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi aut ipsam, nisi asperiores, et incidunt dolore est explicabo earum id minima distinctio, pariatur labore! Ducimus iure rem libero voluptatem doloremque!
+        table(class="table")
+          tbody
+          each podcast in podcasts
+            tr(class="row")
+              td
+                p 🎵
+              td
+                img(src=podcast.podcastImage width="100px" height="100px")
+              td
+                span(class="author-host")= podcast.title
+                br
+                span(class="by")= podcast.host
+                div
+                  i(class="fas fa-star rating")
+                  i(class="fas fa-star rating")
+                  i(class="fas fa-star rating")
+                  i(class="fas fa-star rating")
+                  i(class="fas fa-star-half-alt rating")
+      div(class="rightContainer")
+        div(class="box")
+          h1 The form element
+          form(class="form" action="/action_page.php")
+            label(for="fname") First name:
+            input#fname(type="text" name="fname")
+            br
+            br
+            label(for="lname") Last name:
+            input#lname(type="text" name="lname")
+            br
+            br
+            input(type="submit" value="Submit")
+          p
+            | Click the "Submit" button and the form-data will be sent to a page on the
+            | server called "action_page.php".
+        div(class="box")
+          h1 Explore the top five new podcasts
+          div
+            img(class="boxImage" src="/listen1.png")
+          div
+            p Explore trending topics in ...

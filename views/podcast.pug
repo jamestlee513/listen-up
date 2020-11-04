@@ -9,90 +9,30 @@ block content
       div(class="mininav") podcast
     div(class="content content--main-sidebar")
       div(class="content_container")
-        p(class="content_container-text")  All Podcasts
-        p(class="content_container-header")
-          | Explore podcasts you might be interested in.
-        p(class="content_container-para")
-          | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem voluptate beatae, saepe nostrum consectetur, pariatur minus animi nesciunt eveniet molestiae deserunt, voluptatum quisquam. Hic, eveniet? Fugit asperiores consectetur est et.
-          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic minima sit maxime consectetur nostrum quas sequi distinctio iusto a rem adipisci numquam nam, enim, perferendis sunt esse eum ex laborum.
-          | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi aut ipsam, nisi asperiores, et incidunt dolore est explicabo earum id minima distinctio, pariatur labore! Ducimus iure rem libero voluptatem doloremque!
+        p(class="content_container-text")= podcast.title
+        p(class="content_container-header")= podcast.hostName
+          |
+        p(class="content_container-para")= podcast.description
+          |
         table(class="table")
           tbody
             tr(class="row")
               td
-                p 🎵
+                p
               td
-                img(src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSA4UAGuB3gvriNe_BGPDBGN8lyzquSFzbicYEesg6EqsswVjT5" width="100px" height="100px")
+                img(src="/imgs/crime-junkie.jpeg" width="100px" height="100px")
               td
-                span(class="author-host") The Joe Rogan Experience
+                span(class="author-host")= podcast.title
                 br
-                span(class="by") host SomeGuy
+                span(class="by")= podcast.host
                 div
                   i(class="fas fa-star rating")
                   i(class="fas fa-star rating")
                   i(class="fas fa-star rating")
                   i(class="fas fa-star rating")
                   i(class="fas fa-star-half-alt rating")
-            tr(class="row")
-              td
-                p 🎵
-              td(width="150px")
-                img(src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSA4UAGuB3gvriNe_BGPDBGN8lyzquSFzbicYEesg6EqsswVjT5" width="100px" height="100px")
-              td
-                a
-                  span Transcendent Kingdom
-                br
-                span(class="by") by
-                span
-                  div
-                    a(href="#")
-                      span YaaGyasi
-                div
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star-half-alt rating")
-            tr(class="row")
-              td
-                p 🎵
-              td(width="150px")
-                img(src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSA4UAGuB3gvriNe_BGPDBGN8lyzquSFzbicYEesg6EqsswVjT5" width="100px" height="100px")
-              td
-                a
-                  span Transcendent Kingdom
-                br
-                span(class="by") by
-                span
-                  div
-                    a(href="#")
-                      span YaaGyasi
-                div
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star-half-alt rating")
-            tr(class="row")
-              td
-                p 🎵
-              td(width="150px")
-                img(src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSA4UAGuB3gvriNe_BGPDBGN8lyzquSFzbicYEesg6EqsswVjT5" width="100px" height="100px")
-              td
-                a
-                  span Transcendent Kingdom
-                br
-                span(class="by") by
-                span
-                  div
-                    a(href="#")
-                      span YaaGyasi
-                div
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star-half-alt rating")
+        div(class="reviews") Reviews go here
+
       div(class="rightContainer")
         div(class="box")
           h1 The form element
@@ -112,6 +52,6 @@ block content
         div(class="box")
           h1 Explore the top five new podcasts
           div
-            img(src="../public/listen1.png")
+            img(class="boxImage" src="/listen1.png")
           div
             p Explore trending topics in ...

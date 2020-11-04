@@ -174,3 +174,8 @@ th {
   height: auto;
   margin-right: 5%;
 }
+.boxImage
+{
+  height: 150px;
+  width: auto;
+}
