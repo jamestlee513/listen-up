@@ -20,7 +20,7 @@ block content
                     hr(class="form_container-hr-left")
                 form(class="form_container-form" action='/users/login' method='POST')
                     input(class="form_container-form-input" type='hidden' name='_csrf' value=csrfToken)
-                    +field('Email Address', 'email', user.email)
+                    +field('Email Address', 'email', email)
                     label(class="form_container-form-input-label" for="password") Password
                     input(class="form_container-form-input" type="password" id="password" name="password")
                     button(class="form_container-form-button" type='submit') Log in!
