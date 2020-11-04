@@ -135,9 +135,10 @@ th {
 	flex-direction: column;
 	justify-content: flex-end;
 	padding: 20px;
-	width: 500px;
-	height: 250px;
-	margin-left: 20px;
+	width: 100%;
+	height: auto;
+  margin-left: 20px;
+  margin-top: 20px;
 	border-radius: 5px;
 	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
 		rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -164,4 +165,12 @@ th {
 
 .mininav:hover {
 	color: rgb(98, 98, 98);
+}
+
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 35%;
+  height: auto;
+  margin-right: 5%;
 }
