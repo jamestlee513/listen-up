@@ -5,8 +5,6 @@ include utils.pug
 
 block content
     body
-        +validationErrors(errors)
-            //- Make sure that the form action aligns with the server
         section(class="body_container")
             section(class="form_container")
                 h1
@@ -14,13 +12,14 @@ block content
                     span(class="form_container-logo-bold") up
                 h1(class="form_container-form-title") Register to Listenup
                 button(button class="form_container-demo-button")
-                    i(class="fas fa-headphones")
+                    i(class="fas fa-headphones form_container-demo-button-text")
                     a(href="/" class="form_container-demo-button-text") Continue as a Demo User
                 div(class="form_container-divider")
                     hr(class="form_container-hr-right")
                     span(class="form_container-divider-text") or
                     hr(class="form_container-hr-left")
                 form(class="form_container-form" action='/users/register' method='POST')
+                    +validationErrors(errors)
                     input(type='hidden' name='_csrf' value=csrfToken)
                     +field('First Name', 'firstName', user.firstName)
                     +field('Last Name', 'lastName', user.lastName)
