@@ -2,9 +2,13 @@
 
 body {
     font-family: "Lato", sans-serif;
-    background-color: #e9e5cd;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1017%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(221%2c 174%2c 53%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c476.112C89.775%2c472.887%2c179.359%2c443.973%2c248.345%2c386.432C313.421%2c332.152%2c338.289%2c247.488%2c368.856%2c168.451C397.686%2c93.906%2c418.172%2c19.306%2c421.215%2c-60.562C424.812%2c-154.974%2c439.843%2c-257.235%2c388.084%2c-336.276C334.511%2c-418.087%2c239.527%2c-472.373%2c142.678%2c-485.915C50.421%2c-498.815%2c-29.83%2c-432.203%2c-119.583%2c-407.261C-211.082%2c-381.834%2c-323.446%2c-405.685%2c-389.956%2c-337.899C-456.706%2c-269.868%2c-454.94%2c-160.727%2c-454.99%2c-65.418C-455.035%2c20.349%2c-423.074%2c98.983%2c-390.227%2c178.211C-356.19%2c260.307%2c-330.724%2c350.77%2c-260.083%2c404.697C-187.145%2c460.378%2c-91.703%2c479.406%2c0%2c476.112' fill='%2398751a'%3e%3c/path%3e%3cpath d='M1440 1149.821C1550.692 1154.05 1646.676 1085.99 1743.807 1032.734 1848.026 975.591 1980.001 937.241 2026.899 828.028 2073.7290000000003 718.975 2005.434 598.297 1980.158 482.337 1956.8229999999999 375.284 1950.24 262.49 1884.519 174.822 1816.307 83.832 1712.807 31.538999999999987 1608.41-13.552999999999997 1491.939-63.860000000000014 1371.019-122.07899999999995 1245.909-101.01400000000001 1114.875-78.95100000000002 976.738-13.183999999999969 913.179 103.507 850.879 217.88799999999998 939.525 356.56 926.116 486.115 913.502 607.994 789.169 722.559 837.451 835.175 885.555 947.376 1042.542 953.567 1150.754 1010.075 1247.633 1060.664 1330.788 1145.6480000000001 1440 1149.821' fill='%23ebcf87'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1017'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
     display: flex;
     justify-content: center;
+    background-repeat: no-repeat;
+    height: auto;
+    background-size: cover;
+    max-height: 100%;
 }
 
 .form_container-logo-light {
@@ -23,6 +27,7 @@ body {
     width: 60%;
     display: flex;
     justify-content: center;
+    margin-bottom: auto;
 }
 
 .form_container {
@@ -50,7 +55,7 @@ body {
     padding-left: 5rem;
     padding-right: 5rem;
     padding-bottom: 1rem;
-    background-color: #f5d47a;
+    background-color: #eacf86;
     border-radius: 3px;
     border: 1px solid #d6d0c4;
     cursor: pointer;
@@ -66,11 +71,11 @@ body {
     margin-left: 5px;
     text-decoration: none;
     font-weight: 800;
-    color: darkgoldenrod;
+    color: #98751a;
 }
 
 .form_container-demo-button:hover {
-    background-color: #ffcd44;
+    background-color: #ddaf36;
 }
 
 .form_container-form {
@@ -136,10 +141,10 @@ body {
 .form_container-form-button {
     font-family: "Lato", sans-serif;
     border-radius: 3px;
-    border: 1px solid #d6d0c4;
+    border: 1px solid #335d2d;
     cursor: pointer;
-    color: darkgray;
-    background-color: #f4f1ea;
+    color: rgb(5, 53, 16);
+    background-color: #7ea04d;
     padding: 10px 14px;
     font-weight: 800;
     font-family: "Lato", sans-serif;
@@ -150,7 +155,7 @@ body {
 }
 
 .form_container-form-button:hover {
-    background-color: #e7e3dc;
+    background-color: #83b17c;
 }
 
 .form_container-divider-a-text {

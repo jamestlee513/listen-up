@@ -4,4 +4,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     form.addEventListener("input", (event) => {
         event.target.style.color = "black";
     }, true);
+
+
 })
