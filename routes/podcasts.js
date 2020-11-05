@@ -52,7 +52,7 @@ router.post(
 			podcastId: id,
 			rating: parseInt(rating, 10),
 		});
-		return res.status(200).json({ newRating });
+		return res.status(200).json({ rating: newRating });
 	})
 );
 

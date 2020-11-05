@@ -80,7 +80,7 @@ body {
 /*  */
 
 .content_container {
-	align-self: center;
+
 	display: flex;
 	flex-direction: column;
 	width: 70%;
@@ -178,4 +178,7 @@ th {
 {
   height: 150px;
   width: auto;
+}
+.image_container{
+align-self: baseline;
 }

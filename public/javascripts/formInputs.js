@@ -17,25 +17,36 @@ window.addEventListener("DOMContentLoaded", () => {
 	const stars = document.querySelectorAll(".rating");
 	const baseUrl = location.origin;
 
+	function refreshStars(rating) {
+		const parentContainer = document.querySelector(
+			`.star_container[data-podcast-id="${rating.podcastId}"]`
+		);
+		if (!parentContainer) return;
+		parentContainer.querySelectorAll(".fa-star").forEach((starEl) => {
+			const starRating = starEl.dataset.rating;
+			if (starRating > rating.rating) {
+				starEl.classList.remove("fas");
+				starEl.classList.add("far");
+			} else {
+				starEl.classList.remove("far");
+				starEl.classList.add("fas");
+			}
+		});
+	}
+
 	for (let star of stars) {
 		star.addEventListener("click", (event) => {
 			let { rating, podcastId, ratingId } = event.target.dataset;
 
-			console.log("set loading...?");
-
 			if (ratingId) {
 				PUT(`${baseUrl}/podcasts/${podcastId}/rating/${ratingId}`, {
 					rating,
-				})
-					.then((res) => console.log("res", res))
-					.then(() => console.log("turn loading off?"));
+				}).then((res) => refreshStars(res.rating));
 			} else {
-				POST(`${baseUrl}/podcasts/${podcastId}/rating`, { rating })
-					.then((res) => console.log("res", res))
-					.then(() => console.log("turn loading off?"));
+				POST(`${baseUrl}/podcasts/${podcastId}/rating`, {
+					rating,
+				}).then((res) => refreshStars(res.rating));
 			}
-
-			console.log("clicked", rating, podcastId);
 		});
 	}
 });

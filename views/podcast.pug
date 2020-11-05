@@ -9,11 +9,11 @@ block content
       div(class="mininav") podcast
     div(class="content content--main-sidebar")
       div(class="content_container")
+        div(class="image_container")
+          img(src="/imgs/crime-junkie.jpeg" width="100px" height="100px")
         p(class="content_container-text")= podcast.title
         p(class="content_container-header")= podcast.hostName
-          |
         p(class="content_container-para")= podcast.description
-          |
         table(class="table")
           tbody
             tr(class="row")
@@ -25,7 +25,7 @@ block content
                 span(class="author-host")= podcast.title
                 br
                 span(class="by")= podcast.host
-                div
+                div(class="star_container" data-podcast-id=podcast.id)
                   each star in [1,2,3,4,5]
                     if star > rating.rating
                       i(class="far fa-star rating" data-rating-id=rating.id data-rating=star data-podcast-id=podcast.id)
