@@ -114,7 +114,8 @@ router.get("/login", csrfProtection, (req, res) => { // route for user login
 
 
 router.get("/login-demo",  (req, res) => { // route for demoUser login
-  const demoUser = db.User.findOne({where: {email: 'demo@demo.com'}})
+  const demoUser = db.User.findOne({ where: { email: 'demo@demo.com' } })
+  console.log("hi")
 
   loginUser(req, res, demoUser)
   return res.redirect("/");
