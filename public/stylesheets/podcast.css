@@ -2,7 +2,7 @@
 
 body {
 	font-family: "Lato", sans-serif;
-	background-color: white;
+	background-color: #e9e5cd;
 	display: flex;
 	flex-direction: column;
 	margin: 0;
@@ -80,10 +80,13 @@ body {
 /*  */
 
 .content_container {
-
+	background-color: #eacf86;
 	display: flex;
 	flex-direction: column;
 	width: 70%;
+	padding: 0.2rem;
+	padding: 5px;
+	border-radius: 10px;
 }
 
 .content_container-text {
@@ -137,8 +140,8 @@ th {
 	padding: 20px;
 	width: 100%;
 	height: auto;
-  margin-left: 20px;
-  margin-top: 20px;
+	margin-left: 20px;
+	margin-top: 20px;
 	border-radius: 5px;
 	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
 		rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -168,17 +171,66 @@ th {
 }
 
 .rightContainer {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 35%;
-  height: auto;
-  margin-right: 5%;
+	display: flex;
+	flex-direction: column;
+	flex-basis: 35%;
+	height: auto;
+	margin-right: 5%;
 }
-.boxImage
-{
-  height: 150px;
-  width: auto;
+.boxImage {
+	height: 150px;
+	width: auto;
 }
-.image_container{
-align-self: baseline;
+.image_container {
+	padding-top: 30px;
+}
+
+.playlist_select_wrapper {
+	position: relative;
+}
+
+.playlist_select {
+	/* hide default arrow */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	/* basic style */
+	box-sizing: content-box;
+	text-indent: 5px;
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	overflow: hidden;
+	text-align: left;
+	word-wrap: normal;
+	white-space: nowrap;
+	width: 155px;
+	margin: 15px 5px;
+	font-size: 13px;
+	min-height: 32px;
+	background: #ffffff;
+	text-overflow: ellipsis;
+	/* add custom arrow */
+	background-image: linear-gradient(to right, #777e20, #777e20);
+	background-position: right center;
+	background-size: 2.5rem 2.5rem;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+}
+
+.playlist_select_wrapper::after {
+	/* mimic fa class */
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	content: "\f0d7";
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1;
+
+	position: absolute;
+	color: white;
+	top: 24px;
+	left: 136px;
+	pointer-events: none; /* ensures click on select not icon */
+	display: block;
 }
