@@ -101,6 +101,13 @@ h2 {
     width: 90px;
 }
 
+img {
+    box-sizing: border-box;
+    padding: 10px;
+    height: 90px;
+    width: 90px;
+}
+
 .podcast-header {
     grid-area: header;
 
