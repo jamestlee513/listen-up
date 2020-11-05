@@ -28,12 +28,13 @@ block content
                 span(class="author-host")= podcast.title
                 br
                 span(class="by")= podcast.host
-                div
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star-half-alt rating")
+                div(class="star_container" data-podcast-id=podcast.id)
+                  each star in [1,2,3,4,5]
+                    if star > podcast.rating.rating
+                      i(class="far fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
+                    else
+                      i(class="fas fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
+
       div(class="rightContainer")
         div(class="box")
           h1 The form element

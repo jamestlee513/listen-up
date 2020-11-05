@@ -36,6 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	for (let star of stars) {
 		star.addEventListener("click", (event) => {
+			console.log(event.target)
 			let { rating, podcastId, ratingId } = event.target.dataset;
 
 			if (ratingId) {

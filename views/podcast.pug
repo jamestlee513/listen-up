@@ -20,11 +20,11 @@ block content
               td
                 p
               td
-                img(src="/imgs/crime-junkie.jpeg" width="100px" height="100px")
+                img(src=podcast.podcastImage width="100px" height="100px")
               td
                 span(class="author-host")= podcast.title
                 br
-                span(class="by")= podcast.host
+                span(class="by")= podcast.hostName
                 div(class="star_container" data-podcast-id=podcast.id)
                   each star in [1,2,3,4,5]
                     if star > rating.rating

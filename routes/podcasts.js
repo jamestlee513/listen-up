@@ -11,13 +11,22 @@ const router = express.Router();
 router.get(
 	"/",
 	asyncHandler(async (req, res) => {
-		// res.send('Testing podcast route...');
-		// TODO: Connect to front-end PUG
-		//TODO: Implement me:
+		const { userId } = req.session.auth;
 		const podcasts = await db.Podcast.findAll({
 			order: [["title", "ASC"]],
 			limit: 10,
-		});
+		}).map(async (pod) => ({
+			id: pod.id,
+			host: pod.host,
+			description: pod.description,
+			hostName: pod.hostName,
+			title: pod.title,
+			podcastImage: pod.podcastImage,
+			rating:
+				(await db.Rating.findOne({
+					where: { podcastId: pod.id, userId },
+				})) || db.Rating.build({ podcastId: pod.id, rating: 0 }),
+		}));
 		res.render("podcast-list", { podcasts });
 	})
 );
