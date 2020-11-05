@@ -5,15 +5,13 @@ include utils.pug
 
 block content
     body
-        section(class="body_container")
-            section(class="form_container")
+        section(class="form_container")
                 h1
                     span(class="form_container-logo-light") Listen
                     span(class="form_container-logo-bold") up
                 h1(class="form_container-form-title") Register to Listenup
-                button(button class="form_container-demo-button")
+                a(href="/users/demo-login" class="form_container-demo-button-text" button class="form_container-demo-button") Continue as a Demo User
                     i(class="fas fa-headphones form_container-demo-button-text")
-                    a(href="/users/demo-login" class="form_container-demo-button-text") Continue as a Demo User
                 div(class="form_container-divider")
                     hr(class="form_container-hr-left")
                     span(class="form_container-divider-text") or
@@ -32,7 +30,3 @@ block content
                 div(class="form_container-divider")
                     span(class="form_container-divider-cta") Already a member?
                         a(class="form_container-divider-a-text" href="/users/login") Login!
-
-
-            //- label First Name
-            //- input(type='text' name='firstName')
