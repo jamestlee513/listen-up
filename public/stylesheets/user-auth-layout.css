@@ -90,6 +90,7 @@ body {
 }
 
 .form_container-form-title {
+    color: rgb(85, 83, 83);
     font-weight: 800;
     font-family: "Lato", sans-serif;
     font-size: 2rem;
@@ -301,9 +302,10 @@ body {
 }
 
 .form_container-form-title {
-    font-weight: 600;
+    color: rgb(85, 83, 83);
+    font-weight: 900;
     font-family: "Lato", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.60rem;
     text-shadow:rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
@@ -347,6 +349,7 @@ body {
 }
 
 .form_container-form-input {
+    padding-left: 5px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     font-weight: bold;
@@ -365,9 +368,9 @@ body {
 .form_container-form-button {
     font-family: "Lato", sans-serif;
     border-radius: 3px;
-    border: 1px solid #335d2d;
+    border: 1px solid #7ea04d;
     cursor: pointer;
-    color: rgb(5, 53, 16);
+    color: rgb(22, 98, 40);
     background-color: #7ea04d;
     padding: 5px 7px;
     font-weight: 800;

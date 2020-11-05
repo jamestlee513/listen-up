@@ -15,9 +15,9 @@ block content
                     i(class="fas fa-headphones form_container-demo-button-text")
                     a(href="/users/demo-login" class="form_container-demo-button-text") Continue as a Demo User
                 div(class="form_container-divider")
-                    hr(class="form_container-hr-right")
-                    span(class="form_container-divider-text") or
                     hr(class="form_container-hr-left")
+                    span(class="form_container-divider-text") or
+                    hr(class="form_container-hr-right")
                 form(class="form_container-form" action='/users/register' method='POST')
                     +validationErrors(errors)
                     input(type='hidden' name='_csrf' value=csrfToken)
