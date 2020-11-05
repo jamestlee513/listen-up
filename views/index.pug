@@ -5,3 +5,12 @@ append head
     //- add page specific js
     script(src="/javascripts/index.js" type="module" defer)
 block content
+    body
+        section(class="main_section-header")
+            div(class="main_section-container")
+                form(class="form_container-form" action="/users/register" method="POST")
+                    input( type="hidden" name="_csrf" value=csrfToken)
+                    h1(class="form_container-form-title") Register Form
+                    div 
+                        label(class="form_container-form-input-label" for="firstName") First Name
+                        
