@@ -26,21 +26,22 @@ body {
     width: 100%;
     height: 100%;
     justify-content: center;
+    margin:0;
 }
 
 .form_title {
     text-decoration: none;
-    padding-bottom: 0px;
+    padding-bottom:2rem;
 }
 
 .form_container-logo-light {
-    font-size: 10rem;
+    font-size: 5rem;
     color: #553b08;
     font-weight: 200;
 }
 
 .form_container-logo-bold {
-    font-size: 10rem;
+    font-size: 5rem;
     color: #553b08;
     font-weight: 600;
     margin-right: 1px;
@@ -58,16 +59,15 @@ body {
     align-items: center;
     justify-content: center;
     align-self: center;
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 30%;
     border: 1px solid rgba(182, 102, 11, 0.27);
     box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
         rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
     background-color: white;
-    padding-bottom: 12rem;
-    padding-top: 6rem;
+    padding-bottom: 50px;
+    padding-top: 2rem;
     border-radius: 5px;
-    
 }
 
 .form_container-divider {
@@ -106,7 +106,6 @@ body {
 .form_container-form {
     font-size: 1.5rem;
     width: 50%;
-    margin-bottom: 1rem;
 }
 
 .form_container-form-title {
@@ -114,7 +113,7 @@ body {
     color: rgb(85, 83, 83);
     font-weight: 800;
     font-family: "Lato", sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-shadow:rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
