@@ -19,6 +19,8 @@ router.get("/", asyncHandler(async (req, res) => {
 	res.render("podcast-list", { podcasts });
 }));
 
+
+//TODO: Return data with ratings, comments, reviews joined
 router.get(
 	"/:id(\\d+)",
 	asyncHandler(async (req, res) => {
