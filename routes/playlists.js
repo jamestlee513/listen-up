@@ -16,7 +16,7 @@ router.get("/",
     asyncHandler(async (req, res) => {
         const playlists = await findAllPlaylists();
         //TODO: Connect to front-end
-        res.render('playlists', { playlists });
+        res.render('playlist', { playlists });
     }));
 
 // Returns data of specified playlist
