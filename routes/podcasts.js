@@ -20,7 +20,7 @@ router.get("/", asyncHandler(async (req, res) => {
 }));
 
 
-//TODO: Return data with ratings, comments, reviews joined
+//TODO: Return data with ratings, reviews, replies joined
 router.get(
 	"/:id(\\d+)",
 	asyncHandler(async (req, res) => {
