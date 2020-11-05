@@ -168,7 +168,7 @@ body {
     border: 1px solid rgba(149, 145, 145, 0.5);
     color: rgba(67, 71, 85, 0.27);
     border-radius: 3px;
-    /* padding-left: 20px; */
+    padding-left: 15px;
 }
 
 .form_container-form-title {
