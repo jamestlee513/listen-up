@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Podcast.associate = function(models) {
     Podcast.hasMany(models.Link, { foreignKey: "podcastId" });
-		Podcast.hasMany(models.PodcastPlaylistJoin, { foreignKey: "podcastId" });
+		Podcast.hasMany(models.PlaylistPodcastJoin, { foreignKey: "podcastId" });
 		Podcast.hasMany(models.Review, { foreignKey: "podcastId" });
 		Podcast.hasMany(models.Rating, { foreignKey: "podcastId" });
   };

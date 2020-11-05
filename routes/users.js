@@ -116,6 +116,7 @@ router.get("/login", csrfProtection, (req, res) => { // route for user login
 router.get("/login-demo", asyncHandler (async (req, res) => { // route for demoUser login
   const demoUser = await db.User.findOne({where: {email: 'demo@demo.com'}})
   console.log(demoUser)
+
   loginUser(req, res, demoUser)
   return res.redirect("/");
 }));

@@ -39,6 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
 			console.log(event.target)
 			let { rating, podcastId, ratingId } = event.target.dataset;
 
+
 			if (ratingId) {
 				PUT(`${baseUrl}/podcasts/${podcastId}/rating/${ratingId}`, {
 					rating,
@@ -51,3 +52,4 @@ window.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 });
+

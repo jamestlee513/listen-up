@@ -3,30 +3,24 @@ include utils.pug
 
 block content
     body
-        //- Make sure that the form action aligns with the server
-        section(class="body_container")
-            section(class="form_container")
-                +validationErrors(errors)
-                h1
+        section(class="form_container")
+                a(class="form_title" href="/")
                     span(class="form_container-logo-light") Listen
                     span(class="form_container-logo-bold") up
                 h1(class="form_container-form-title") log in to Listenup
-                button(button class="form_container-demo-button")
+                a(href="/users/login-demo" class="form_container-demo-button-text" button class="form_container-demo-button") Continue as a Demo User
                     i(class="fas fa-headphones form_container-demo-button-text")
-                    a(href="/users/login-demo" class="form_container-demo-button-text") Continue as a Demo User
                 div(class="form_container-divider")
                     hr(class="form_container-hr-right")
                     span(class="form_container-divider-text") or
                     hr(class="form_container-hr-left")
+                +validationErrors(errors)
                 form(class="form_container-form" action='/users/login' method='POST')
                     input(class="form_container-form-input" type='hidden' name='_csrf' value=csrfToken)
                     +field('Email Address', 'email', email)
                     label(class="form_container-form-input-label" for="password") Password
                     input(class="form_container-form-input" type="password" id="password" name="password")
-                    button(class="form_container-form-button" type='submit') Log in!
+                    button(class="form_container-form-button" type='submit') Sign in
                 div(class="form_container-divider")
                     span(class="form_container-divider-text") Not a member?
                         a(class="form_container-divider-a-text" href="/users/register") Sign up
-
-                //- label Log In
-                //- input(type='text' name='login')
