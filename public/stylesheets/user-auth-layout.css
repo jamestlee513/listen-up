@@ -354,10 +354,13 @@ body {
     padding-bottom: 0.5rem;
     font-weight: bold;
     text-align: left;
-    width: 98.8%;
-    border: 1px solid rgba(149, 145, 145, 0.5);
-    color: rgba(67, 71, 85, 0.27);
-    border-radius: 3px;
+    width: 100;
+    border-bottom: 1px solid rgb(141, 141, 141);
+    border-top: 0;
+    outline: 0;
+    border-left: 0;
+    border-right: 0;
+    color: rgba(67, 71, 85, 0.10);
     /* padding-left: 20px; */
 }
 
