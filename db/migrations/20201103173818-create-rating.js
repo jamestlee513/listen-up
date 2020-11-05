@@ -18,6 +18,8 @@ module.exports = {
 			},
 			podcastId: {
 				type: Sequelize.INTEGER,
+				allowNull: false,
+				references: { model: "Podcasts" },
 			},
 			createdAt: {
 				allowNull: false,
