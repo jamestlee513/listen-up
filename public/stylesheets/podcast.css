@@ -85,20 +85,24 @@ body {
 	flex-direction: column;
 	width: 70%;
 	padding: 0.2rem;
-	padding: 5px;
-	border-radius: 10px;
+	padding: 5px 20px;
+	border-radius: 5px;
 }
 
 .content_container-text {
-	color: rgb(62, 113, 114);
+  color: rgb(62, 113, 114);
+  font-weight: bold;
 	font-size: 1.5rem;
-	margin-bottom: 0;
-	width: 50%;
+  margin-bottom: 0px;
+  margin-top: 0px;
+	width: 100%;
 }
 
 .content_container-header {
-	font-size: 1.5rem;
-	margin-bottom: 0;
+  font-size: 1.25rem;
+  margin-top: 3px;
+  margin-bottom: 0;
+  height: 100%;
 }
 
 .content_container-para {
@@ -160,8 +164,8 @@ th {
 }
 
 .mininav {
-  padding-top: 5px;
-  padding-bottom: 15px;
+	padding-top: 5px;
+	padding-bottom: 15px;
 	margin-right: 10px;
 	color: darkgray;
 	font-weight: 900;
@@ -182,8 +186,15 @@ th {
 	height: 150px;
 	width: auto;
 }
-.image_container {
+.podcast_container-elements {
 	padding-top: 30px;
+	display: grid;
+	grid-template-columns: 1fr 1.25fr;
+}
+.image_container {
+  margin-bottom: 1px;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .playlist_select_wrapper {
@@ -223,7 +234,7 @@ th {
 	font-style: normal;
 	font-variant: normal;
 	text-rendering: auto;
-	line-height: 1;
+  line-height: 1;
 
 	position: absolute;
 	color: white;
@@ -231,4 +242,15 @@ th {
 	left: 140px;
 	pointer-events: none; /* ensures click on select not icon */
 	display: block;
+}
+
+.podcast_container-info {
+	padding-left: 10px;
+}
+.star_container{
+  margin-left: 7px;
+}
+select:focus {
+  outline: none !important;
+  border:2px solid  #777e20;
 }
