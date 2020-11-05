@@ -265,8 +265,8 @@ select:focus {
 .reviews_container {
 	background-color: white;
 	align-self: center;
-	width: 500px;
-	height: 500px;
+	width: 95%;
+	height: 80%;
 	border-radius: 0.75em;
 	padding: 10px;
 }
