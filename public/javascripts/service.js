@@ -28,3 +28,16 @@ export const POST = (url, payload) =>
 	})
 		.then(checkStatus)
 		.then(parseJSON);
+
+export const PUT = (url, payload) =>
+	fetch(url, {
+		method: "PUT",
+		credentials: "same-origin", // includes cookies
+		headers: {
+			Accept: "application/json",
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(payload),
+	})
+		.then(checkStatus)
+		.then(parseJSON);

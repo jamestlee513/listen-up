@@ -28,9 +28,9 @@ block content
                 div
                   each star in [1,2,3,4,5]
                     if star > rating.rating
-                      i(class="far fa-star rating" data-rating=star data-podcast-id=podcast.id)
+                      i(class="far fa-star rating" data-rating-id=rating.id data-rating=star data-podcast-id=podcast.id)
                     else
-                      i(class="fas fa-star rating" data-rating=star data-podcast-id=podcast.id)
+                      i(class="fas fa-star rating" data-rating-id=rating.id data-rating=star data-podcast-id=podcast.id)
 
         div(class="reviews") Reviews go here
 

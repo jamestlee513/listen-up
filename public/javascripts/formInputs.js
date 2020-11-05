@@ -1,4 +1,4 @@
-import { POST } from "./service.js";
+import { POST, PUT } from "./service.js";
 
 window.addEventListener("DOMContentLoaded", (event) => {
 	const form = document.querySelector(".form_container-form");
@@ -19,16 +19,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	for (let star of stars) {
 		star.addEventListener("click", (event) => {
-			//get rating from dataset
-			console.log(event);
-			let rating = event.target.dataset.rating;
-			let podcastId = event.target.dataset.podcastId;
+			let { rating, podcastId, ratingId } = event.target.dataset;
 
 			console.log("set loading...?");
 
-			POST(`${baseUrl}/podcasts/${podcastId}/rating`, { rating })
-				.then((res) => console.log("res", res))
-				.then(() => console.log("turn loading off?"));
+			if (ratingId) {
+				PUT(`${baseUrl}/podcasts/${podcastId}/rating/${ratingId}`, {
+					rating,
+				})
+					.then((res) => console.log("res", res))
+					.then(() => console.log("turn loading off?"));
+			} else {
+				POST(`${baseUrl}/podcasts/${podcastId}/rating`, { rating })
+					.then((res) => console.log("res", res))
+					.then(() => console.log("turn loading off?"));
+			}
 
 			console.log("clicked", rating, podcastId);
 		});

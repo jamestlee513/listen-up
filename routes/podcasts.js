@@ -43,7 +43,6 @@ router.post(
 	"/:id(\\d+)/rating",
 	requireAuth,
 	asyncHandler(async (req, res) => {
-		console.log("at top of route");
 		const { rating } = req.body;
 		// TODO: debug user id
 		const { userId } = req.session.auth;
@@ -54,6 +53,26 @@ router.post(
 			rating: parseInt(rating, 10),
 		});
 		return res.status(200).json({ newRating });
+	})
+);
+
+router.put(
+	"/:podcastId(\\d+)/rating/:id(\\d+)",
+	requireAuth,
+	asyncHandler(async (req, res) => {
+		const { rating } = req.body;
+		// TODO: debug user id
+		const { userId } = req.session.auth;
+		const podcastId = parseInt(req.params.podcastId, 10);
+		const id = parseInt(req.params.id, 10);
+		const existingRating = await db.Rating.findOne({
+			where: { podcastId, userId, id },
+		});
+		if (!existingRating) {
+			return res.status(404).json({ message: "Not found" });
+		}
+		await existingRating.update({ rating });
+		return res.status(200).json({ rating: existingRating });
 	})
 );
 module.exports = router;
