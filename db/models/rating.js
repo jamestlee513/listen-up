@@ -3,6 +3,9 @@ module.exports = (sequelize, DataTypes) => {
 	const Rating = sequelize.define(
 		"Rating",
 		{
+			userId: {
+				type: DataTypes.INTEGER
+			},
 			rating: {
 				type: DataTypes.NUMERIC(2, 2),
 			},

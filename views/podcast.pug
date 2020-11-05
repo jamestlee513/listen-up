@@ -9,31 +9,30 @@ block content
       div(class="mininav") podcast
     div(class="content content--main-sidebar")
       div(class="content_container")
-        p(class="content_container-text")  All Podcasts
-        p(class="content_container-header")
-          | Explore podcasts you might be interested in.
-        p(class="content_container-para")
-          | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem voluptate beatae, saepe nostrum consectetur, pariatur minus animi nesciunt eveniet molestiae deserunt, voluptatum quisquam. Hic, eveniet? Fugit asperiores consectetur est et.
-          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic minima sit maxime consectetur nostrum quas sequi distinctio iusto a rem adipisci numquam nam, enim, perferendis sunt esse eum ex laborum.
-          | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi aut ipsam, nisi asperiores, et incidunt dolore est explicabo earum id minima distinctio, pariatur labore! Ducimus iure rem libero voluptatem doloremque!
+        div(class="image_container")
+          img(src="/imgs/crime-junkie.jpeg" width="100px" height="100px")
+        p(class="content_container-text")= podcast.title
+        p(class="content_container-header")= podcast.hostName
+        p(class="content_container-para")= podcast.description
         table(class="table")
           tbody
-          each podcast in podcasts
             tr(class="row")
               td
-                p 🎵
+                p
               td
                 img(src=podcast.podcastImage width="100px" height="100px")
               td
                 span(class="author-host")= podcast.title
                 br
-                span(class="by")= podcast.host
+                span(class="by")= podcast.hostName
                 div(class="star_container" data-podcast-id=podcast.id)
                   each star in [1,2,3,4,5]
-                    if star > podcast.rating.rating
-                      i(class="far fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
+                    if star > rating.rating
+                      i(class="far fa-star rating" data-rating-id=rating.id data-rating=star data-podcast-id=podcast.id)
                     else
-                      i(class="fas fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
+                      i(class="fas fa-star rating" data-rating-id=rating.id data-rating=star data-podcast-id=podcast.id)
+
+        div(class="reviews") Reviews go here
 
       div(class="rightContainer")
         div(class="box")
