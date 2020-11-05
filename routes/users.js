@@ -113,13 +113,14 @@ router.get("/login", csrfProtection, (req, res) => { // route for user login
 })
 
 
-router.get("/login-demo",  (req, res) => { // route for demoUser login
-  const demoUser = db.User.findOne({ where: { email: 'demo@demo.com' } })
-  console.log("hi")
+router.get("/login-demo", asyncHandler (async (req, res) => { // route for demoUser login
+  const demoUser = await db.User.findOne({where: {email: 'demo@demo.com'}})
+  console.log(demoUser)
 
   loginUser(req, res, demoUser)
   return res.redirect("/");
-})
+}));
+
 
 const loginValidators = [ // login for validations
   check("email")
@@ -130,7 +131,7 @@ const loginValidators = [ // login for validations
     .withMessage("Please provide a value for a Password"),
 ];
 
-router.post( // form post action route 
+router.post( // form post action route
   "/login",
   csrfProtection,
   loginValidators,
