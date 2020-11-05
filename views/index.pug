@@ -2,13 +2,16 @@ extends layout.pug
 append head
     //- add page specific styles by appending to the head
     link(rel="stylesheet" href="/stylesheets/index.css")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous")
     //- add page specific js
     script(src="/javascripts/index.js" type="module" defer)
+    script(src="/javascripts/homePage.js" type="module" defer)
 block content
     body
         section(class="main_section-header")
             div(class="main_section-container")
-                form(class="form_container-form" action="/users/register" method="POST")
+                div
+                form(class="form_container-form" action='/users/register' method='POST')
                     input( type="hidden" name="_csrf" value=csrfToken)
                     h1(class="form_container-form-title") Register Form
                     div 
@@ -36,7 +39,7 @@ block content
                         br
                         input(class="form_container-form-input" type="password" id="confirmPassword" name="confirmPassword" style="color: black")
                         br
-                    button(lass="form_container-form-button" type="submit") Submit
+                    button(class="form_container-form-button" type="submit" ) SignUp!
         section(class="main_section-content")
             div(class="main_section-container")
                 div(class="content_container")
@@ -104,5 +107,11 @@ block content
                                     i(class="fas fa-star rating")
                                     i(class="fas fa-star rating")
                                     i(class="fas fa-star-half-alt rating")
+                div(class="box")
+                    h1 #1 Recommended
+        section(class="main_section-footer")
+            footer(class="main_section-container-footer")
+                i(class="fab fa-github footer-icon fa-3x")
+               
             
                 
