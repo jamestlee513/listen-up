@@ -368,10 +368,10 @@ body {
 .form_container-form-button {
     font-family: "Lato", sans-serif;
     border-radius: 3px;
-    border: 1px solid #7ea04d;
+    border: 1px solid #2b4704;
     cursor: pointer;
-    color: rgb(22, 98, 40);
-    background-color: #7ea04d;
+    color: rgb(255, 255, 255);
+    background-color: #2b4704;
     padding: 5px 7px;
     font-weight: 800;
     font-family: "Lato", sans-serif;
@@ -382,7 +382,7 @@ body {
 }
 
 .form_container-form-button:hover {
-    background-color: #83b17c;
+    background-color: #243b04;
 }
 
 .form_container-divider-a-text {
