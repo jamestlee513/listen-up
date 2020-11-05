@@ -1,7 +1,7 @@
 const express = require("express");
 
 const db = require("../db/models"); // check to db
-const { Podcast } = db;
+
 const { requireAuth } = require("../auth");
 const { csrfProtection, asyncHandler } = require("./utils"); //need make utils
 
@@ -14,7 +14,7 @@ router.get(
 		// res.send('Testing podcast route...');
 		// TODO: Connect to front-end PUG
 		//TODO: Implement me:
-		const podcasts = await Podcast.findAll({
+		const podcasts = await db.Podcast.findAll({
 			order: [["title", "ASC"]],
 			limit: 10,
 		});
@@ -26,11 +26,16 @@ router.get(
 	"/:id(\\d+)",
 	asyncHandler(async (req, res) => {
 		const id = parseInt(req.params.id, 10);
-		const podcast = await Podcast.findByPk(id);
+		const podcast = await db.Podcast.findByPk(id);
+		const { userId } = req.session.auth;
+		const rating =
+			(await db.Rating.findOne({
+				where: { podcastId: id, userId },
+			})) || db.Rating.build({ rating: 0 });
 		// res.send(`This route works. This is ID: ${req.params.id} `);
 
 		// TODO: connect to front-end PUG
-		res.render("podcast.pug", { podcast });
+		res.render("podcast.pug", { podcast, rating });
 	})
 );
 
@@ -43,13 +48,12 @@ router.post(
 		// TODO: debug user id
 		const { userId } = req.session.auth;
 		const id = parseInt(req.params.id, 10);
-		const newRating = await db.Rating.build({
+		const newRating = await db.Rating.create({
 			userId: userId,
 			podcastId: id,
 			rating: parseInt(rating, 10),
 		});
 		return res.status(200).json({ newRating });
-
 	})
 );
 module.exports = router;
