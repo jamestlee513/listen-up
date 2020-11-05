@@ -13,13 +13,14 @@ html
             span(class='') Welcome #{user.firstName}!
             form(class='' action='' method='post')
               button(class='' type='submit') Logout
+              a(href="/users/login-demo") Demo
         else
-          section(class="body_container")
-            section(class="navbar_main-section")
-              nav(class="main_section-container")
-                h1(class="navbar_conatiner-logo-h1")
-                  span(class="navbar_container-logo-light") Listen
-                  span(class="navbar_container-logo-bold") up
-                button(class="form_container-demo-button")
-                  a(href="/users/login" class="form_container-demo-login-text") Login
+          nav(class="navbar_container")
+            h1(class="navbar_conatainer-logo-h1")
+              span(class="navbar_container-logo-light") Listen
+              span(class="navbar_container-logo-bold") up
+            div
+              a(href="/users/login") Login
+              a(href="/users/login-demo") Demo
+              a(href="/users/logout") Logout
         block content
