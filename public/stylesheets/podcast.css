@@ -90,19 +90,18 @@ body {
 }
 
 .content_container-text {
-  color: rgb(62, 113, 114);
-  font-weight: bold;
+	color: rgb(62, 113, 114);
+	font-weight: bold;
 	font-size: 1.5rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
 	width: 100%;
 }
 
 .content_container-header {
-  font-size: 1.25rem;
-  margin-top: 3px;
-  margin-bottom: 0;
-  height: 100%;
+	font-size: 1.25rem;
+	margin-top: 3px;
+	margin-bottom: 1px;
 }
 
 .content_container-para {
@@ -150,6 +149,9 @@ th {
 	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
 		rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
+.box:first-of-type {
+	margin-top: 0px;
+}
 
 .content {
 	align-self: center;
@@ -190,15 +192,17 @@ th {
 	padding-top: 30px;
 	display: grid;
 	grid-template-columns: 1fr 1.25fr;
+	height: 330px;
 }
 .image_container {
-  margin-bottom: 1px;
-  max-width: 200px;
-  max-height: 200px;
+	margin-bottom: 1px;
+	max-width: 200px;
+	max-height: 200px;
 }
 
 .playlist_select_wrapper {
 	position: relative;
+	height: 40px;
 }
 
 .playlist_select {
@@ -234,7 +238,7 @@ th {
 	font-style: normal;
 	font-variant: normal;
 	text-rendering: auto;
-  line-height: 1;
+	line-height: 1;
 
 	position: absolute;
 	color: white;
@@ -247,10 +251,22 @@ th {
 .podcast_container-info {
 	padding-left: 10px;
 }
-.star_container{
-  margin-left: 7px;
+.star_container {
+	margin-left: 5px;
+}
+.star_container > p {
+	margin-block-end: 1px;
 }
 select:focus {
-  outline: none !important;
-  border:2px solid  #777e20;
+	outline: none !important;
+	border: 2px solid #777e20;
+}
+
+.reviews_container {
+	background-color: white;
+	align-self: center;
+	width: 500px;
+	height: 500px;
+	border-radius: 0.75em;
+	padding: 10px;
 }
