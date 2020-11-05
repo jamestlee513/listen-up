@@ -198,16 +198,13 @@ th {
 	text-indent: 5px;
 	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: bold;
-	overflow: hidden;
 	text-align: left;
-	word-wrap: normal;
-	white-space: nowrap;
-	width: 155px;
+	width: 158px;
 	margin: 15px 5px;
 	font-size: 13px;
 	min-height: 32px;
 	background: #ffffff;
-	text-overflow: ellipsis;
+
 	/* add custom arrow */
 	background-image: linear-gradient(to right, #777e20, #777e20);
 	background-position: right center;
@@ -230,7 +227,7 @@ th {
 	position: absolute;
 	color: white;
 	top: 24px;
-	left: 136px;
+	left: 140px;
 	pointer-events: none; /* ensures click on select not icon */
 	display: block;
 }
