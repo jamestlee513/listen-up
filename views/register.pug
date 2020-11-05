@@ -5,33 +5,30 @@ include utils.pug
 
 block content
     body
-        section(class="body_container")
-            section(class="form_container")
-                h1
-                    span(class="form_container-logo-light" ) Listen
+    div(class="register-container")
+                section(class="form_container")
+                    a(class="form_title" href="/")
+                        span(class="form_container-logo-light") Listen
+                        span(class="form_container-logo-bold") up
+                    h1(class="form_container-form-title") Register to Listenup
+                    a(href="/users/login-demo" class="form_container-demo-button-text" button class="form_container-demo-button") Continue as a Demo User
+                        i(class="fas fa-headphones form_container-demo-button-text")
 
-                    span(class="form_container-logo-bold") up
-                h1(class="form_container-form-title") Register to Listenup
-                a(href="/users/login-demo" class="form_container-demo-button-text" button class="form_container-demo-button") Continue as a Demo User
-                    i(class="fas fa-headphones form_container-demo-button-text")
-
-                    a(href="/users/login-demo" class="form_container-demo-button-text") Continue as a Demo User
-
-                div(class="form_container-divider")
-                    hr(class="form_container-hr-left")
-                    span(class="form_container-divider-text") or
-                    hr(class="form_container-hr-right")
-                form(class="form_container-form" action='/users/register' method='POST')
-                    +validationErrors(errors)
-                    input(type='hidden' name='_csrf' value=csrfToken)
-                    +field('First Name', 'firstName', user.firstName)
-                    +field('Last Name', 'lastName', user.lastName)
-                    +field('Email Address', 'email', user.email)
-                    label(class="form_container-form-input-label" for="password") Password
-                    input(class="form_container-form-input" type="password" id="password" name="password" style="color: black")
-                    label(class="form_container-form-input-label" for="confirmPassword") Confirm Password
-                    input(class="form_container-form-input" type="password" id="confirmPassword" name="confirmPassword" style="color: black")
-                    button(class="form_container-form-button" type='submit') Register
-                div(class="form_container-divider")
-                    span(class="form_container-divider-cta") Already a member?
-                        a(class="form_container-divider-a-text" href="/users/login") Login!
+                    div(class="form_container-divider")
+                        hr(class="form_container-hr-left")
+                        span(class="form_container-divider-text") or
+                        hr(class="form_container-hr-right")
+                    form(class="form_container-form" action='/users/register' method='POST')
+                        +validationErrors(errors)
+                        input(type='hidden' name='_csrf' value=csrfToken)
+                        +field('First Name', 'firstName', user.firstName)
+                        +field('Last Name', 'lastName', user.lastName)
+                        +field('Email Address', 'email', user.email)
+                        label(class="form_container-form-input-label" for="password") Password
+                        input(class="form_container-form-input" type="password" id="password" name="password" style="color: black")
+                        label(class="form_container-form-input-label" for="confirmPassword") Confirm Password
+                        input(class="form_container-form-input" type="password" id="confirmPassword" name="confirmPassword" style="color: black")
+                        button(class="form_container-form-button" type='submit') Register
+                    div(class="form_container-divider")
+                        span(class="form_container-divider-cta") Already a member?
+                            a(class="form_container-divider-a-text" href="/users/login") Login!

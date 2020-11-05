@@ -13,8 +13,8 @@ html
         if locals.authenticated
           nav(class="navbar_container")
             span(class='') Welcome #{user.firstName}!
-            form(class='' action='' method='post')
-              button(class='' type='submit') Logout
+            form(class='' action='/users/logout' method='POST')
+              button(class='form_container-logout-button' type='submit') Logout
         else
           section(class="body_container")
             section(class="navbar_main-section")
@@ -22,6 +22,10 @@ html
                 h1(class="navbar_conatiner-logo-h1")
                   span(class="navbar_container-logo-light") Listen
                   span(class="navbar_container-logo-bold") up
-                button(class="form_container-demo-button")
-                  a(href="/users/login" class="form_container-demo-login-text") Login
+                div(class="navbar_buttons")
+                  button(class="form_container-demo-button")  
+                    a(href="/users/login" class="form_container-demo-login-text") Login
+                div
+                  a(href="/users/login-demo" class="form_container-demo-button-text" button class="form_container-demo-button") Continue as a Demo User
+                    i(class="fas fa-headphones form_container-demo-button-text")
         block content
