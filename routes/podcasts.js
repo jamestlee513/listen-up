@@ -31,6 +31,8 @@ router.get(
 	})
 );
 
+
+//TODO: Return data with ratings, reviews, replies joined
 router.get(
 	"/:id(\\d+)",
 	asyncHandler(async (req, res) => {
