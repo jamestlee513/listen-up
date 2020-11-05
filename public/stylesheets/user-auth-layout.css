@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+html{
+    height: 100%;
+    width: 100%;
+}
 
 body {
     font-family: "Lato", sans-serif;
@@ -8,7 +12,7 @@ body {
     background-repeat: no-repeat;
     height: 100%;
     background-size: cover;
-    width: 100vw;
+    width: 100%;
     margin: 0;
 }
 
@@ -197,4 +201,27 @@ body {
     font-weight: bold;
     color: rgb(71, 22, 22);
     padding-right: 9px;
+}
+
+
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+}
+
+/* Table */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+
 }
