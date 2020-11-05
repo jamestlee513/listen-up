@@ -26,11 +26,11 @@ block content
                 br
                 span(class="by")= podcast.host
                 div
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star rating")
-                  i(class="fas fa-star-half-alt rating")
+                  i(class="fas fa-star rating" data-rating="1" data-podcast-id=podcast.id)
+                  i(class="fas fa-star rating" data-rating="2" data-podcast-id=podcast.id)
+                  i(class="fas fa-star rating" data-rating="3" data-podcast-id=podcast.id)
+                  i(class="fas fa-star rating" data-rating="4" data-podcast-id=podcast.id)
+                  i(class="fas fa-star rating" data-rating="5" data-podcast-id=podcast.id)
         div(class="reviews") Reviews go here
 
       div(class="rightContainer")
