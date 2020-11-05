@@ -19,6 +19,7 @@ body {
 .main-container {
     background-color: white;
     width: 75%;
+    height: 100%;
     margin: 0 auto;
     padding: 20px 40px;
     
@@ -31,6 +32,7 @@ body {
 .sidebar-container {
     background-color: white;
     width: 15%;
+    height: 100%;
     margin: 0 auto;
     padding: 10px;
     border-radius: 15px;
@@ -73,7 +75,9 @@ h2 {
     padding: 10px 25px;
     border-radius: 5px;
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
-		rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+        rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    height: 85%;
+    overflow: auto;
 }
 
 .podcast__wrapper {
@@ -94,7 +98,6 @@ h2 {
 .podcast-img__wrapper {
     grid-area: img;
 
-    border: 1px solid black;
     margin: 10px 5px;
     box-sizing: border-box;
     height: 90px;
@@ -117,6 +120,8 @@ img {
 
     margin: 10px 5px 5px 5px;
     padding: 5px;
+
+    font-size: 10em;
 }
 
 
@@ -124,4 +129,7 @@ img {
     grid-area: description;
     margin: 5px 5px 10px 5px;
     padding: 5px;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
 }
