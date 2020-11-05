@@ -80,7 +80,8 @@ body {
 }
 
 .form_container-demo-button:hover {
-    background-color: #ddaf36;
+    background-color: #e6c77a;
+    color: #9b7822;
 }
 
 .form_container-form {
@@ -220,7 +221,7 @@ body {
 }
 
 /* Portrait and Landscape */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
       @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 
@@ -292,7 +293,8 @@ body {
 }
 
 .form_container-demo-button:hover {
-    background-color: #ddaf36;
+    background-color: #e6c77a;
+    color: #9b7822;
 }
 
 .form_container-form {
