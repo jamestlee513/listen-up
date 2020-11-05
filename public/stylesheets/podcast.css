@@ -160,7 +160,8 @@ th {
 }
 
 .mininav {
-	padding-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 15px;
 	margin-right: 10px;
 	color: darkgray;
 	font-weight: 900;
