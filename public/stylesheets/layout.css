@@ -68,3 +68,22 @@ body {
 @media only screen and (max-width: 800px) {
 
 }
+
+
+@media only screen and (max-width: 600px) {
+    .form_container-form {
+    justify-content: center;
+    text-align: left;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    font-size: 1.5rem;
+    width: 100vw;
+    margin-bottom: 0;
+    }
+
+    .main_section_header {
+        width: 100%;
+    }
+}

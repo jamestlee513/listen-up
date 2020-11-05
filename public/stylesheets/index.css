@@ -253,3 +253,27 @@ th {
     font-size: large;
     color: #e9e5cd;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .form_container-form {
+    justify-content: center;
+    text-align: left;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    font-size: 1.5rem;
+    width: 600px;
+    margin-bottom: 0;
+    background-color: blue;
+    }
+
+    .main_section_container {
+        background: blue;
+    }
+
+    .form {
+        width: 100%
+    }
+}
