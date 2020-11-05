@@ -20,10 +20,12 @@ body {
     background-color: white;
     width: 75%;
     margin: 0 auto;
-    padding: 40px;
+    padding: 20px 40px;
     
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
     rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+
+    border-radius: 15px;
 }
 
 .sidebar-container {
@@ -31,7 +33,7 @@ body {
     width: 15%;
     margin: 0 auto;
     padding: 10px;
-
+    border-radius: 15px;
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
 		rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
@@ -48,18 +50,30 @@ h2 {
     flex-direction: column;
 }
 
+.playlist-active {
+    font-weight: bold;
+}
+
 .playlist__wrapper {
     height: 40px;
     width: auto;
     padding: 10px;
 }
 
+.main-container__playlist-title {
+    font-size: 30px;
+    padding: 5px;
+    margin: 10px 5px;
+}
+
 .main-container__playlist-content {
     display: flex;
     flex-direction: column;
     background-color: #e9e5cd;
-    padding: 30px 20px;
-    border-radius: 15px;
+    padding: 10px 25px;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+		rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
 
 .podcast__wrapper {
@@ -67,11 +81,24 @@ h2 {
     grid-template-columns: 1fr 9fr;
     grid-template-areas: 2fr 3fr; 
     grid-template-areas: "img header"
-                         "img description"
+                         "img description";
+    background-color: #cecece;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+		rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+
+    margin: 5px 0;
+    padding: 5px;
 }
 
 .podcast-img__wrapper {
     grid-area: img;
+
+    border: 1px solid black;
+    margin: 10px 5px;
+    box-sizing: border-box;
+    height: 90px;
+    width: 90px;
 }
 
 .podcast-header {
@@ -80,9 +107,14 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    margin: 10px 5px 5px 5px;
+    padding: 5px;
 }
 
 
 .podcast-description {
-    grid-area: description
+    grid-area: description;
+    margin: 5px 5px 10px 5px;
+    padding: 5px;
 }
