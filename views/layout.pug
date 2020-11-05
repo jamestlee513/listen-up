@@ -13,8 +13,8 @@ html
         if locals.authenticated
           nav(class="navbar_container")
             span(class='') Welcome #{user.firstName}!
-            form(class='' action='' method='post')
-              button(class='' type='submit') Logout
+            form(class='' action='/users/logout' method='POST')
+              button(class='form_container-logout-button' type='submit') Logout
         else
           section(class="body_container")
             section(class="navbar_main-section")
