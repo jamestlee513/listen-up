@@ -9,31 +9,29 @@ block content
       div(class="mininav") podcast
     div(class="content content--main-sidebar")
       div(class="content_container")
-        div(class="image_container")
-          img(src="/imgs/crime-junkie.jpeg" width="100px" height="100px")
-        p(class="content_container-text")= podcast.title
-        p(class="content_container-header")= podcast.hostName
-        p(class="content_container-para")= podcast.description
-        table(class="table")
-          tbody
-            tr(class="row")
-              td
-                p
-              td
-                img(src=podcast.podcastImage width="100px" height="100px")
-              td
-                span(class="author-host")= podcast.title
-                br
-                span(class="by")= podcast.hostName
-                div(class="star_container" data-podcast-id=podcast.id)
-                  each star in [1,2,3,4,5]
-                    if star > rating.rating
-                      i(class="far fa-star rating" data-rating-id=rating.id data-rating=star data-podcast-id=podcast.id)
-                    else
-                      i(class="fas fa-star rating" data-rating-id=rating.id data-rating=star data-podcast-id=podcast.id)
-
-        div(class="reviews") Reviews go here
-
+        div(class="podcast_container-elements")
+          div(class="image_container")
+            img(src=podcast.podcastImage width="200px" height="200px")
+            form(class="listenStatus")
+              div(class="playlist_select_wrapper")
+                select(class="playlist_select" name="playlists")
+                  option(value="") Add to playlist
+                  option(value="want-to-listen") Want to Listen
+                  option(value="listened") Listened To
+                  option(value="currently-listening") Currently Listening
+            div(class="star_container" data-podcast-id=podcast.id)
+              p My Rating:
+              each star in [1,2,3,4,5]
+                if star > rating.rating
+                  i(class="far fa-star rating" data-rating-id=rating.id data-rating=star data-podcast-id=podcast.id)
+                else
+                  i(class="fas fa-star rating" data-rating-id=rating.id data-rating=star data-podcast-id=podcast.id)
+          div(class="podcast_container-info")
+            p(class="content_container-text")= podcast.title
+            p(class="content_container-header")= podcast.hostName
+            p(class="content_container-para")= podcast.description
+            button(class="content_container-link") Link
+        div(class="reviews_container") Reviews
       div(class="rightContainer")
         div(class="box")
           h1 The form element
