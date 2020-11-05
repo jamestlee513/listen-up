@@ -17,15 +17,11 @@ html
               button(class='' type='submit') Logout
         else
           section(class="body_container")
-            nav(class="navbar_container")
-              h1(class="navbar_conatiner-logo-h1")
-                span(class="navbar_container-logo-light") Listen
-                span(class="navbar_container-logo-bold") up
-              form(class="navbar_container-form" action='/users/login' method='POST')
-                input(class="navbar_container-form-input" type='hidden' name='_csrf' value=csrfToken)
-                label(for="email")
-                input(class="navbar_container-form-input" type="email" id="email" name="email" value=email placeholder="Email address")
-                label(for="password")
-                input(class="navbar_container-form-input" type="password" id="password" name="password" value=password placeholder="Password")
-                button(class="navbar_container-form-button" type='submit') Sign in
+            section(class="navbar_main-section")
+              nav(class="main_section-container")
+                h1(class="navbar_conatiner-logo-h1")
+                  span(class="navbar_container-logo-light") Listen
+                  span(class="navbar_container-logo-bold") up
+                button(class="form_container-demo-button")
+                  a(href="/users/login" class="form_container-demo-login-text") Login
         block content

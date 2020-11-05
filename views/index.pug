@@ -2,6 +2,116 @@ extends layout.pug
 append head
     //- add page specific styles by appending to the head
     link(rel="stylesheet" href="/stylesheets/index.css")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous")
     //- add page specific js
     script(src="/javascripts/index.js" type="module" defer)
+    script(src="/javascripts/homePage.js" type="module" defer)
 block content
+    body
+        section(class="main_section-header")
+            div(class="main_section-container")
+                div
+                form(class="form_container-form" action='/users/register' method='POST')
+                    input( type="hidden" name="_csrf" value=csrfToken)
+                    h1(class="form_container-form-title") Register Form
+                    div 
+                        label(class="form_container-form-input-label" for="firstName") First Name
+                        br
+                        input(class="form_container-form-input" type="text" id="firstName" name="firstName")
+                        br
+                    div
+                        label(class="form_container-form-input-label" for="lastName") Last Name
+                        br
+                        input(class="form_container-form-input" type="text" id="lastName" name="lastName")
+                        br
+                    div
+                        label(class="form_container-form-input-label" for="email") Email Address
+                        br
+                        input(class="form_container-form-input" type="text" id="email" name="email")
+                        br
+                    div
+                        label(class="form_container-form-input-label" for="password") Password
+                        br
+                        input(class="form_container-form-input" type="password" id="password" name="password" style="color: black")
+                        br
+                    div
+                        label(class="form_container-form-input-label" for="confirmPassword") Confirmed Password
+                        br
+                        input(class="form_container-form-input" type="password" id="confirmPassword" name="confirmPassword" style="color: black")
+                        br
+                    button(class="form_container-form-button" type="submit" ) SignUp!
+        section(class="main_section-content")
+            div(class="main_section-container")
+                div(class="content_container")
+                    p(class="content_container-text") lorem
+                    p(class="content_container-header") Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore nemo consectetur quod expedita, excepturi distinctio dolores non numquam qui ipsum deleniti eaque voluptates cum, cumque hic adipisci velit assumenda illo.
+                    table(class="table")
+                        tbody
+                            tr(class="row")
+                                td 
+                                    p 1
+                                td
+                                    img(src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSA4UAGuB3gvriNe_BGPDBGN8lyzquSFzbicYEesg6EqsswVjT5" width="100px" height="100px")
+                                td 
+                                    span(class="author-host") The Joe Rogan Experience
+                                    br
+                                    span(class="by") Host SomeGuy
+                                    div
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star-half-alt rating")
+                            tr(class="row")
+                                td 
+                                    p 2
+                                td
+                                    img(src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSA4UAGuB3gvriNe_BGPDBGN8lyzquSFzbicYEesg6EqsswVjT5" width="100px" height="100px")
+                                td 
+                                    span(class="author-host") The Joe Rogan Experience x2
+                                    br
+                                    span(class="by") Host SomeGuy
+                                    div
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star-half-alt rating")
+                            tr(class="row")
+                                td 
+                                    p 3
+                                td
+                                    img(src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSA4UAGuB3gvriNe_BGPDBGN8lyzquSFzbicYEesg6EqsswVjT5" width="100px" height="100px")
+                                td 
+                                    span(class="author-host") The Joe Rogan Experience x2
+                                    br
+                                    span(class="by") Host SomeGuy
+                                    div
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star-half-alt rating")
+                            tr(class="row")
+                                td 
+                                    p 4
+                                td
+                                    img(src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSA4UAGuB3gvriNe_BGPDBGN8lyzquSFzbicYEesg6EqsswVjT5" width="100px" height="100px")
+                                td 
+                                    span(class="author-host") The Joe Rogan Experience x2
+                                    br
+                                    span(class="by") Host SomeGuy
+                                    div
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star rating")
+                                    i(class="fas fa-star-half-alt rating")
+                div(class="box")
+                    h1 #1 Recommended
+        section(class="main_section-footer")
+            footer(class="main_section-container-footer")
+                i(class="fab fa-github footer-icon fa-3x")
+               
+            
+                
