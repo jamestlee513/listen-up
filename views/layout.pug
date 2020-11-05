@@ -14,7 +14,7 @@ html
           nav(class="navbar_container")
             div(class="navbar_conatiner-logo-h1")
               span(class='') Welcome #{user.firstName}!
-              form(class='' action='/users/logout' method='POST')
+              form(class='form_container-demo-button-login' action='/users/logout' method='POST')
                 button(class='form_container-logout-button' type='submit') Logout
         else
           section(class="navbar_main-section")
