@@ -5,6 +5,7 @@ include utils.pug
 block content
     link(rel='stylesheet' href='/stylesheets/reset.css')
     link(rel='stylesheet' href='/stylesheets/playlist.css')
+    script(src="/javascripts/playlist.js" type="module")
     body
         div(class="playlists-page")    
             div(class="sidebar-container")
@@ -12,14 +13,15 @@ block content
                     h2(class="sidebar-container__playlists-title") Playlists
                     div(class="sidebar-container__playlists-selections")
                         //- on render, populate this
-                        div(class="playlist__wrapper")
-                            div(class="playlist-1 playlist-active") My First Playlist
-                        div(class="playlist__wrapper")
-                            div(class="playlist-2") Currently Listening
-                        div(class="playlist__wrapper")
-                            div(class="playlist-3") Want to listen
-                        div(class="playlist__wrapper")
-                            div(class="playlist-4") Listened
+                        for playlist in playlists
+                            div(class="playlist__wrapper")
+                                div(class=`playlist-${playlist.id}`)= playlist.title
+                        //- div(class="playlist__wrapper")
+                        //-     div(class="playlist-2") Currently Listening
+                        //- div(class="playlist__wrapper")
+                        //-     div(class="playlist-3") Want to listen
+                        //- div(class="playlist__wrapper")
+                        //-     div(class="playlist-4") Listened
                     //- For each playlist, create a selector
                     //- example playlist for now
                         
@@ -37,6 +39,7 @@ block content
                             h3(class="podcast-title") Title
                             h4(class="podcast-host") Host Name
                         p(class="podcast-description") loren ipusum etc yeethagang loren ipusum etc yeethagangloren ipusum etc yeethagangloren ipusum etc yeethagang
+                    
                     div(class="podcast__wrapper")
                         div(class="podcast-img__wrapper")
                             img(src="", alt="podcast-image")(class="podcast-img" )
@@ -44,6 +47,7 @@ block content
                             h3(class="podcast-title") Title
                             h4(class="podcast-host") Host Name
                         p(class="podcast-description") loren ipusum etc yeethagang loren ipusum etc yeethagangloren ipusum etc yeethagangloren ipusum etc yeethagang
+                    
                     div(class="podcast__wrapper")
                         div(class="podcast-img__wrapper")
                             img(src="", alt="podcast-image")(class="podcast-img" )
