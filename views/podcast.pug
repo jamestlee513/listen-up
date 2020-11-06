@@ -39,8 +39,10 @@ block content
         div(class="reviews_container")
           form(class="form_container-form" action=`/podcasts/${podcast.id}/reviews` method='POST')
               input(type="hidden" id="podcastId" value=podcast.id)
-              label(class="form_container-form-input-label" for="reviews") Review
+              label(class="form_container-form-input-label" for="reviews") Review this podcast
+              br
               textarea(class="review_input" type="text" name="review") Example text
+              br
               button(class="form_container-form-button" type='submit') Submit Review
           div(class="reviews_container-list")
             ul(class="review_list")

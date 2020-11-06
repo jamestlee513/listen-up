@@ -263,14 +263,47 @@ select:focus {
 }
 
 .reviews_container {
-	background-color: white;
+	background-color: #777e1f;
 	align-self: center;
 	width: 95%;
 	height: 80%;
 	border-radius: 0.75em;
 	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 5%;
+}
+.form_container-form {
+	padding: 5% 10%;
+}
+.form_container-form-input-label {
+	color: #e9e5cd;
+}
+.review_input {
+	height: 40%;
+	width: 90%;
+	background-color: #e9e5cd;
+	border-radius: 0.25em;
+}
+.review_list-elements {
+	list-style-type: none;
+	border-radius: 0.25em;
+	background-color: #e9e5cd;
+	margin: 3% 0;
+	padding: 3%;
+}
+.form_container-form-button {
+	margin-left: 65%;
+	background-color: #eace85;
+	border-radius: 0.25em;
+	border: 1px solid black;
+	font-weight: 500;
+	box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+		rgba(0, 0, 0, 0.5) 0px 1px 1px 0px;
 }
 
-.review_list-elements{
-	list-style-type: none;
+.review_list {
+	margin: 5% 10%;
+	padding-inline-start: 0px;
+	font-family: "Lato", sans-serif;
 }
