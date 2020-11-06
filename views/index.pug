@@ -13,22 +13,22 @@ block content
             div(class="main_section-container")
                 div(class="form")
                 form(class="form_container-form" action='/users/register' method='POST')
-                    input( type="hidden" name="_csrf" value=csrfToken)
                     h1(class="form_container-form-title") Register Form
+                    input( type="hidden" name="_csrf" value=csrfToken)
                     div 
                         label(class="form_container-form-input-label" for="firstName") First Name
                         br
-                        input(class="form_container-form-input" type="text" id="firstName" name="firstName")
+                        input(class="form_container-form-input" type="text" id="firstName" name="firstName" style="color:black")
                         br
                     div
                         label(class="form_container-form-input-label" for="lastName") Last Name
                         br
-                        input(class="form_container-form-input" type="text" id="lastName" name="lastName")
+                        input(class="form_container-form-input" type="text" id="lastName" name="lastName" style="color:black")
                         br
                     div
                         label(class="form_container-form-input-label" for="email") Email Address
                         br
-                        input(class="form_container-form-input" type="text" id="email" name="email")
+                        input(class="form_container-form-input" type="text" id="email" name="email" style="color:black")
                         br
                     div
                         label(class="form_container-form-input-label" for="password") Password
@@ -40,7 +40,7 @@ block content
                         br
                         input(class="form_container-form-input" type="password" id="confirmPassword" name="confirmPassword" style="color: black")
                         br
-                    button(class="form_container-form-button" type="submit" ) SignUp!
+                        button(class="form_container-demo-button-signup" type="submit" ) Register
         section(class="main_section-content")
             div(class="main_section-container")
                 div(class="content_container")
