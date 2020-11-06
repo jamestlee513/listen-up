@@ -14,7 +14,10 @@ router.get("/",
     restoreUser,
     requireAuth,
     asyncHandler(async (req, res) => {
-        const playlists = await findAllPlaylists();
+        const { userId } = req.session.auth;
+        const playlists = await Playlist.findAll({
+            where: { userId }
+        });
         //TODO: Connect to front-end
         res.render('playlist', { playlists });
     }));
