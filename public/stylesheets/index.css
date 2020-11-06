@@ -157,11 +157,11 @@ body {
 
 /* *******************************     reference file  ************************************************ */
 
-.content_container {
+.content_container-home {
     align-self: center;
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 60%;
 }
 
 .content_container-text {
