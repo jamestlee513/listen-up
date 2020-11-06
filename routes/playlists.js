@@ -4,7 +4,7 @@ const { check, validationResult } = require("express-validator");
 const db = require("../db/models");
 const { Playlist, Podcast, PlaylistPodcastJoin } = db;
 const { findAllPlaylists } = require("../data/playlist-data");
-const { requireAuth, restoreUser } = require("../auth");
+const { requireAuth } = require("../auth");
 const { asyncHandler } = require("./utils");
 
 const router = express.Router();
@@ -12,7 +12,6 @@ const router = express.Router();
 // User playlist home page
 
 router.get("/",
-    restoreUser,
     requireAuth,
     asyncHandler(async (req, res) => {
         const { userId } = req.session.auth;
@@ -27,7 +26,6 @@ router.get("/",
 // Returns data of specified playlist
 router.get(
 	"/:id(\\d+)",
-	restoreUser,
 	requireAuth,
 	asyncHandler(async (req, res) => {
 		const id = parseInt(req.params.id, 10);
@@ -54,11 +52,10 @@ const playlistValidators = [
 		),
 ];
 
-// For when users create a new-playlist via form submission
+// TODO: Add implementation for when users create a new-playlist via form submission
 router.post(
 	"/new-playlist",
 	requireAuth,
-	restoreUser,
 	playlistValidators,
 
 	asyncHandler(async (req, res) => {
@@ -82,6 +79,7 @@ router.post(
 
 router.post(
 	"/:playlistId(\\d)/podcasts",
+	requireAuth,
 	asyncHandler(async (req, res) => {
 		const playlistId = parseInt(req.params.playlistId, 10);
 		const { podcastId } = req.body;
@@ -95,6 +93,7 @@ router.post(
 
 router.put(
 	"/:playlistId(\\d)/podcasts",
+	requireAuth,
 	asyncHandler(async (req, res) => {
 		const playlistId = parseInt(req.params.playlistId, 10);
 		const { currentJoinId } = req.body;
@@ -108,6 +107,7 @@ router.put(
 
 router.delete(
 	"/:playlistId(\\d)/podcasts/:id(\\d)",
+	requireAuth,
 	asyncHandler(async (req, res) => {
 		const playlistId = parseInt(req.params.playlistId, 10);
 		const id = parseInt(req.params.id, 10);
