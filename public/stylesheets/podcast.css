@@ -307,3 +307,23 @@ select:focus {
 	padding-inline-start: 0px;
 	font-family: "Lato", sans-serif;
 }
+
+.podcast_info-link-button {
+	text-decoration: none;
+	margin: 10px 10px 0px 0px;
+	padding: 2px;
+	width: 100px;
+	background-color: #e9e5cd;
+	border-radius: 3px;
+	border: 1px solid #d6d0c4;
+	cursor: pointer;
+	color: black;
+	font-weight: 400;
+	font-family: "Lato", sans-serif;
+	box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+		rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.content_container-link{
+	font-weight: 500;
+}
