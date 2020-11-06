@@ -7,6 +7,15 @@ module.exports = (sequelize, DataTypes) => {
 				type: DataTypes.STRING,
 				allowNull: false,
 			},
+			podcastId: {
+				type: Sequelize.INTEGER,
+				allowNull: false,
+				references: { model: "Podcasts" },
+			},
+			name: {
+				type: Sequelize.STRING(30),
+				allowNull: false
+			}
 		},
 		{}
 	);
