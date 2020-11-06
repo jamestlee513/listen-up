@@ -43,6 +43,10 @@ router.get(
 				where: { podcastId: id, userId },
 			})) || db.Rating.build({ rating: 0 });
 
+		const reviews = await db.Review.findAll({
+			where: {podcastId: id}
+		})
+
 		const playlists = await db.Playlist.findAll({ where: { userId } });
 		const playlistPodcastJoin =
 			(await db.PlaylistPodcastJoin.findOne({
@@ -60,6 +64,7 @@ router.get(
 			rating,
 			playlists,
 			playlistPodcastJoin,
+			reviews
 		});
 	})
 );
@@ -100,4 +105,23 @@ router.put(
 		return res.status(200).json({ rating: existingRating });
 	})
 );
+
+router.post(
+	"/:id(\\d+)/reviews",
+	asyncHandler(async (req, res) => {
+		const { userId } = req.session.auth;
+		const podcastId = parseInt(req.params.id, 10);
+
+		const { review } = req.body;
+		console.log(review)
+		const newReview = await db.Review.create({
+			userId,
+			podcastId,
+			content: review,
+		});
+
+		res.redirect(`/podcasts/${podcastId}`);
+	})
+);
+
 module.exports = router;

@@ -270,3 +270,7 @@ select:focus {
 	border-radius: 0.75em;
 	padding: 10px;
 }
+
+.review_list-elements{
+	list-style-type: none;
+}
