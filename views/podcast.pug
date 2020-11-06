@@ -36,7 +36,19 @@ block content
             p(class="content_container-header")= podcast.hostName
             p(class="content_container-para")= podcast.description
             button(class="content_container-link") Link
-        div(class="reviews_container") Reviews
+        div(class="reviews_container")
+          form(class="form_container-form" action=`/podcasts/${podcast.id}/reviews` method='POST')
+              input(type="hidden" id="podcastId" value=podcast.id)
+              label(class="form_container-form-input-label" for="reviews") Review this podcast
+              br
+              textarea(class="review_input" type="text" name="review") Example text
+              br
+              button(class="form_container-form-button" type='submit') Submit Review
+          div(class="reviews_container-list")
+            ul(class="review_list")
+              each review in reviews
+                li(class="review_list-elements")= review.content
+
       div(class="rightContainer")
         div(class="box")
           h1 The form element
