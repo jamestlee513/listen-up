@@ -73,4 +73,14 @@ router.post(
     })
 )
 
+router.post('/:playlistId(\\d)/podcasts', asyncHandler(async (req, res) =>{
+    const playlistId = parseInt(req.params.playlistId, 10);
+    const { podcastId } = req.body
+    const newJoin = await PlaylistPodcastJoin.create({
+        podcastId,
+        playlistId
+    })
+    return res.status(200).json({ newJoin });
+}))
+
 module.exports = router;

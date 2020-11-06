@@ -27,12 +27,12 @@ router.get(
 					where: { podcastId: pod.id, userId },
 				})) || db.Rating.build({ podcastId: pod.id, rating: 0 }),
 		}));
+
 		res.render("podcast-list", { podcasts });
 	})
 );
 
 
-//TODO: Return data with ratings, reviews, replies joined
 router.get(
 	"/:id(\\d+)",
 	asyncHandler(async (req, res) => {
@@ -43,10 +43,11 @@ router.get(
 			(await db.Rating.findOne({
 				where: { podcastId: id, userId },
 			})) || db.Rating.build({ rating: 0 });
-		// res.send(`This route works. This is ID: ${req.params.id} `);
 
-		// TODO: connect to front-end PUG
-		res.render("podcast.pug", { podcast, rating });
+		const playlists =
+		(await db.Playlist.findAll({ where: { userId } })) || [{title: "fake"}];
+
+		res.render("podcast.pug", { podcast, rating, playlists });
 	})
 );
 

@@ -16,9 +16,9 @@ block content
               div(class="playlist_select_wrapper")
                 select(class="playlist_select" name="playlists")
                   option(value="") Add to playlist
-                  option(value="want-to-listen") Want to Listen
-                  option(value="listened") Listened To
-                  option(value="currently-listening") Currently Listening
+                  each playlist in playlists
+                    option(value=playlist.id)= playlist.title
+                input(type="hidden" id="podcastId" value=podcast.id)
             div(class="star_container" data-podcast-id=podcast.id)
               p My Rating:
               each star in [1,2,3,4,5]

@@ -36,9 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	for (let star of stars) {
 		star.addEventListener("click", (event) => {
-			console.log(event.target)
 			let { rating, podcastId, ratingId } = event.target.dataset;
-
 
 			if (ratingId) {
 				PUT(`${baseUrl}/podcasts/${podcastId}/rating/${ratingId}`, {
@@ -51,5 +49,20 @@ window.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 	}
+
+	const selectPlaylist = document.querySelector(".playlist_select");
+
+	selectPlaylist?.addEventListener("change", (event) => {
+		let playlistId = event.target.value;
+		let form = event.target.closest("form");
+		let podcastId = form.querySelector("#podcastId").value;
+		console.log(podcastId)
+
+		POST(`${location.origin}/playlists/${playlistId}/podcasts`, {
+			podcastId,
+		}).then((res) => console.log(res));
+	});
 });
 
+// select on change
+// then post ?
