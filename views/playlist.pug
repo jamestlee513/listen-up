@@ -15,7 +15,7 @@ block content
                         //- on render, populate this
                         for playlist in playlists
                             div(class="playlist__wrapper")
-                                div(class=`playlist-${playlist.id}`)= playlist.title
+                                div(class=`playlist-${playlist.id} playlist`)= playlist.title
                         //- div(class="playlist__wrapper")
                         //-     div(class="playlist-2") Currently Listening
                         //- div(class="playlist__wrapper")
@@ -28,31 +28,8 @@ block content
                         
             div(class="main-container")
                 //- change to accept data
-                div(class="main-container__playlist-title") My First Playlist
+                div(class="main-container__playlist-title")
                     //- use ajax to populate this when a button is clicked
                     //- format to this:
                 div(class="main-container__playlist-content")
-                    div(class="podcast__wrapper")
-                        div(class="podcast-img__wrapper")
-                            img(src="", alt="podcast-image")(class="podcast-img" )
-                        div(class="podcast-header")
-                            h3(class="podcast-title") Title
-                            h4(class="podcast-host") Host Name
-                        p(class="podcast-description") loren ipusum etc yeethagang loren ipusum etc yeethagangloren ipusum etc yeethagangloren ipusum etc yeethagang
-                    
-                    div(class="podcast__wrapper")
-                        div(class="podcast-img__wrapper")
-                            img(src="", alt="podcast-image")(class="podcast-img" )
-                        div(class="podcast-header")
-                            h3(class="podcast-title") Title
-                            h4(class="podcast-host") Host Name
-                        p(class="podcast-description") loren ipusum etc yeethagang loren ipusum etc yeethagangloren ipusum etc yeethagangloren ipusum etc yeethagang
-                    
-                    div(class="podcast__wrapper")
-                        div(class="podcast-img__wrapper")
-                            img(src="", alt="podcast-image")(class="podcast-img" )
-                        div(class="podcast-header")
-                            h3(class="podcast-title") Title
-                            h4(class="podcast-host") Host Name
-                        p(class="podcast-description") loren ipusum etc yeethagang loren ipusum etc yeethagangloren ipusum etc yeethagangloren ipusum etc yeethagang
-                    
+                    h2(class="main-container__empty-playlist-message") Click a playlist to get started!
