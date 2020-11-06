@@ -10,16 +10,19 @@ const { asyncHandler } = require("./utils");
 const router = express.Router();
 
 // User playlist home page
-router.get(
-	"/",
-	restoreUser,
-	requireAuth,
-	asyncHandler(async (req, res) => {
-		const playlists = await findAllPlaylists();
-		//TODO: Connect to front-end
-		res.render("playlist", { playlists });
-	})
-);
+
+router.get("/",
+    restoreUser,
+    requireAuth,
+    asyncHandler(async (req, res) => {
+        const { userId } = req.session.auth;
+        const playlists = await Playlist.findAll({
+            where: { userId }
+        });
+        //TODO: Connect to front-end
+        res.render('playlist', { playlists });
+    }));
+
 
 // Returns data of specified playlist
 router.get(
