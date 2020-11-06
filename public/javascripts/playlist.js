@@ -2,27 +2,31 @@ window.addEventListener('DOMContentLoaded', () => {
     const sidebarContainer = document.querySelector('.sidebar-container__playlists-selections');
     sidebarContainer.addEventListener('click', async e => {
         const selection = e.target;
+
         const playlistClass = selection.classList[0];
-        const index = playlistClass.indexOf('-');
-        const id = parseInt(playlistClass.slice(index + 1))
-        try {
-            const res = await fetch(`/playlists/${id}`);
-            const json = await res.json();
-            const { title } = json;
-            const data = json.PlaylistPodcastJoins;
+        // const index = playlistClass.indexOf('-');
+        const id = getIdFromBEMClass(playlistClass)
+        //parseInt(playlistClass.slice(index + 1))
+        if(id) {
+            try {
+                const res = await fetch(`/playlists/${id}`);
+                const json = await res.json();
+                const { title } = json;
+                const data = json.PlaylistPodcastJoins;
     
-            makeActive(selection);
-            populatePodcastContent(data);
-            updatePlaylistTitle(title);
-        } catch (e) {
-            throw new Error('Uh oh. Something went wrong...')
+                makeActive(selection);
+                populatePodcastContent(data);
+                updatePlaylistTitle(title);
+            } catch (e) {
+                throw new Error('Uh oh. Something went wrong...')
+            }
         }
     });
 
     function makeActive(selection) {
-        for(let i = 0; i < sidebarContainer.childNodes.length; i++) {
+        for (let i = 0; i < sidebarContainer.childNodes.length; i++) {
             let playlist = sidebarContainer.childNodes[i].childNodes[0];
-            if(playlist.classList.contains('playlist-active')) {
+            if (playlist.classList.contains('playlist-active')) {
 
                 playlist.classList.remove('playlist-active');
             }
@@ -42,6 +46,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             const newPlaylistContent = document.createElement('div');
             newPlaylistContent.classList.add('podcast__wrapper');
+            newPlaylistContent.classList.add(`podcast-${id}`);
             newPlaylistContent.innerHTML = `
                 <div class="podcast-img__wrapper">
                     <img class="podcast-img" src="${podcastImage}" alt="podcast-image">
@@ -52,6 +57,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <p class="podcast-description">${description}</p>
             `
+
+            newPlaylistContent.addEventListener('click', e => {
+                e.stopPropagation();
+                const podcastId = getIdFromBEMClass(newPlaylistContent.classList[1]);
+                window.location.href = `/podcasts/${podcastId}`;
+            })
 
             contentContainer.appendChild(newPlaylistContent);
         }
@@ -79,5 +90,11 @@ window.addEventListener('DOMContentLoaded', () => {
     function updatePlaylistTitle(title) {
         const playlistTitle = document.querySelector('.main-container__playlist-title');
         playlistTitle.innerHTML = title;
+    }
+
+    function getIdFromBEMClass(classString) {
+        const index = classString.indexOf('-');
+        const id = parseInt(classString.slice(index + 1));
+        return id;
     }
 });
