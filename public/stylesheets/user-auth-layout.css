@@ -344,7 +344,7 @@ html{
     margin-bottom: 0px;
     font-size: 0.75rem;
     font-weight: 600;
-    color: #5f5c5c;
+    color: #000000;
 }
 
 .form_container-form-input {
@@ -359,7 +359,7 @@ html{
     outline: 0;
     border-left: 0;
     border-right: 0;
-    color: rgba(67, 71, 85, 0.10);
+    color: black !important;
     /* padding-left: 20px; */
 }
 
