@@ -41,3 +41,16 @@ export const PUT = (url, payload) =>
 	})
 		.then(checkStatus)
 		.then(parseJSON);
+
+export const DELETE = (url, payload) =>
+	fetch(url, {
+		method: "DELETE",
+		credentials: "same-origin", // includes cookies
+		headers: {
+			Accept: "application/json",
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(payload),
+	})
+		.then(checkStatus)
+		.then(parseJSON);
