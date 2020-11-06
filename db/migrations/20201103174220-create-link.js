@@ -17,6 +17,10 @@ module.exports = {
 				allowNull: false,
 				references: { model: "Podcasts" },
 			},
+			name: {
+				type: Sequelize.STRING(30),
+				allowNull: false
+			},
 			createdAt: {
 				allowNull: false,
 				type: Sequelize.DATE,
