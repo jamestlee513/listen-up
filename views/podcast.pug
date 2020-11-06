@@ -17,8 +17,12 @@ block content
                 select(class="playlist_select" name="playlists")
                   option(value="") Add to playlist
                   each playlist in playlists
-                    option(value=playlist.id)= playlist.title
+                    if playlist.id === playlistPodcastJoin.id
+                      option(value=playlist.id selected)= playlist.title
+                    else
+                      option(value=playlist.id)= playlist.title
                 input(type="hidden" id="podcastId" value=podcast.id)
+                input(type="hidden" id="currentJoinId" value=playlistPodcastJoin.id)
             div(class="star_container" data-podcast-id=podcast.id)
               p My Rating:
               each star in [1,2,3,4,5]

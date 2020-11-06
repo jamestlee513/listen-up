@@ -50,17 +50,51 @@ window.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
+	//Update listen status (add to playlists)
+	//Playlist Update helper function
+
+	function refreshPlaylist(playlistId) {
+		parentContainer
+			.querySelectorAll(".fa-star")
+			.forEach((playlistOption) => {
+				let currentPlaylistId = event.target.value;
+				if (playlistId !== currentPlaylistId) {
+					starEl.classList.remove("fas");
+					starEl.classList.add("far");
+				} else {
+					starEl.classList.remove("far");
+					starEl.classList.add("fas");
+				}
+			});
+	}
+
+	//AJAX requests
+
 	const selectPlaylist = document.querySelector(".playlist_select");
 
 	selectPlaylist?.addEventListener("change", (event) => {
 		let playlistId = event.target.value;
 		let form = event.target.closest("form");
 		let podcastId = form.querySelector("#podcastId").value;
-		console.log(podcastId)
+		let currentJoinId = form.querySelector("#currentJoinId").value;
 
-		POST(`${location.origin}/playlists/${playlistId}/podcasts`, {
-			podcastId,
-		}).then((res) => console.log(res));
+		if (currentJoinId) {
+			if (!playlistId) {
+				console.log("TODO: delete me");
+			} else {
+				PUT(`${location.origin}/playlists/${playlistId}/podcasts`, {
+					currentJoinId,
+				}).then((res) => console.log("updated"));
+			}
+		} else if(playlistId) {
+			POST(`${location.origin}/playlists/${playlistId}/podcasts`, {
+				podcastId,
+			}).then(
+				(res) =>
+					(form.querySelector("#currentJoinId").value =
+						res.newJoin.id)
+			);
+		}
 	});
 });
 

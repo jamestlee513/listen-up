@@ -32,7 +32,6 @@ router.get(
 	})
 );
 
-
 router.get(
 	"/:id(\\d+)",
 	asyncHandler(async (req, res) => {
@@ -44,10 +43,24 @@ router.get(
 				where: { podcastId: id, userId },
 			})) || db.Rating.build({ rating: 0 });
 
-		const playlists =
-		(await db.Playlist.findAll({ where: { userId } })) || [{title: "fake"}];
+		const playlists = await db.Playlist.findAll({ where: { userId } });
+		const playlistPodcastJoin =
+			(await db.PlaylistPodcastJoin.findOne({
+				where: { podcastId: id },
+				include: [
+					{
+						model: db.Playlist,
+						where: { userId },
+					},
+				],
+			})) || db.PlaylistPodcastJoin.build();
 
-		res.render("podcast.pug", { podcast, rating, playlists });
+		res.render("podcast.pug", {
+			podcast,
+			rating,
+			playlists,
+			playlistPodcastJoin,
+		});
 	})
 );
 

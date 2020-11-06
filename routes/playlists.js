@@ -10,77 +10,97 @@ const { asyncHandler } = require("./utils");
 const router = express.Router();
 
 // User playlist home page
-router.get("/",
-    restoreUser,
-    requireAuth,
-    asyncHandler(async (req, res) => {
-        const playlists = await findAllPlaylists();
-        //TODO: Connect to front-end
-        res.render('playlist', { playlists });
-    }));
+router.get(
+	"/",
+	restoreUser,
+	requireAuth,
+	asyncHandler(async (req, res) => {
+		const playlists = await findAllPlaylists();
+		//TODO: Connect to front-end
+		res.render("playlist", { playlists });
+	})
+);
 
 // Returns data of specified playlist
 router.get(
-    "/:id(\\d+)",
-    restoreUser,
-    requireAuth,
-    asyncHandler(async (req, res) => {
-        const id = parseInt(req.params.id, 10);
-        const playlist = await Playlist.findOne({
-            where: { id },
-            include: [
-                {
-                    model: PlaylistPodcastJoin,
-                    include: [Podcast]
-                }
-            ]
-        });
-        res.json(playlist)
-    })
+	"/:id(\\d+)",
+	restoreUser,
+	requireAuth,
+	asyncHandler(async (req, res) => {
+		const id = parseInt(req.params.id, 10);
+		const playlist = await Playlist.findOne({
+			where: { id },
+			include: [
+				{
+					model: PlaylistPodcastJoin,
+					include: [Podcast],
+				},
+			],
+		});
+		res.json(playlist);
+	})
 );
 
 const playlistValidators = [
-    check('title')
-        .exists({ checkFalsy: true })
-        .withMessage('Please provide a playlist title')
-        .isLength({ max: 25 })
-        .withMessage('The playlist title must not be more than 25 characters long')
-]
+	check("title")
+		.exists({ checkFalsy: true })
+		.withMessage("Please provide a playlist title")
+		.isLength({ max: 25 })
+		.withMessage(
+			"The playlist title must not be more than 25 characters long"
+		),
+];
 
 // For when users create a new-playlist via form submission
 router.post(
-    "/new-playlist",
-    requireAuth,
-    restoreUser,
-    playlistValidators,
+	"/new-playlist",
+	requireAuth,
+	restoreUser,
+	playlistValidators,
 
-    asyncHandler(async (req, res) => {
-        const { title } = req.body;
-        const playlist = Playlist.build({
-            title
-        })
+	asyncHandler(async (req, res) => {
+		const { title } = req.body;
+		const playlist = Playlist.build({
+			title,
+		});
 
-        const validatorErrors = validationResult(req);
-        if (validatorErrors.isEmpty()) {
-            await playlist.save();
-            const playlists = await findAllPlaylists();
-            res.json(playlists);
-        } else {
-            const errors = validatorErrors.array().map((error) => error.msg)
-            console.log("ERROR", errors)
-            res.json(errors);
-        }
-    })
-)
+		const validatorErrors = validationResult(req);
+		if (validatorErrors.isEmpty()) {
+			await playlist.save();
+			const playlists = await findAllPlaylists();
+			res.json(playlists);
+		} else {
+			const errors = validatorErrors.array().map((error) => error.msg);
+			console.log("ERROR", errors);
+			res.json(errors);
+		}
+	})
+);
 
-router.post('/:playlistId(\\d)/podcasts', asyncHandler(async (req, res) =>{
-    const playlistId = parseInt(req.params.playlistId, 10);
-    const { podcastId } = req.body
-    const newJoin = await PlaylistPodcastJoin.create({
-        podcastId,
-        playlistId
-    })
-    return res.status(200).json({ newJoin });
-}))
+router.post(
+	"/:playlistId(\\d)/podcasts",
+	asyncHandler(async (req, res) => {
+		const playlistId = parseInt(req.params.playlistId, 10);
+		const { podcastId } = req.body;
+		const newJoin = await PlaylistPodcastJoin.create({
+			podcastId,
+			playlistId,
+		});
+		return res.status(200).json({ newJoin });
+	})
+);
+
+router.put(
+	"/:playlistId(\\d)/podcasts",
+	asyncHandler(async (req, res) => {
+		const playlistId = parseInt(req.params.playlistId, 10);
+		const { currentJoinId } = req.body;
+		const currentJoin = await PlaylistPodcastJoin.findOne({
+			where: { id: currentJoinId },
+		});
+		await currentJoin.update({ playlistId });
+		return res.status(200).json({ currentJoin });
+	})
+);
 
 module.exports = router;
