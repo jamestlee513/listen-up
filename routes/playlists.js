@@ -103,4 +103,16 @@ router.put(
 	})
 );
 
+router.delete(
+	"/:playlistId(\\d)/podcasts/:id(\\d)",
+	asyncHandler(async (req, res) => {
+		const playlistId = parseInt(req.params.playlistId, 10);
+		const id = parseInt(req.params.id, 10);
+		const currentJoin = await PlaylistPodcastJoin.findOne({
+			where: { playlistId, podcastId: id },
+		});
+		await currentJoin.destroy({ truncate: true });
+		return res.status(200).json({ message: "deleted!! wooo" });
+	})
+);
 module.exports = router;
