@@ -65,7 +65,11 @@ block content
                                     else
                                         i(class="fas fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
                 div(class="podcast")
-                    h1= recommendation.title
+                    div(class="podcast_rec")
+                        h1(class="rec-title")= recommendation.title
+                        div(class="image_div")
+                    div(class="image-div")
+                        img(class="rec-image" src="./womanjamming.png")
         section(class="main_section-footer")
             footer(class="main_section-container-footer")
                 i(class="fab fa-github footer-icon fa-3x")
