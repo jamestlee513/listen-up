@@ -45,16 +45,16 @@ block content
             div(class="home_content_container")
                 div(class="podcast_table")
                     p(class="podcast_table-title") Listenup Top 5 Podcasts
-                    p(class="content_container-header") Here's a list of Listen
+                    p(class="content_container-header") Here's a list of some of the highest rated podcast
                     table(class="table")
                         tbody
                         each podcast in podcasts
                             tr(class="row")
-                            td
+                            td(class="td_line")
                                 i(class="fas fa-music")
-                            td
+                            td(class="td_line")
                                 img(src=podcast.podcastImage width="100px" height="100px" class="podcast_table-image")
-                            td
+                            td(class="td_line")
                                 span(class="author-host")= podcast.title
                                 br
                                 span(class="by")= podcast.host

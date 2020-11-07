@@ -189,6 +189,10 @@ body {
     margin-top: 0;
 }
 
+.td_line {
+    border-bottom: 1px solid rgba(109, 109, 109, 0.123);
+}
+
 /* *******************************     reference file  ************************************************ */
 
 .content_container-home {
