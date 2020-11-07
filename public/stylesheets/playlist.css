@@ -17,6 +17,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
+    padding-bottom: 20px;
 }
 
 .playlists-page {
