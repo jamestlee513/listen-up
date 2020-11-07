@@ -7,29 +7,38 @@ block content
     link(rel='stylesheet' href='/stylesheets/playlist.css')
     script(src="/javascripts/playlist.js" type="module")
     body
-        div(class="playlists-page")    
-            div(class="sidebar-container")
-                div(class="sidebar-container__playlists")
-                    h2(class="sidebar-container__playlists-title") Playlists
-                    div(class="sidebar-container__playlists-selections")
-                        //- on render, populate this
-                        for playlist in playlists
-                            div(class="playlist__wrapper")
-                                div(class=`playlist-${playlist.id} playlist`)= playlist.title
-                        //- div(class="playlist__wrapper")
-                        //-     div(class="playlist-2") Currently Listening
-                        //- div(class="playlist__wrapper")
-                        //-     div(class="playlist-3") Want to listen
-                        //- div(class="playlist__wrapper")
-                        //-     div(class="playlist-4") Listened
-                    //- For each playlist, create a selector
-                    //- example playlist for now
-                        
-                        
-            div(class="main-container")
-                //- change to accept data
-                div(class="main-container__playlist-title")
-                    //- use ajax to populate this when a button is clicked
-                    //- format to this:
-                div(class="main-container__playlist-content")
-                    h2(class="main-container__empty-playlist-message") Click a playlist to get started!
+        div(class="main-div")
+            div(class="playlists-page")
+                div(class="sidebar-container")
+                    div(class="sidebar-container__playlists")
+                        h2(class="sidebar-container__playlists-title") Playlists
+                        div(class="sidebar-container__playlists-selections")
+                            //- on render, populate this
+                            for playlist in playlists
+                                div(class="playlist__wrapper")
+                                    div(class=`playlist-${playlist.id} playlist`)= playlist.title
+                            //- div(class="playlist__wrapper")
+                            //-     div(class="playlist-2") Currently Listening
+                            //- div(class="playlist__wrapper")
+                            //-     div(class="playlist-3") Want to listen
+                            //- div(class="playlist__wrapper")
+                            //-     div(class="playlist-4") Listened
+                        //- For each playlist, create a selector
+                        //- example playlist for now
+                            
+                            
+                div(class="main-container")
+                    //- change to accept data
+                    div(class="main-container__playlist-title-none")
+                        //- use ajax to populate this when a button is clicked
+                        //- format to this:
+                    div(class="main-container__playlist-content")
+                        h2(class="main-container__empty-playlist-message") Click a playlist to get started!
+        section(class="main_section-footer")
+            footer(class="main_section-container-footer")
+                a(href="/team") 
+                    i(class="fas fa-users footer-icon fa-2x")
+                a(class="footer-link" href="/team") Connect With The Team
+                a(href="https://github.com/jamestlee513/listen-up")
+                    i(class="fab fa-github footer-icon fa-2x")
+                a(class="footer-link" href="https://github.com/jamestlee513/listen-up") Github Project Repo

@@ -1,0 +1,41 @@
+extends layout.pug
+include utils.pug
+append head
+    //- add page specific styles by appending to the head
+    link(rel="stylesheet" href="/stylesheets/index.css")
+    link(rel="stylesheet" href="/stylesheets/teamcard.css")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous")
+    //- add page specific js
+    script(src="/javascripts/index.js" type="module" defer)
+    script(src="/javascripts/homePage.js" type="module" defer)
+block content
+    div(class="title_container")
+        h1(class="card_container-title") Connect With The Team
+    div(class="card_container")
+        div(class="card_body")
+            img(class="cardimage" src="https://avatars3.githubusercontent.com/u/19562787?s=400&u=ebac3a5c61b12ca0b72e065bc3177eecc7cb122f&v=4", alt="jamestlee" height="300" width="300")
+            p(class="card_name") James Lee
+            p(class="card_title") Full Stack Developer
+            email(class="card_email")
+            a(class="card_button" href="https://github.com/jamestlee513") GitHub
+            
+        div(class="card_body")
+            img(class="cardimage" src="https://avatars0.githubusercontent.com/u/43125443?s=400&u=e430fb24d2104e786c0d6c21152f75180ce678f4&v=4", alt="juliarichards" height="300" width="300")
+            p(class="card_name") Julia Richards
+            p(class="card_title") Full Stack Developer
+            email(class="card_email")
+            a(class="card_button" href="https://github.com/julia-richards") GitHub
+        div(class="card_body")
+            img(class="cardimage" src="https://avatars1.githubusercontent.com/u/68914791?s=400&v=4", alt="carlos" height="300" width="300")
+            p(class="card_name") Carlos Molero
+            p(class="card_title") Full Stack Developer
+            email(class="card_email")
+            a(class="card_button" href="https://github.com/Cmolerov") GitHub
+        div(class="card_body")
+            img(class="cardimage" src="https://avatars2.githubusercontent.com/u/66500500?s=460&u=752deede5a8c4e1d77d9ba4de01be76cca12112a&v=4", alt="miguelc" height="300" width="300")
+            p(class="card_name") Miguel Coria
+            p(class="card_title") Full Stack Developer
+            email(class="card_email")
+            a(class="card_button" href="https://github.com/miguelcoria94") GitHub
+                
+

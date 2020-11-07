@@ -36,10 +36,7 @@ router.get(
                 parseInt(b.rating.rating, 10) - parseInt(a.rating.rating, 10)
         );
         if (res.locals.authenticated) {
-            res.render("homePage", {
-                title: "Home",
-                csrfToken: req.csrfToken(),
-            });
+            res.redirect("/playlists");
         } else {
             res.render("index", {
                 title: "Home",
@@ -50,5 +47,9 @@ router.get(
         }
     })
 );
+
+router.get("/team", (req, res) => {
+    res.render("team", {title:"Project Team"})
+})
 
 module.exports = router;
