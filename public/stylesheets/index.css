@@ -77,6 +77,10 @@ body {
     margin-bottom: 1rem;
 }
 
+.form_container-demo-button-signup:hover {
+    background-color: #3a4e0a;
+}
+
 .form_container-demo-button-login {
     margin: 15px 5px;
     width: 100px;
