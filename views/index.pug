@@ -68,13 +68,13 @@ block content
                 div(class="podcast_rec-div")
                     div(class="rec-content")
                         h1(class="rec-title") Podcast of the day
-                        h1(class="rec-podtitle")= recommendation.title
-                        img(src=recommendation.podcastImage width="180px" height="180px" class="podcast_table-image")
+                        h1(class="rec-podtitle" href="/users/login")= recommendation.title
+                        img(src=recommendation.podcastImage width="180px" height="180px" class="podcast_table-image" href="/users/login")
                         p(class="td_line")
                         p(class="rec-count")= `Episode Count: ${recommendation.episodeCount}`
                         p(class="rec-host")= recommendation.hostName
                         div(class="star_container" data-podcast-id=recommendation.rating)
-                            each star in [1,2,3,4,5]
+                        each star in [1,2,3,4,5]
                                 if star > recommendation.rating
                                     i(class="far fa-star rating fa-2x" data-rating-id=recommendation.rating data-rating=star data-podcast-id=recommendation)
                                 else
@@ -86,7 +86,12 @@ block content
                         p(class="rec-desc")= recommendation.description
         section(class="main_section-footer")
             footer(class="main_section-container-footer")
-                i(class="fab fa-github footer-icon fa-3x")
+                a(href="https://github.com/jamestlee513/listen-up") 
+                    i(class="fas fa-users footer-icon fa-2x")
+                p(class="footer") Meet the team
+                a(href="https://github.com/jamestlee513/listen-up")
+                    i(class="fab fa-github footer-icon fa-2x")
+                p() Github repo
                
             
                 
