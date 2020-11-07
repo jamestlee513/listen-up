@@ -15,9 +15,9 @@ body {
 
 .playlists-page {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-self: center;
-    width: 100%;
+    width: 90%;
     height: 100%;
     padding: 40px;
 }
@@ -25,20 +25,17 @@ body {
 
 .main-container {
     background-color: white;
-    width: 75%;
+    width: 70%;
     height: 100%;
-    margin: 0 auto;
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
     rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
-
     border-radius: 5px;
 }
 
 .sidebar-container {
     background-color: white;
-    width: 15%;
+    width: 25%;
     height: 100%;
-    margin: 0 auto;
     padding: 10px;
     border-radius: 5px;
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
