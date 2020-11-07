@@ -14,6 +14,7 @@ html
         link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.1/css/all.css' integrity='sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp' crossorigin='anonymous')
         link(rel='stylesheet' href='/stylesheets/podcast.css')
         link(rel='stylesheet' href='/stylesheets/login.css')
+      
   body
         if locals.authenticated
          section(class="navbar_main-section")
@@ -38,8 +39,8 @@ html
                 span(class="navbar_container-logo-light") Listen
                 span(class="navbar_container-logo-bold") up
               div(class="navbar_buttons")
-                button(class="form_container-demo-button-login")  
+                button(class="form_container-demo-button-login")
                   a(href="/users/login" class="form_container-demo-login-text") Login
-                button(class="form_container-demo-button")  
+                button(class="form_container-demo-button")
                   a(href="/users/login-demo" class="form_container-demo-login-text") Demo User
         block content
