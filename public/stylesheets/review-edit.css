@@ -1,3 +1,8 @@
+li > #edit-button {
+	text-decoration: none;
+	color: hotpink !important;
+}
+
 #review_edit_1.review_edit-container {
 	display: flex;
 	margin: 100px important;
