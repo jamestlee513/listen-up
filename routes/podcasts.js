@@ -160,4 +160,22 @@ router.post(
 	})
 );
 
+
+router.post(
+	"/:podcastId(\\d+)/reviews/:id(\\d+)/delete",
+	asyncHandler(async (req, res) => {
+	
+		const { userId } = req.session.auth;
+		const podcastId = parseInt(req.params.podcastId, 10);
+		const reviewId = parseInt(req.params.id, 10);
+		const existingReview = await db.Review.findOne({
+			where: { podcastId, userId, id: reviewId },
+		});
+
+		await existingReview.destroy();
+		res.redirect(`/podcasts/${podcastId}`);
+	})
+);
+
+
 module.exports = router;
