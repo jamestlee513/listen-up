@@ -99,6 +99,11 @@ body {
     color: #777e1f;
 }
 
+.form_container-demo-button-login:hover {
+    background-color: #ddaf36;
+    color: #777e1f;
+}
+
 .form_container-form {
     justify-content: center;
     text-align: left;
