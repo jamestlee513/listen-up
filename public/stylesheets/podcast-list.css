@@ -1,4 +1,26 @@
+
+label{
+	margin: 3px
+}
 .podcastRow {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
+}
+.pocast-title {
+	text-decoration: none;
+	color: black;
+	font-weight: 600;
+}
+
+.content_container{
+	margin: 5% 0;
+}
+
+.rightContainer{
+	margin: 5% 0;
+}
+
+#fname, #lname{
+	margin: 3px;
+	width: 200px;
 }
