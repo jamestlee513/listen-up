@@ -28,7 +28,7 @@ router.get(
 				})) || db.Rating.build({ podcastId: pod.id, rating: 0 }),
 		}));
 
-		res.render("podcast-list", { podcasts });
+		res.render("podcast-list", { podcasts, title: "All Podcast"});
 	})
 );
 

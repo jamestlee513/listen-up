@@ -4,14 +4,12 @@ include utils.pug
 block content
   body
     div(class="content content--main-sidebar")
-      div(class="content_container")
-        p(class="content_container-text")  All Podcasts
+      div(class="content_container-podcast-list")
+        p(class="content_container-text")  Can't decide on what to listen to next?
         p(class="content_container-header")
-          | Explore podcasts you might be interested in.
+          | You're in the right place!
         p(class="content_container-para")
-          | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem voluptate beatae, saepe nostrum consectetur, pariatur minus animi nesciunt eveniet molestiae deserunt, voluptatum quisquam. Hic, eveniet? Fugit asperiores consectetur est et.
-          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic minima sit maxime consectetur nostrum quas sequi distinctio iusto a rem adipisci numquam nam, enim, perferendis sunt esse eum ex laborum.
-          | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi aut ipsam, nisi asperiores, et incidunt dolore est explicabo earum id minima distinctio, pariatur labore! Ducimus iure rem libero voluptatem doloremque!
+          | Access our entire catolog down below.
         table(class="table")
           tbody
           each podcast in podcasts
@@ -31,8 +29,8 @@ block content
                     else
                       i(class="fas fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
 
-      div(class="rightContainer")
-        div(class="box")
+      div(class="rightContainer-podcasts")
+        div(class="just-added")
           h1 Explore the top five new podcasts
           div
             img(class="boxImage" src="/listen1.png")
