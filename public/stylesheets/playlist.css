@@ -8,7 +8,7 @@ body {
     background-color: #e9e5cd;
     height: 750px;
     position: relative;
-    background-image: url("../couch.svg");
+    background-image: url("../bg-couch.svg");
     background-size: cover;
     background-repeat: no-repeat;
 }
