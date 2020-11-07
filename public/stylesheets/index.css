@@ -216,6 +216,8 @@ body {
     flex-direction: row-reverse;
     padding-left: 50px;
     width: 750px;
+    margin-bottom: 40px;
+    background-color: white;
 }
 
 .podcast_rec {
@@ -248,26 +250,40 @@ body {
 }
 
 .rec-content {
-    background-color: #E9E5CD;
+    background-color: #32372D;
     padding: 20px;
-    height: 700px;
     border-radius: 5px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    height: 100%;
 }
 
 .rec-title{
-
+    color: #96751B;
+    font-weight: 200;
 }
-.rec-podtitle
+.rec-podtitle {
+    color: #DF5E08;
+    font-size: 15px;
+}
 .podcastImage {
     border: .5px solid #777e1f;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
-.rec-count
-.rec-host
-.rec-by
-.rec-host
-.rec-by
+.rec-count {
+    color: white;
+    font-weight: 200;
+    font-size: 15px;
+
+}
+.rec-host {
+    color: #9A761B;
+    font-weight: 300;
+}
+.rec-desc {
+    color: white;
+    font-weight: 200;
+    font-size: 15px;
+}
 
 /* *******************************     reference file  ************************************************ */
 
