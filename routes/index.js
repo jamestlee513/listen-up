@@ -26,7 +26,7 @@ router.get('/',
     }));
 
     let recommendation = await db.Podcast.findOne({
-      where: { id:"1" },
+      where: { id:"3" },
     });
 
     podcasts.sort((a, b) => parseInt(b.rating.rating, 10) - parseInt(a.rating.rating, 10))

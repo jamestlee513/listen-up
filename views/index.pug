@@ -46,7 +46,7 @@ block content
             div(class="home_content_container")
                 div(class="podcast_table")
                     p(class="podcast_table-title") Listenup Top 5 Podcasts
-                    p(class="podcast-table-header") Here's a list of some of the highest rated podcast
+                    p(class="podcast-table-header") Here's a list of some of the highest rated podcasts
                     table(class="table")
                         tbody
                         each podcast in podcasts
@@ -66,13 +66,24 @@ block content
                                     else
                                         i(class="fas fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
                 div(class="podcast_rec-div")
-                    div(class="podcast_rec")
-                        h1(class="rec-title")= recommendation.title
-                        img(src=recommendation.podcastImage width="100px" height="100px" class="podcast_table-image")
+                    div(class="rec-content")
+                        h1(class="rec-title")  
+                        h1(class="rec-podtitle")= recommendation.title
+                        img(src=recommendation.podcastImage width="200px" height="200px" class="podcast_table-image")
                         p(class="td_line")
-                        p(class="rec-host")= recommendation.title
+                        p(class="rec-count")= recommendation.episodeCount
+                        p(class="rec-host")= recommendation.hostName
+                        div(class="star_container" data-podcast-id=recommendation.rating)
+                            each star in [1,2,3,4,5]
+                                if star > recommendation.rating
+                                    i(class="far fa-star rating fa-2x" data-rating-id=recommendation.rating data-rating=star data-podcast-id=recommendation)
+                                else
+                                    i(class="fas fa-star rating fa-2x" data-rating-id=recommendation.rating data-rating=star data-podcast-id=recommendation)
                         br
                         p(class="rec-by")= recommendation.host
+                        p(class="rec-host")= recommendation.publisher
+                        br
+                        p(class="rec-by")= recommendation.description
         section(class="main_section-footer")
             footer(class="main_section-container-footer")
                 i(class="fab fa-github footer-icon fa-3x")
