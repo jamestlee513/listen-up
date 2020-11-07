@@ -21,7 +21,7 @@ block content
               td
                 img(src=podcast.podcastImage width="100px" height="100px")
               td
-                span(class="author-host")= podcast.title
+                a(class="pocast-title" href=`/podcasts/${podcast.id}`)= podcast.title
                 br
                 span(class="by")= podcast.host
                 div(class="star_container" data-podcast-id=podcast.id)
@@ -33,23 +33,21 @@ block content
 
       div(class="rightContainer")
         div(class="box")
-          h1 The form element
-          form(class="form" action="/action_page.php")
-            label(for="fname") First name:
-            input#fname(type="text" name="fname")
-            br
-            br
-            label(for="lname") Last name:
-            input#lname(type="text" name="lname")
-            br
-            br
-            input(type="submit" value="Submit")
-          p
-            | Click the "Submit" button and the form-data will be sent to a page on the
-            | server called "action_page.php".
-        div(class="box")
           h1 Explore the top five new podcasts
           div
             img(class="boxImage" src="/listen1.png")
           div
             p Explore trending topics in ...
+        div(class="box")
+          h1 Request Your Favorite Podcast
+          form(class="form" action="/action_page.php")
+            label(for="fname") Podcast Name:
+            input#fname(type="text" name="fname")
+            br
+            br
+            label(for="lname") Podcast Link:
+            input#lname(type="text" name="lname")
+            br
+            br
+            input(type="submit" value="Submit")
+          //-

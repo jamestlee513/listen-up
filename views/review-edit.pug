@@ -1,0 +1,10 @@
+
+include utils.pug
+
+block content
+  body
+    div(class="review_edit-container" id="review_edit_1")
+      form(action=`/podcasts/${podcastId}/reviews/${existingReview.id}` method='POST')
+        //- input(type="hidden" name="_method" value="PUT")
+        textarea(class="review_edit" name="newReview")= existingReview.content
+        button(type="submit" class="review_edit-button") Submit
