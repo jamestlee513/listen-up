@@ -16,9 +16,25 @@
 .nav_bar-welcome-text {
     margin-right: 25px;
     align-self: center;
-    border-right: 1px solid #98751A;
+    border-right: 1px solid #98751a;
     padding-right: 25px;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: #98751A;
+    color: #98751a;
+}
+
+.links {
+    display: flex;
+    text-decoration: none;
+    justify-content: space-around;
+}
+
+.link {
+    margin-right: 25px;
+    align-self: center;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #98751a;
+    text-decoration: none;
 }

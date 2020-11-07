@@ -21,6 +21,11 @@ html
               a(class="navbar_conatiner-logo-h1" href="/")
                 span(class="navbar_container-logo-light") Listen
                 span(class="navbar_container-logo-bold") up
+                .links
+                  .link
+                    a(href="/podcasts") Podcasts
+                  .link
+                    a(href="/playlists") Playlists
               div(class="navbar_buttons")
                 p(class="nav_bar-welcome-text")= `Welcome ${user.firstName}`
                 form(action='/users/logout' method='POST')
