@@ -22,7 +22,7 @@ html
                 span(class="navbar_container-logo-light") Listen
                 span(class="navbar_container-logo-bold") up
               div(class="navbar_buttons")
-                p= `Welcome ${user.firstName}`
+                p(class="nav_bar-welcome-text")= `Welcome ${user.firstName}`
                 form(action='/users/logout' method='POST')
                   button(class="form_container-logout-btn" type='submit') Logout
         else
