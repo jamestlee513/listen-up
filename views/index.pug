@@ -45,7 +45,7 @@ block content
             div(class="home_content_container")
                 div(class="podcast_table")
                     p(class="podcast_table-title") Listenup Top 5 Podcasts
-                    p(class="content_container-header") Here's a list of some of the highest rated podcast
+                    p(class="podcast-table-header") Here's a list of some of the highest rated podcast
                     table(class="table")
                         tbody
                         each podcast in podcasts
@@ -64,7 +64,7 @@ block content
                                         i(class="far fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
                                     else
                                         i(class="fas fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
-                div(class="box")
+                div(class="podcast")
                     h1 #1 Recommended
         section(class="main_section-footer")
             footer(class="main_section-container-footer")

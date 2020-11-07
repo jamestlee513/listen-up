@@ -187,10 +187,17 @@ body {
 .podcast_table-title{
     color: #9A761B;
     margin-top: 0;
+    font-size: 3rem;
+    font-weight: 300;
 }
 
 .td_line {
     border-bottom: 1px solid rgba(109, 109, 109, 0.123);
+}
+
+.podcast-table-header {
+    color: #553B08;
+    font-weight: 700;
 }
 
 /* *******************************     reference file  ************************************************ */
@@ -247,18 +254,12 @@ th {
 }
 
 .box {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
     width: 434.5px;
-    height: 300px;
-    margin-top: 38px;
-    margin-left: 50px;
+    height: 400px;
     border-radius: 5px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    background-color: #3a4e0a;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    background-color: white;
+    padding-top: 50px;
 }
 
 .content {
