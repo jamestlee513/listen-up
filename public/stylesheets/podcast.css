@@ -324,6 +324,21 @@ select:focus {
 		rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
 
-.content_container-link{
+.content_container-link {
 	font-weight: 500;
+}
+
+.icon_container {
+	display: flex;
+	justify-content: flex-end;
+}
+#edit-button {
+	margin-left: 10px;
+}
+
+.review_delete {
+	background-color: transparent;
+	margin-left: 10px;
+	border: none;
+	color: #98751a;
 }

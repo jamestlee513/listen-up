@@ -51,9 +51,12 @@ block content
             ul(class="review_list")
               each review in reviews
                 li(class="review_list-elements")= review.content
-                  a(href=`${podcast.id}/reviews/${review.id}` id="edit-button" class="review_list-elements-edit" text-decoration="none" button) Edit Review
-                  form(action=`${podcast.id}/reviews/${review.id}/delete` method="POST")
-                    button(type="submit" class="review_delete") Delete Review
+                  div(class="icon_container")
+                    a(href=`${podcast.id}/reviews/${review.id}` id="edit-button" class="review_list-elements-edit" text-decoration="none" title="edit" button)
+                      i(class="fas fa-pen edit_button")
+                    form(action=`${podcast.id}/reviews/${review.id}/delete` method="POST")
+                      button(type="submit" class="review_delete")
+                        i(class="fas fa-trash-alt delete_button" title="delete")
 
       div(class="rightContainer")
         div(class="box")
