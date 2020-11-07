@@ -5,7 +5,10 @@ body {
     background-color: #e9e5cd;
     display: flex;
     flex-direction: column;
-    margin: 0;
+	margin: 0;
+	background-image: url("../yellowBackground.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .navbar_container {
@@ -249,7 +252,8 @@ th {
 }
 
 .podcast_container-info {
-    padding-left: 10px;
+	padding-left: 10px;
+	margin-bottom: 10px;
 }
 .star_container {
     margin-left: 5px;
@@ -271,10 +275,14 @@ select:focus {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 5%;
+	margin-bottom: 5%;
+	margin-top: 70px; 
+	/* fix margin top */
+	
 }
 .form_container-form {
-    padding: 5% 10%;
+	padding: 5% 10%;
+	
 }
 .form_container-form-input-label {
     color: #e9e5cd;
