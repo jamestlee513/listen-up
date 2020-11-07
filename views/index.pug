@@ -11,8 +11,9 @@ block content
     body
         section(class="main_section-header")
             div(class="main_section-container")
+                img(class="rec-image" src="./header.png")
                 div(class="form")
-                form(class="form_container-form" action='/users/register' method='POST')
+                form(class="form_container-form-index" action='/users/register' method='POST')
                     h1(class="form_container-form-title") Register Form
                     input( type="hidden" name="_csrf" value=csrfToken)
                     div 
@@ -42,32 +43,55 @@ block content
                         br
                         button(class="form_container-demo-button-signup" type="submit" ) Register
         section(class="main_section-content")
-            div(class="main_section-container")
-                div(class="content_container-home")
-                    p(class="content_container-text") Listenup Top 5 Podcasts
-                    p(class="content_container-header") Here's a list of Listen
+            div(class="home_content_container")
+                div(class="podcast_table")
+                    p(class="podcast_table-title") Listenup Top 5 Podcasts
+                    p(class="podcast-table-header") Here's a list of some of the highest rated podcasts
                     table(class="table")
                         tbody
+                        each podcast in podcasts
                             tr(class="row")
-                                td 
-                                    p 1
-                                td
-                                    img(src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSA4UAGuB3gvriNe_BGPDBGN8lyzquSFzbicYEesg6EqsswVjT5" width="100px" height="100px")
-                                td 
-                                    span(class="author-host") The Joe Rogan Experience
-                                    br
-                                    span(class="by") Host SomeGuy
-                                    div
-                                    i(class="fas fa-star rating")
-                                    i(class="fas fa-star rating")
-                                    i(class="fas fa-star rating")
-                                    i(class="fas fa-star rating")
-                                    i(class="fas fa-star-half-alt rating")
-                div(class="box")
-                    h1 #1 Recommended
+                            td(class="td_line")
+                                i(class="fas fa-music")
+                            td(class="td_line")
+                                img(src=podcast.podcastImage width="100px" height="100px" class="podcast_table-image")
+                            td(class="td_line")
+                                span(class="author-host")= podcast.title
+                                br
+                                span(class="by")= podcast.host
+                                div(class="star_container" data-podcast-id=podcast.id)
+                                each star in [1,2,3,4,5]
+                                    if star > podcast.rating.rating
+                                        i(class="far fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
+                                    else
+                                        i(class="fas fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
+                div(class="podcast_rec-div")
+                    div(class="rec-content")
+                        h1(class="rec-title") Podcast of the day
+                        h1(class="rec-podtitle" href="/users/login")= recommendation.title
+                        img(src=recommendation.podcastImage width="180px" height="180px" class="podcast_table-image" href="/users/login")
+                        p(class="td_line")
+                        p(class="rec-count")= `Episode Count: ${recommendation.episodeCount}`
+                        p(class="rec-host")= recommendation.hostName
+                        div(class="star_container" data-podcast-id=recommendation.rating)
+                        each star in [1,2,3,4,5]
+                                if star > recommendation.rating
+                                    i(class="far fa-star rating fa-2x" data-rating-id=recommendation.rating data-rating=star data-podcast-id=recommendation)
+                                else
+                                    i(class="fas fa-star rating fa-2x" data-rating-id=recommendation.rating data-rating=star data-podcast-id=recommendation)
+                        br
+                        p(class="rec-by")= recommendation.host
+                        p(class="rec-host")= recommendation.publisher
+                        br
+                        p(class="rec-desc")= recommendation.description
         section(class="main_section-footer")
             footer(class="main_section-container-footer")
-                i(class="fab fa-github footer-icon fa-3x")
+                a(href="https://github.com/jamestlee513/listen-up") 
+                    i(class="fas fa-users footer-icon fa-2x")
+                p(class="footer") Meet the team
+                a(href="https://github.com/jamestlee513/listen-up")
+                    i(class="fab fa-github footer-icon fa-2x")
+                p() Github repo
                
             
                 
