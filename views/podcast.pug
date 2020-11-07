@@ -3,12 +3,8 @@ include utils.pug
 
 block content
   body
-    nav(class="nave2box")
-      div(class="mininav") home
-      div(class="mininav") browse
-      div(class="mininav") podcast
     div(class="content content--main-sidebar")
-      div(class="content_container")
+      div(class="content_container" style="margin-top: 5rem;")
         div(class="podcast_container-elements")
           div(class="image_container")
             img(src=podcast.podcastImage width="200px" height="200px")
@@ -49,7 +45,7 @@ block content
               each review in reviews
                 li(class="review_list-elements")= review.content
 
-      div(class="rightContainer")
+      div(class="rightContainer" style="margin-top: 5rem;")
         div(class="box")
           h1 The form element
           form(class="form" action="/action_page.php")

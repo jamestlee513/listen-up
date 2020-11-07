@@ -20,9 +20,16 @@ html
               a(class="navbar_conatiner-logo-h1" href="/")
                 span(class="navbar_container-logo-light") Listen
                 span(class="navbar_container-logo-bold") up
+              .links
+                .link
+                  a(href="/podcasts") Podcasts
+                .link
+                  a(href="/playlists") Playlists
               div(class="navbar_buttons")
-                form(action='/users/logout' method='POST')
-                   button(class='form_container-logout-button' type='submit') Logout
+              form(action='/users/logout' method='POST')
+                button(class="form_container-demo-button-login")  
+                  a(href="/users/login" class="form_container-demo-login-text") Logout
+         
         else
           section(class="navbar_main-section")
             nav(class="main_section-container")
