@@ -4,6 +4,7 @@ const db = require("../db/models");
 
 const { requireAuth } = require("../auth");
 const { csrfProtection, asyncHandler } = require("./utils"); //need make utils
+const e = require("express");
 const router = express.Router();
 
 /* GET home page. */
@@ -34,18 +35,19 @@ router.get(
             (a, b) =>
                 parseInt(b.rating.rating, 10) - parseInt(a.rating.rating, 10)
         );
-        if(res.locals.authenticated){
-          res.render("homePage", {
-              title: "Home",
-              csrfToken: req.csrfToken(),
-          });
+        if (res.locals.authenticated) {
+            res.render("homePage", {
+                title: "Home",
+                csrfToken: req.csrfToken(),
+            });
+        } else {
+            res.render("index", {
+                title: "Home",
+                csrfToken: req.csrfToken(),
+                podcasts,
+                recommendation,
+            });
         }
-        res.render("index", {
-            title: "Home",
-            csrfToken: req.csrfToken(),
-            podcasts,
-            recommendation,
-        });
     })
 );
 
