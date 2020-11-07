@@ -12,7 +12,7 @@ block content
         section(class="main_section-header")
             div(class="main_section-container")
                 div(class="form")
-                form(class="form_container-form" action='/users/register' method='POST')
+                form(class="form_container-form-index" action='/users/register' method='POST')
                     h1(class="form_container-form-title") Register Form
                     input( type="hidden" name="_csrf" value=csrfToken)
                     div 
@@ -64,11 +64,9 @@ block content
                                         i(class="far fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
                                     else
                                         i(class="fas fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
-                div(class="podcast")
+                div(class="podcast_rec-div")
                     div(class="podcast_rec")
                         h1(class="rec-title")= recommendation.title
-                        div(class="image_div")
-                    div(class="image-div")
                         img(class="rec-image" src="./womanjamming.png")
         section(class="main_section-footer")
             footer(class="main_section-container-footer")
