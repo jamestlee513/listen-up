@@ -3,12 +3,9 @@ include utils.pug
 
 block content
   body
-    nav(class="nave2box")
-      div(class="mininav") home
-      div(class="mininav") browse
-      div(class="mininav") podcast
-    div(class="content content--main-sidebar")
-      div(class="content_container")
+   
+    div(class="content content--main-sidebar"  )
+      div(class="content_container" style="margin-top: 5rem;" ) 
         p(class="content_container-text")  All Podcasts
         p(class="content_container-header")
           | Explore podcasts you might be interested in.
@@ -35,7 +32,7 @@ block content
                     else
                       i(class="fas fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
 
-      div(class="rightContainer")
+      div(class="rightContainer" style="margin-top: 5rem;")
         div(class="box")
           h1 The form element
           form(class="form" action="/action_page.php")

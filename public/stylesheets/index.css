@@ -19,6 +19,8 @@ body {
     display: flex;
     justify-content: center;
     margin: 0;
+    margin-top: 2rem;
+    background-image: url(../header.svg);
     background: #e9e5cd;
     background-position: center;
     background-size: cover;
@@ -98,6 +100,7 @@ body {
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
         rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
+
 .form_container-demo-button:hover {
     background-color: #ddaf36;
     color: #777e1f;
@@ -171,13 +174,11 @@ body {
     background-color: #3a4e0a;
 }
 
-.home_content_container{
+.home_content_container {
     width: 80%;
     display: flex;
     justify-content: center;
     padding: 50px 0px;
-    z-index: 100;
-}
 
 .podcast_table {
     width: 100% ;
@@ -185,16 +186,18 @@ body {
     background: #E9E5CD;
     padding: 40px;
     border-radius: 5px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .podcast_table-image {
-    border: .5px solid #777e1f;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border: 0.5px solid #777e1f;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-.podcast_table-title{
-    color: #9A761B;
+.podcast_table-title {
+    color: #9a761b;
     margin-top: 0;
     font-size: 3rem;
     font-weight: 300;
@@ -205,7 +208,7 @@ body {
 }
 
 .podcast-table-header {
-    color: #553B08;
+    color: #553b08;
     font-weight: 700;
 }
 
@@ -341,7 +344,8 @@ th {
     width: 434.5px;
     height: 400px;
     border-radius: 5px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     background-color: white;
     padding-top: 50px;
 }
@@ -396,6 +400,8 @@ th {
 }
 
 
+@media only screen and (max-width: 600px) {
+
 
 @media only screen and (max-width: 1000px) {
     .form_container-form-index {
@@ -413,6 +419,21 @@ th {
         flex-direction: column;
         z-index: 100;
         
+    }
+
+
+    .form_container-demo-button-login {
+        margin: 15px 5px;
+        width: 75px;
+        background-color: #eacf86;
+        border-radius: 3px;
+        border: 1px solid #d6d0c4;
+        cursor: pointer;
+        color: #98751a;
+        font-weight: 600;
+        font-family: "Lato", sans-serif;
+        box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+            rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
     }
     
     .main_section-content {
