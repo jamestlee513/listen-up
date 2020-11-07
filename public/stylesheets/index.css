@@ -155,6 +155,31 @@ body {
     background-color: #3a4e0a;
 }
 
+.home_content_container{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0px;
+
+}
+
+.podcast_table {
+    background: #E9E5CD;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.podcast_table-image {
+    border: .5px solid #777e1f;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.podcast_table-title{
+    color: #9A761B;
+    margin-top: 0;
+}
+
 /* *******************************     reference file  ************************************************ */
 
 .content_container-home {

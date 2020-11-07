@@ -42,18 +42,18 @@ block content
                         br
                         button(class="form_container-demo-button-signup" type="submit" ) Register
         section(class="main_section-content")
-            div(class="main_section-container")
-                div(class="content_container-home")
-                    p(class="content_container-text") Listenup Top 5 Podcasts
+            div(class="home_content_container")
+                div(class="podcast_table")
+                    p(class="podcast_table-title") Listenup Top 5 Podcasts
                     p(class="content_container-header") Here's a list of Listen
                     table(class="table")
                         tbody
                         each podcast in podcasts
                             tr(class="row")
                             td
-                                p 🎵
+                                i(class="fas fa-music")
                             td
-                                img(src=podcast.podcastImage width="100px" height="100px")
+                                img(src=podcast.podcastImage width="100px" height="100px" class="podcast_table-image")
                             td
                                 span(class="author-host")= podcast.title
                                 br
