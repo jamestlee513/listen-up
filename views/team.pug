@@ -1,0 +1,12 @@
+extends layout.pug
+include utils.pug
+append head
+    //- add page specific styles by appending to the head
+    link(rel="stylesheet" href="/stylesheets/index.css")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous")
+    //- add page specific js
+    script(src="/javascripts/index.js" type="module" defer)
+    script(src="/javascripts/homePage.js" type="module" defer)
+block content
+    div(class="card_container")
+        h1(class="card_container-title") Meet The Team

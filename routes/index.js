@@ -48,4 +48,8 @@ router.get(
     })
 );
 
+router.get("/team", (req, res) => {
+    res.render("team", {title:"Project Team"})
+})
+
 module.exports = router;
