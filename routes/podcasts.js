@@ -44,11 +44,11 @@ router.get(
 			})) || db.Rating.build({ rating: 0 });
 
 		const reviews = await db.Review.findAll({
-			where: {podcastId: id}
-		})
+			where: { podcastId: id },
+		});
 		const links = await db.Link.findAll({
-			where: {podcastId: id}
-		})
+			where: { podcastId: id },
+		});
 
 		const playlists = await db.Playlist.findAll({ where: { userId } });
 		const playlistPodcastJoin =
@@ -68,7 +68,7 @@ router.get(
 			playlists,
 			playlistPodcastJoin,
 			reviews,
-			links
+			links,
 		});
 	})
 );
@@ -117,12 +117,44 @@ router.post(
 		const podcastId = parseInt(req.params.id, 10);
 
 		const { review } = req.body;
-		console.log(review)
+		// console.log(review);
 		const newReview = await db.Review.create({
 			userId,
 			podcastId,
 			content: review,
 		});
+
+		res.redirect(`/podcasts/${podcastId}`);
+	})
+);
+
+router.get(
+	"/:podcastId(\\d+)/reviews/:id(\\d+)",
+	asyncHandler(async (req, res) => {
+		const { userId } = req.session.auth;
+		const podcastId = parseInt(req.params.podcastId, 10);
+		const reviewId = parseInt(req.params.id, 10);
+		const existingReview = await db.Review.findOne({
+			where: { podcastId, userId, id: reviewId },
+		});
+
+		res.render("review-edit.pug", { userId, podcastId, existingReview });
+	})
+);
+
+router.post(
+	"/:podcastId(\\d+)/reviews/:id(\\d+)",
+	asyncHandler(async (req, res) => {
+		const review = req.body.newReview;
+
+		const { userId } = req.session.auth;
+		const podcastId = parseInt(req.params.podcastId, 10);
+		const reviewId = parseInt(req.params.id, 10);
+		const existingReview = await db.Review.findOne({
+			where: { podcastId, userId, id: reviewId },
+		});
+
+		await existingReview.update({ content: review });
 
 		res.redirect(`/podcasts/${podcastId}`);
 	})

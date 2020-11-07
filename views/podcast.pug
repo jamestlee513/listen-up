@@ -51,6 +51,7 @@ block content
             ul(class="review_list")
               each review in reviews
                 li(class="review_list-elements")= review.content
+                  a(href=`${podcast.id}/reviews/${review.id}` class="review_list-elements-edit" button) Edit Review
 
       div(class="rightContainer")
         div(class="box")
