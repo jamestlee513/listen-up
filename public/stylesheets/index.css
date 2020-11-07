@@ -33,6 +33,9 @@ body {
     display: flex;
     justify-content: center;
     align-self: center;
+    z-index: 20;
+    overflow: hidden;
+    position: relative;
 }
 
 .main_section-footer {
@@ -44,6 +47,8 @@ body {
     width: 80%;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
+    position: relative;
 }
 
 .form_container-demo-button {
@@ -65,8 +70,8 @@ body {
     border-radius: 3px;
     border: 1px solid #335d2d;
     cursor: pointer;
-    color: rgb(5, 53, 16);
-    background-color: #7ea04d;
+    color: white;
+    background-color: #32372D;
     padding: 10px 14px;
     font-weight: 800;
     font-family: "Lato", sans-serif;
@@ -115,6 +120,9 @@ body {
     width: 465px;
     margin-bottom: 0;
     background-color: #e9e5cd;
+    z-index: 20;
+    overflow: hidden;
+    position: relative;
 }
 
 .form_container-form-input-label {
@@ -169,6 +177,7 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 50px 0px;
+    z-index: 100;
 }
 
 .podcast_table {
@@ -208,9 +217,10 @@ body {
 }
 
 .podcast_rec {
+    position: absolute;
     margin-left: 10%;
-    width: 80%;
-    background: #32372D;
+    width: 23.5%;
+    background: #E9E5CD;
     padding: 40px;
     border-radius: 5px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -222,13 +232,21 @@ body {
 }
 
 .rec-image {
-    width: 100%;
-    width: 200px;
-    height: 471px;
+    position: absolute;
+    width: 120px;
+    height: 300px;
     z-index: 1;
-    padding-right: 500px;
     overflow: hidden;
     bottom: 0;
+    margin-top: 500px;
+}
+
+.header-image {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    z-index: 1;
+    margin-right: 300px;
 }
 
 /* *******************************     reference file  ************************************************ */
@@ -318,7 +336,7 @@ th {
 
 .main_section-footer {
     width: 100%;
-    background-color: #3a4e0a;
+    background-color: #32372D;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -329,7 +347,7 @@ th {
 .main_section-container-footer {
     display: flex;
     width: 80%;
-    background-color: #3a4e0a;
+    background-color: #32372D;
     justify-content: center;
     align-self: center;
 }
