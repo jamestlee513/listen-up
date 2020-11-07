@@ -30,7 +30,6 @@
     display: flex;
     justify-content: flex-end;
     margin-left: 30px;
-
 }
 
 .link {
@@ -44,5 +43,60 @@
 }
 a {
     text-decoration: none;
-     color: #98751a;
+    color: #98751a;
+}
+
+/* ------------------ALERT MEDIA QUERY----------------- */
+
+@media only screen and (max-width: 900px) {
+    .form_container-logout-btn {
+        margin: 15px 0px;
+        padding: 10px 10px;
+        width: 100px;
+        background-color: #eacf86;
+        border-radius: 3px;
+        border: 1px solid #d6d0c4;
+        cursor: pointer;
+        color: #98751a;
+        font-weight: 600;
+        font-family: "Lato", sans-serif;
+        box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+            rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    }
+
+    .nav_bar-welcome-text {
+        visibility: hidden;
+        margin-right: 25px;
+        align-self: center;
+        border-right: 1px solid #98751a;
+        padding-right: 25px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #98751a;
+    }
+    .marco-polo {
+        display: flex;
+        justify-content: space-around;
+    }
+    .links {
+        display: flex;
+        justify-content: flex-end;
+        margin-left: 30px;
+    }
+
+    .link {
+        margin-right: 25px;
+        margin-left: 25px;
+        text-align: right;
+        align-self: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #98751a;
+    }
+    a {
+        text-decoration: none;
+        color: #98751a;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 }
