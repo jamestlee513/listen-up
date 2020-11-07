@@ -3,7 +3,7 @@
 	justify-content: center;
 }
 
-.form_container-divider {
+#edit_page {
 	display: flex;
 	align-self: flex-start;
 }
@@ -20,7 +20,7 @@
 	border: 2px solid #777e20;
 	border-radius: 0.25em;
 }
-.form_container-form-button {
+#save {
 	margin-top: 3px;
 	margin-right: 70%;
 	align-self: flex-start;
