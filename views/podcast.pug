@@ -52,6 +52,8 @@ block content
               each review in reviews
                 li(class="review_list-elements")= review.content
                   a(href=`${podcast.id}/reviews/${review.id}` id="edit-button" class="review_list-elements-edit" text-decoration="none" button) Edit Review
+                  form(action=`${podcast.id}/reviews/${review.id}/delete` method="POST")
+                    button(type="submit" class="review_delete") Delete Review
 
       div(class="rightContainer")
         div(class="box")
