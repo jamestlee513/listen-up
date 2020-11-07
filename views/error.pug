@@ -1,6 +1,9 @@
-extends layout
+append head
+  link(rel="stylesheet" href="/stylesheets/errors.css")
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  div(class="error-div")
+    a(class="form_container-demo-button-login" href="/") GO HOME
+    h1= message
+    h2= error.status
+    pre #{error.stack}

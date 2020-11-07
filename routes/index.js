@@ -25,8 +25,12 @@ router.get('/',
       }))
     }));
 
+    let recommendation = await db.Podcast.findOne({
+      where: { id:"4" },
+    })
+
     podcasts.sort((a, b) => parseInt(b.rating.rating, 10) - parseInt(a.rating.rating, 10))
-  res.render('index', { title: "Home" , csrfToken: req.csrfToken(), podcasts });
+    res.render('index', { title: "Home", csrfToken: req.csrfToken(), podcasts, recommendation });
 }));
 
 module.exports = router;

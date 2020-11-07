@@ -46,6 +46,9 @@ router.get(
 		const reviews = await db.Review.findAll({
 			where: {podcastId: id}
 		})
+		const links = await db.Link.findAll({
+			where: {podcastId: id}
+		})
 
 		const playlists = await db.Playlist.findAll({ where: { userId } });
 		const playlistPodcastJoin =
@@ -64,7 +67,8 @@ router.get(
 			rating,
 			playlists,
 			playlistPodcastJoin,
-			reviews
+			reviews,
+			links
 		});
 	})
 );

@@ -21,6 +21,7 @@ body {
     margin: 0;
     margin-top: 2rem;
     background-image: url(../header.svg);
+    background: #e9e5cd;
     background-position: center;
     background-size: cover;
 }
@@ -34,6 +35,8 @@ body {
     display: flex;
     justify-content: center;
     align-self: center;
+    z-index: 20;
+    overflow: hidden;
 }
 
 .main_section-footer {
@@ -45,6 +48,8 @@ body {
     width: 80%;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
+    position: relative;
 }
 
 .form_container-demo-button {
@@ -66,8 +71,8 @@ body {
     border-radius: 3px;
     border: 1px solid #335d2d;
     cursor: pointer;
-    color: rgb(5, 53, 16);
-    background-color: #7ea04d;
+    color: white;
+    background-color: #32372D;
     padding: 10px 14px;
     font-weight: 800;
     font-family: "Lato", sans-serif;
@@ -106,10 +111,10 @@ body {
     color: #777e1f;
 }
 
-.form_container-form {
+.form_container-form-index {
     justify-content: center;
     text-align: left;
-    align-items: center;
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
     align-content: flex-end;
@@ -117,6 +122,9 @@ body {
     width: 465px;
     margin-bottom: 0;
     background-color: #e9e5cd;
+    z-index: 20;
+    overflow: hidden;
+    position: relative;
 }
 
 .form_container-form-input-label {
@@ -169,12 +177,13 @@ body {
 .home_content_container {
     width: 80%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 50px 0px;
-}
 
 .podcast_table {
-    background: #e9e5cd;
+    width: 100% ;
+    z-index: 2;
+    background: #E9E5CD;
     padding: 40px;
     border-radius: 5px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -201,6 +210,81 @@ body {
 .podcast-table-header {
     color: #553b08;
     font-weight: 700;
+}
+
+.podcast_rec-div {
+    text-align: center;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-left: 50px;
+    width: 750px;
+    margin-bottom: 40px;
+    background-color: white;
+}
+
+.podcast_rec {
+    width: 50%;
+    padding: 400px;
+    background: #E9E5CD;
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.rec-title {
+    color: white;
+}
+
+.rec-image {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    z-index: 1;
+    overflow: hidden;
+    bottom: 0;
+}
+
+.header-image {
+    position: absolute;
+    width: 10000px;
+    height: 10000px;
+    z-index: 1;
+    margin-right: 300px;
+}
+
+.rec-content {
+    background-color: #F1C515;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    height: 100%;
+}
+
+.rec-title{
+    color: #96751B;
+    font-weight: 200;
+}
+.rec-podtitle {
+    color: #DF5E08;
+    font-size: 15px;
+}
+.podcastImage {
+    border: .5px solid #777e1f;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.rec-count {
+    color: white;
+    font-weight: 200;
+    font-size: 15px;
+
+}
+.rec-host {
+    color: #9A761B;
+    font-weight: 300;
+}
+.rec-desc {
+    color: #553B08;
+    font-weight: 400;
+    font-size: 15px;
 }
 
 /* *******************************     reference file  ************************************************ */
@@ -291,7 +375,7 @@ th {
 
 .main_section-footer {
     width: 100%;
-    background-color: #3a4e0a;
+    background-color: #553B08;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -302,7 +386,7 @@ th {
 .main_section-container-footer {
     display: flex;
     width: 80%;
-    background-color: #3a4e0a;
+    background-color: #553B08;
     justify-content: center;
     align-self: center;
 }
@@ -312,25 +396,31 @@ th {
     margin-top: 10px;
     font-size: large;
     color: #e9e5cd;
+    margin-left: 10px;
 }
 
+
 @media only screen and (max-width: 600px) {
+
+
+@media only screen and (max-width: 1000px) {
+    .form_container-form-index {
+        display: flex;
+        align-content: center;
+        align-items: center;
+    }
     .main_section-header {
-        background: #e9e5cd;
+        width: 100%;
+        background-image: url("../Group.png")
     }
-    .form_container-demo-button {
-        margin: 15px 0px;
-        width: 75px;
-        background-color: #eacf86;
-        border-radius: 3px;
-        border: 1px solid #d6d0c4;
-        cursor: pointer;
-        color: #98751a;
-        font-weight: 600;
-        font-family: "Lato", sans-serif;
-        box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
-            rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    .home_content_container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+        
     }
+
 
     .form_container-demo-button-login {
         margin: 15px 5px;
@@ -345,4 +435,130 @@ th {
         box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
             rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
     }
+    
+    .main_section-content {
+        width: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
+.home_content_container{
+    margin: 0;
+    padding: 0;
+}
+
+.podcast_table {
+    width: auto;
+    padding: 50px;
+    z-index: 2;
+    background-color: #eacf86;
+    border-radius: 0 !important;
+}
+
+.podcast_table-image {
+    border: .5px solid #777e1f;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.podcast_table-title{
+    color: white;
+    margin-top: 0;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.td_line {
+    border-bottom: 1px solid rgba(109, 109, 109, 0.123);
+}
+
+.podcast-table-header {
+    color: white;
+    font-weight: 700;
+}
+
+.podcast_rec-div {
+    background-color: white;
+    padding: 0;
+    width: 100%;
+}
+
+.rec-title {
+    color: white;
+}
+
+.rec-content {
+    width: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    height: 100%;
+    box-shadow: none;
+}
+
+.rec-title{
+    color: #96751B;
+    font-weight: 200;
+}
+.rec-podtitle {
+    color: #DF5E08;
+    font-size: 15px;
+}
+.podcastImage {
+    border: .5px solid #777e1f;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.rec-count {
+    color: white;
+    font-weight: 200;
+    font-size: 15px;
+    
+}
+.rec-host {
+    color: #9A761B;
+    font-weight: 300;
+}
+.rec-desc {
+    color: #96751B;
+    font-weight: 300;
+    font-size: 20px;
+    margin: 0;
+}
+}
+                                                @media only screen and (max-width: 600px) {
+                                                
+                                                    .main_section-header {
+                                                        background: #e9e5cd;
+                                                    }
+                                                    .form_container-demo-button {
+                                                        margin: 15px 0px;
+                                                        width: 75px;
+                                                        background-color: #eacf86;
+                                                        border-radius: 3px;
+                                                        border: 1px solid #98751a;
+                                                        cursor: pointer;
+                                                        color: #98751a;
+                                                        font-weight: 600;
+                                                        font-family: "Lato", sans-serif;
+                                                        box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+                                                            rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+                                                    }
+                                                    
+                                                    .form_container-demo-button-login {
+                                                        margin: 15px 5px;
+                                                        width: 75px;
+                                                        background-color: #eacf86;
+                                                        border-radius: 3px;
+                                                        border: 1px solid #98751a;
+                                                        cursor: pointer;
+                                                        color: #98751a;
+                                                        font-weight: 600;
+                                                        font-family: "Lato", sans-serif;
+                                                        box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+                                                            rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+                                                    }
+                                                
+                                                     .main_section-header {
+                                                        width: 100%;
+                                                        background-color: #e9e5cd;
+                                                    }
+                                                }
