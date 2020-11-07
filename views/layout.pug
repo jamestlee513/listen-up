@@ -13,13 +13,18 @@ html
         script(src="/javascripts/navbarInputs.js" type="module")
         link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.1/css/all.css' integrity='sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp' crossorigin='anonymous')
         link(rel='stylesheet' href='/stylesheets/podcast.css')
+        link(rel='stylesheet' href='/stylesheets/login.css')
   body
         if locals.authenticated
-          nav(class="navbar_container")
-            div(class="navbar_conatiner-logo-h1")
-              span(class='') Welcome #{user.firstName}!
-              form(class='form_container-demo-button-login' action='/users/logout' method='POST')
-                button(class='form_container-logout-button' type='submit') Logout
+         section(class="navbar_main-section")
+            nav(class="main_section-container")
+              a(class="navbar_conatiner-logo-h1" href="/")
+                span(class="navbar_container-logo-light") Listen
+                span(class="navbar_container-logo-bold") up
+              div(class="navbar_buttons")
+                p= `Welcome ${user.firstName}`
+                form(action='/users/logout' method='POST')
+                  button(class="form_container-logout-btn" type='submit') Logout
         else
           section(class="navbar_main-section")
             nav(class="main_section-container")
