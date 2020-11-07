@@ -11,7 +11,7 @@ block content
     body
         section(class="main_section-header")
             div(class="main_section-container")
-                img(class="header-image" src="./b2.png")
+                img(class="rec-image" src="./header.png")
                 div(class="form")
                 form(class="form_container-form-index" action='/users/register' method='POST')
                     h1(class="form_container-form-title") Register Form
@@ -68,12 +68,11 @@ block content
                 div(class="podcast_rec-div")
                     div(class="podcast_rec")
                         h1(class="rec-title")= recommendation.title
-                        h1(class="rec-title")= recommendation.title
-                        h1(class="rec-title")= recommendation.title
-                        h1(class="rec-title")= recommendation.title
-                        h1(class="rec-title")= recommendation.title
-
-                        img(class="rec-image" src="./womanjamming.png")
+                        img(src=recommendation.podcastImage width="100px" height="100px" class="podcast_table-image")
+                        p(class="td_line")
+                        p(class="rec-host")= recommendation.title
+                        br
+                        p(class="rec-by")= recommendation.host
         section(class="main_section-footer")
             footer(class="main_section-container-footer")
                 i(class="fab fa-github footer-icon fa-3x")

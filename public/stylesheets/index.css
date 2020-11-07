@@ -213,18 +213,14 @@ body {
 .podcast_rec-div {
     width: 100%;
     display: flex;
-    justify-content: right;
+    justify-content: center
 }
 
 .podcast_rec {
-    position: absolute;
-    margin-left: 10%;
-    width: 23.5%;
-    background: #E9E5CD;
     padding: 40px;
+    background: #E9E5CD;
     border-radius: 5px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    height: 500px;
 }
 
 .rec-title {
@@ -233,18 +229,18 @@ body {
 
 .rec-image {
     position: absolute;
-    width: 120px;
-    height: 300px;
+    width: 420px;
+    height: 420px;
     z-index: 1;
     overflow: hidden;
     bottom: 0;
-    margin-top: 500px;
+    
 }
 
 .header-image {
     position: absolute;
-    width: 600px;
-    height: 600px;
+    width: 10000px;
+    height: 10000px;
     z-index: 1;
     margin-right: 300px;
 }
