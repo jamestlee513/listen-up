@@ -90,6 +90,7 @@ body {
 
 
 .content_container-podcast-list{
+    margin-top: 10px;
     padding: 50px;
     background-color: #eacf86;
 	display: flex;
@@ -111,8 +112,23 @@ body {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
+.suggested {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    justify-content: flex-end;
+    padding: 20px;
+    width: 90%;
+    height: auto;
+    border-radius: 5px;
+    margin-left: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
 .rightContainer-podcasts {
     display: flex;
     flex-direction: column;
     align-content: space-around;
+    margin-top: 10px;
 }
