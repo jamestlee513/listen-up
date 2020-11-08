@@ -1,10 +1,17 @@
-
+extends user-auth-layout.pug
 include utils.pug
 
+
 block content
-  body
-    div(class="review_edit-container" id="review_edit_1")
-      form(action=`/podcasts/${podcastId}/reviews/${existingReview.id}` method='POST')
-        //- input(type="hidden" name="_method" value="PUT")
-        textarea(class="review_edit" name="newReview")= existingReview.content
-        button(type="submit" class="review_edit-button") Submit
+    body
+    div(class="review_edit-container register-container")
+       section(class="form_container")
+           a(class="form_title" href="/")
+               span(class="form_container-logo-light") Listen
+               span(class="form_container-logo-bold") up
+           h1(class="form_container-form-title") Edit Review
+               i(class="fas fa-headphones form_container-demo-button-text")
+           div(class="form_container-divider" id="edit_page")
+                 form(class="form_container-form" action=`/podcasts/${podcastId}/reviews/${existingReview.id}` method='POST')
+                  textarea(class="review_edit" name="newReview" rows="8")= existingReview.content
+                  button(class="form_container-form-button" id="save" type='submit') Save

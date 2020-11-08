@@ -284,6 +284,7 @@ select:focus {
 	width: 90%;
 	background-color: #e9e5cd;
 	border-radius: 0.25em;
+	font-family: "Lato", sans-serif;
 }
 .review_list-elements {
 	list-style-type: none;
