@@ -5,10 +5,10 @@ body {
     background-color: #e9e5cd;
     display: flex;
     flex-direction: column;
-	margin: 0;
-	background-image: url("../yellowBackground.svg");
-	background-repeat: no-repeat;
-	background-size: cover;
+    margin: 0;
+    background-image: url("../yellowBackground.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .navbar_container {
@@ -151,9 +151,21 @@ th {
     border-radius: 5px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
         rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background-color: #e9e5cd;
 }
 .box:first-of-type {
     margin-top: 0px;
+}
+
+.box_input {
+	background-color: #e9e5cd;
+	border-radius: 3px;
+}
+
+.box_input-btn{
+	background-color: #e9e5cd;
+	border-radius: 3px;
+	margin-left: 5px;
 }
 
 .content {
@@ -252,8 +264,8 @@ th {
 }
 
 .podcast_container-info {
-	padding-left: 10px;
-	margin-bottom: 10px;
+    padding-left: 10px;
+    margin-bottom: 10px;
 }
 .star_container {
     margin-left: 5px;
@@ -275,14 +287,12 @@ select:focus {
     padding: 10px;
     display: flex;
     flex-direction: column;
-	margin-bottom: 5%;
-	margin-top: 70px; 
-	/* fix margin top */
-	
+    margin-bottom: 5%;
+    margin-top: 70px;
+    /* fix margin top */
 }
 .form_container-form {
-	padding: 5% 10%;
-	
+    padding: 5% 10%;
 }
 .form_container-form-input-label {
     color: #e9e5cd;
