@@ -5,13 +5,11 @@ block content
   body
     div(class="content content--main-sidebar")
       div(class="content_container")
-        p(class="content_container-text")  All Podcasts
+        p(class="content_container-text")  Can't decide on what to listen to next?
         p(class="content_container-header")
-          | Explore podcasts you might be interested in.
-        p(class="content_container-para")
-          | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem voluptate beatae, saepe nostrum consectetur, pariatur minus animi nesciunt eveniet molestiae deserunt, voluptatum quisquam. Hic, eveniet? Fugit asperiores consectetur est et.
-          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic minima sit maxime consectetur nostrum quas sequi distinctio iusto a rem adipisci numquam nam, enim, perferendis sunt esse eum ex laborum.
-          | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi aut ipsam, nisi asperiores, et incidunt dolore est explicabo earum id minima distinctio, pariatur labore! Ducimus iure rem libero voluptatem doloremque!
+          | You're in the right place!
+        p(class="content_container-para-podcast")
+          | Access our entire catolog down below.
         table(class="table")
           tbody
           each podcast in podcasts
@@ -32,22 +30,20 @@ block content
                       i(class="fas fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
 
       div(class="rightContainer")
+
         div(class="box")
-          h1 Explore the top five new podcasts
-          div
-            img(class="boxImage" src="/listen1.png")
-          div
-            p Explore trending topics in ...
-        div(class="box")
-          h1 Request Your Favorite Podcast
-          form(class="form" action="/action_page.php")
-            label(for="fname") Podcast Name:
-            input#fname(type="text" name="fname")
-            br
-            br
-            label(for="lname") Podcast Link:
-            input#lname(type="text" name="lname")
-            br
-            br
-            input(type="submit" value="Submit")
-          //-
+          div(class="rec-content-pod")
+            h1(class="rec-title") Podcast of the day
+                          a(href=`/podcasts/${podcasts[0].id}`)
+                            h1(class="rec-podtitle-pod" href="/users/login")= podcasts[0].title
+                          a(href=`/podcasts/${podcasts[0].id}`)
+                            img(src=podcasts[0].podcastImage width="180px" height="180px" class="podcast_table-image")
+                          p(class="rec-host")= podcasts[0].hostName
+                          div(class="star_container-pod")
+                            div(data-podcast-id=podcasts[0].rating)
+                            each star in [1,2,3,4,5]
+                                    if star > podcasts[0].rating
+                                        i(class="far fa-star rating" data-rating-id=podcasts[0].rating data-rating=star data-podcast-id=podcasts[0])
+                                    else
+                                        i(class="fas fa-star rating" data-rating-id=podcasts[0].rating data-rating=star data-podcast-id=podcasts[0])
+                          p(class="rec-desc")= podcasts[0].description
