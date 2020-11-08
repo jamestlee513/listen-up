@@ -386,3 +386,108 @@ select:focus {
 .delete_button:hover {
     color: #eace85;
 }
+
+
+.img-div{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.podcast_rec-div {
+    text-align: center;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-left: 50px;
+    width: 750px;
+    margin-bottom: 40px;
+}
+
+.podcast_rec {
+    width: 50%;
+    padding: 400px;
+    background: #E9E5CD;
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.rec-title {
+    color: white;
+}
+
+.rec-image {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    z-index: 1;
+    overflow: hidden;
+    bottom: 0;
+}
+
+.header-image {
+    position: absolute;
+    width: 10000px;
+    height: 10000px;
+    z-index: 1;
+    margin-right: 300px;
+}
+
+.rec-content {
+    background-color: #F1C515;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    height: 100%;
+}
+
+.rec-title{
+    text-align: center;
+    color: #96751B;
+    font-weight: 200;
+}
+.rec-podtitle-pod {
+    text-align: center;
+    color: #DF5E08;
+    font-size: 15px;
+}
+
+.rec-podtitle-pod:hover {
+    text-align: center;
+    color: #b34c08;
+    font-size: 15px;
+}
+.podcastImage {
+    border: .5px solid #777e1f;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.rec-count {
+    color: white;
+    font-weight: 200;
+    font-size: 15px;
+
+}
+.rec-host {
+    color: #9A761B;
+    font-weight: 300;
+}
+.rec-desc {
+    color: #553B08;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+}
+
+.star_container-pod {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.rec-content-pod {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+}

@@ -30,22 +30,20 @@ block content
                       i(class="fas fa-star rating" data-rating-id=podcast.rating.id data-rating=star data-podcast-id=podcast.id)
 
       div(class="rightContainer")
+
         div(class="box")
-          h1 Explore the top five new podcasts
-          div
-            img(class="boxImage" src="/listen1.png")
-          div
-            p Explore trending topics in ...
-        div(class="box")
-          h1 Request Your Favorite Podcast
-          form(class="form" action="/action_page.php")
-            label(for="fname") Podcast Name:
-            input#fname(type="text" name="fname")
-            br
-            br
-            label(for="lname") Podcast Link:
-            input#lname(type="text" name="lname")
-            br
-            br
-            input(type="submit" value="Submit")
-          //-
+          div(class="rec-content-pod")
+            h1(class="rec-title") Podcast of the day
+                          a(href=`/podcasts/${podcasts[0].id}`)
+                            h1(class="rec-podtitle-pod" href="/users/login")= podcasts[0].title
+                          a(href=`/podcasts/${podcasts[0].id}`)
+                            img(src=podcasts[0].podcastImage width="180px" height="180px" class="podcast_table-image")
+                          p(class="rec-host")= podcasts[0].hostName
+                          div(class="star_container-pod")
+                            div(data-podcast-id=podcasts[0].rating)
+                            each star in [1,2,3,4,5]
+                                    if star > podcasts[0].rating
+                                        i(class="far fa-star rating" data-rating-id=podcasts[0].rating data-rating=star data-podcast-id=podcasts[0])
+                                    else
+                                        i(class="fas fa-star rating" data-rating-id=podcasts[0].rating data-rating=star data-podcast-id=podcasts[0])
+                          p(class="rec-desc")= podcasts[0].description
