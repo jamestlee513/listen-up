@@ -12,6 +12,12 @@ label{
 	font-weight: 600;
 }
 
+.pocast-title:hover {
+	text-decoration: none;
+	color: #3C7272;
+	font-weight: 600;
+}
+
 .content_container{
 	margin: 5% 0;
 }
