@@ -317,6 +317,7 @@ select:focus {
     width: 90%;
     background-color: #e9e5cd;
     border-radius: 0.25em;
+
 }
 .review_list-elements {
     list-style-type: none;
