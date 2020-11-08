@@ -107,9 +107,24 @@ body {
     margin-bottom: 1px;
 }
 
+/* .div_content_container-para{
+	overflow: scroll;
+	height: 200px;
+
+} */
+/* .scrollable-element {
+  scrollbar-color:;
+} */
+
+
 .content_container-para {
     font-size: 0.9rem;
     font-weight: 300;
+	overflow: hidden scroll;
+    height: 200px;
+}
+::-webkit-scrollbar{
+	background-color: transparent;
 }
 
 .row {
@@ -158,14 +173,14 @@ th {
 }
 
 .box_input {
-	background-color: #e9e5cd;
-	border-radius: 3px;
+    background-color: #e9e5cd;
+    border-radius: 3px;
 }
 
-.box_input-btn{
-	background-color: #e9e5cd;
-	border-radius: 3px;
-	margin-left: 5px;
+.box_input-btn {
+    background-color: #e9e5cd;
+    border-radius: 3px;
+    margin-left: 5px;
 }
 
 .content {

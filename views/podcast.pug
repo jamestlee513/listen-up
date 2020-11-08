@@ -30,7 +30,8 @@ block content
           div(class="podcast_container-info")
             p(class="content_container-text")= podcast.title
             p(class="content_container-header")= podcast.hostName
-            p(class="content_container-para")= podcast.description
+            div(class="div_content_container-para")
+              p(class="content_container-para")= podcast.description
             p(class="content_container-link") Listen Now!
             each link in links
               a(href=`${link.url}` class="podcast_info-link-button" button )= link.name
@@ -65,7 +66,7 @@ block content
             p Explore trending topics in ...
         div(class="box")
           h1 Request Your Favorite Podcast
-          form(class="form" action="/action_page.php")
+          form(class="form" )
             label(for="fname") Podcast Name:
             input#fname( class="box_input" type="text" name="fname")
             br
