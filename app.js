@@ -9,6 +9,7 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const podcastRouter = require("./routes/podcasts");
 const playlistRouter = require("./routes/playlists");
+const createPodcast = require("./routes/create-podcast");
 
 const db = require("./db/models");
 const { sessionSecret } = require("./config/index");
@@ -43,6 +44,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/podcasts", podcastRouter);
 app.use("/playlists", playlistRouter);
+app.use("/create-podcast", createPodcast);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
