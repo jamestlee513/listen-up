@@ -31,7 +31,7 @@ block content
             p(class="content_container-text")= podcast.title
             p(class="content_container-header")= podcast.hostName
             div(class="div_content_container-para")
-              p(class="content_container-para")= podcast.description
+              p(class="content_container-para" id="podcast_description")= podcast.description
             p(class="content_container-link") Listen Now!
             each link in links
               a(href=`${link.url}` class="podcast_info-link-button" button )= link.name
