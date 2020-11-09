@@ -31,7 +31,7 @@ A live version of our application can be found [here](https://aa-listen-up.herok
 
 ## Overview
 
-Listenup is podcast cataloging web application inspired by Goodreads. As a logged out user, you only have the ability to browse the front page. As a logged in user you have the ability to rate and review podcasts. As a logged in user you also have the ability to create, update and edit playlist. Listenup is built with Express JS, The Pug Template Engine, and Vanilla CSS.
+Listenup is podcast cataloging web application inspired by Goodreads. As a logged out user, you only have the ability to browse the front page. As a logged in user you have the ability to rate and review podcasts. As a logged in user you also have the ability to create, update and edit playlist. Listenup is built with Express JS, The Pug Template Engine, Vanilla JS and Vanilla CSS.
 
 ![home gif](https://github.com/miguelcoria94/readme-for-listenup/blob/main/ezgif.com-gif-maker.gif)
 
@@ -64,7 +64,7 @@ When a user trys to access a page that they are not authorized to access
  
  ![user auth gif](https://github.com/miguelcoria94/readme-for-listenup/blob/main/ezgif.com-gif-maker%20(3).gif)
  
- Each route to a podcast uses a regex expression to make sure a valid string is being pased into the url. The req.param is used to retrieve the podcast Id from the database. The Id is also used to retrive the podcast rating. If the user has not submitted a review then the review is set to 0. 
+ Each route to a podcast uses a regex expression to make sure a valid string is being pased into the url. The req.param is used to retrieve the podcast Id from the database. The user id is used to retrive the podcast rating. If the user has not submitted a rating then the rating is set to 0. 
  
  ![user auth gif](https://github.com/miguelcoria94/readme-for-listenup/blob/main/d737524ea38cb46c30ac4741763f8cb0.png)
  
@@ -75,11 +75,11 @@ When a user trys to access a page that they are not authorized to access
  
  ## Playlists
  
-  Goodreads has bookshelves, Listenup has playlists. There are 4 premade playlists (My First Playlist, Currently Listening, Want to Listen, Listened). Each playlist has a title, datecreated, and a link to all of the podcast associated with it. Users are only able to update there playlist from the podcast page right now.
+  Goodreads has bookshelves, Listenup has playlists. There are 4 premade playlists (My First Playlist, Currently Listening, Want to Listen, Listened). Each playlist has a title, datecreated, and a link to all of the podcasts associated with it. Users are only able to update their playlists from both the playlist page and the listen status button on individual podcast pages. 
  
  ![user auth gif](https://github.com/miguelcoria94/readme-for-listenup/blob/main/ezgif.com-gif-maker%20(4).gif)
  
- When a user logs in they are immediately taking to the playlists page. There is an event listener set up on the sidebar container listening for user input. When a user clicks the name of a playlist the page is not refreshed there are several function working together to render the playlist. One of the functions makes one of the playlist active and loops to make all of the other playlist inactive. Another funciton is then used to populate the main container with playlist data. Because some of the podcasts have large descriptions there is a function to shorten the description and let the user know to click the podcast to read the full description.  [CHECK IT OUT](https://github.com/jamestlee513/listen-up/blob/main/public/javascripts/playlist.js)
+ When a user logs in they are immediately taken to the playlists page. There is an event listener set up on the sidebar container listening for user input. When a user clicks the name of a playlist, the page is not refreshed, there are several functions working together to render the playlist. Each respective function makes one of the playlists active and loops to make all of the other playlists inactive. Another funciton is then used to populate the main container with playlist data. Because some of the podcasts have large descriptions there is a function to shorten the description and let the user know to click the podcast to read the full description.  [CHECK IT OUT](https://github.com/jamestlee513/listen-up/blob/main/public/javascripts/playlist.js)
  
  
  ![user auth gif](https://github.com/miguelcoria94/readme-for-listenup/blob/main/c579e00a92ba1a2930e5e848d4dbe5a2.png)
@@ -88,11 +88,14 @@ When a user trys to access a page that they are not authorized to access
  
  ## Reviews
  
- Users are able to leave reviews for each podcasts! Each review is able to be deleted and edited. Each review has a podcast Id asscociated with it and can be viewed by other users. [CHECK IT OUT](https://github.com/jamestlee513/listen-up/blob/main/routes/podcasts.js)
+ Users are able to leave reviews for each podcasts! Each review is able to be deleted and edited. Each review has a podcast Id and user Id asscociated with it and can be viewed by other users. [CHECK IT OUT](https://github.com/jamestlee513/listen-up/blob/main/routes/podcasts.js)
  
  ![user auth gif](https://github.com/miguelcoria94/readme-for-listenup/blob/main/ezgif.com-gif-maker%20(5).gif)
  
+ When a user chooses to edit a review they are taken to a new page to complete the process. Once satisfied with their review they save the review and the content is replaced on the podcast page.
+ 
   ![user auth gif](https://github.com/miguelcoria94/readme-for-listenup/blob/main/fc49012b919d54ddce109c357a676d33.png)
+  A POST route is used to update an edited review based on the review Id. Once the review has been saved users are redirected back to the podcast page they are reviewing. 
   
   ![user auth gif](https://github.com/miguelcoria94/readme-for-listenup/blob/main/16dd11eca7e24ce1f93a95bbcd657532.png)
   
@@ -101,7 +104,8 @@ When a user trys to access a page that they are not authorized to access
   Users are able to to update the status of a podcast via a drop down menu on the selected podcast name. When a user updates the status on a podcast a request is made in the background to update the playlist associated with the users selection. [CHECK IT OUT](https://github.com/jamestlee513/listen-up/blob/main/public/javascripts/playlist.js)
   
   ![user auth gif](https://github.com/miguelcoria94/readme-for-listenup/blob/main/ezgif.com-gif-maker%20(6).gif)
-  
+ When a user is logged in, they will see the currently listen status of each podcast on that podcast's page. When they change the status, the state is saved. 
+ Selecting the 'Add to playlist' option removes the podcasts from all associated playlists. Each podcast, can only be added to one playlist at a time. AJAX is used to so that the page does not refresh when the listen status is changed. 
   
   ![user auth gif](https://github.com/miguelcoria94/readme-for-listenup/blob/main/74185595068382b0ea0db3e5cd7d2a51.png)
   
