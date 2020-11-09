@@ -6,3 +6,12 @@ body {
     background-color: #E9E5CC;
     height: auto;
 }
+
+.button_container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
