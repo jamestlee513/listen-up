@@ -3,11 +3,13 @@ const express = require("express");
 const db = require("../db/models");
 
 const { requireAuth } = require("../auth");
-const { asyncHandler } = require("./utils");
+const { csrfProtection, asyncHandler } = require("./utils");
 const app = require("../app");
 
 const router = express.Router();
 
-app.get("/", asyncHandler((req, res) => {
+router.get("/", csrfProtection, asyncHandler(async(req, res) => {
     res.render("create-podcast")
 }))
+
+module.exports = router
