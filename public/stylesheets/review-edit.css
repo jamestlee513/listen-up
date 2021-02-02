@@ -13,12 +13,12 @@
 	height: 70%;
 	width: 500px;
 	font-family: "Lato", sans-serif;
-	border-radius: 0.25em;
+	border-radius: 5px;
 }
 .review_edit:focus {
 	outline: none;
 	border: 2px solid #777e20;
-	border-radius: 0.25em;
+	border-radius: 5px;
 }
 #save {
 	margin-top: 3px;
