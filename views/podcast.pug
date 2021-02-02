@@ -34,17 +34,17 @@ block content
               p(class="content_container-para" id="podcast_description")= podcast.description
             p(class="content_container-link") Listen Now!
             each link in links
-              a(href=`${link.url}` class="podcast_info-link-button" button )= link.name
+              a(href=`${link.url}` class="link-button" button )= link.name
 
         div(class="reviews_container")
-          form(class="form_container-form" action=`/podcasts/${podcast.id}/reviews` method='POST')
+          form(class="" action=`/podcasts/${podcast.id}/reviews` method='POST')
               input(type="hidden" id="podcastId" value=podcast.id)
-              label(class="form_container-form-input-label" for="reviews") Review this podcast
+              label(class="review-label" for="reviews") Review this podcast
               br
               textarea(class="review_input" type="text" name="review") Leave a review
               br
               button(class="review-button" type='submit') Submit Review
-          div(class="reviews_container-list")
+          div(class="")
             ul(class="review_list")
               each review in reviews
                 li(class="review_list-elements")= review.content

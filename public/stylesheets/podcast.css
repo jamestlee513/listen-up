@@ -89,11 +89,12 @@ body {
 	width: 70%;
 	padding: 0.2rem;
 	padding: 40px;
+	border: 1px solid #98751a;
 	border-radius: 5px;
 }
 
 .content_container-text {
-	color: rgb(62, 113, 114);
+	color: black;
 	font-weight: bold;
 	font-size: 1.5rem;
 	margin-bottom: 0px;
@@ -222,6 +223,7 @@ th {
 .boxImage {
 	height: 150px;
 	width: auto;
+	border-radius: 5px;
 }
 .podcast_container-elements {
 	padding-top: 30px;
@@ -233,6 +235,8 @@ th {
 	margin-bottom: 1px;
 	max-width: 200px;
 	max-height: 200px;
+	border-radius: 5px;
+	border: 1px solid #98751a;
 }
 
 .playlist_select_wrapper {
@@ -255,9 +259,10 @@ th {
 	font-size: 13px;
 	min-height: 32px;
 	background: #ffffff;
+	border: 1px solid #98751a;
 
 	/* add custom arrow */
-	background-image: linear-gradient(to right, #777e20, #777e20);
+	background-image: linear-gradient(to right, #98751a, #98751a);
 	background-position: right center;
 	background-size: 2.5rem 2.5rem;
 	background-repeat: no-repeat;
@@ -299,16 +304,13 @@ select:focus {
 }
 
 .reviews_container {
-	background-color: #777e1f;
 	align-self: center;
-	width: 95%;
+	width: 600px;
 	height: 80%;
 	border-radius: 5px;
-	padding: 10px;
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 5%;
-	margin-top: 70px;
 	/* fix margin top */
 }
 .form_container-form {
@@ -319,9 +321,10 @@ select:focus {
 }
 .review_input {
 	height: 40%;
-	width: 100%;
+	width: 99%;
 	background-color: #e9e5cd;
 	border-radius: 5px;
+	border: 1px solid #98751a;
 	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .review_list-elements {
@@ -330,13 +333,17 @@ select:focus {
 	background-color: #e9e5cd;
 	margin: 3% 0;
 	padding: 3%;
+	border: 1px solid #98751a;
 }
-.review-button {
-	margin-left: 78%;
+
+.link-button {
+	margin-top: 20px;
+	margin-right: 10px;
+	padding: 10px 20px;
     width: 100px;
     background-color: #eacf86;
     border-radius: 3px;
-    border: 1px solid #d6d0c4;
+    border: 1px solid #98751a;
     cursor: pointer;
     color: #98751a;
     font-weight: 600;
@@ -345,7 +352,22 @@ select:focus {
         rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
 
-.review-button:hover {
+
+.review-button {
+	margin-left: 83%;
+    width: 100px;
+    background-color: #eacf86;
+    border-radius: 3px;
+    border: 1px solid #98751a;
+    cursor: pointer;
+    color: #98751a;
+    font-weight: 600;
+    font-family: "Lato", sans-serif;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+        rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.review-button:hover, .link-button:hover {
     background-color: #ddaf36;
     color: white;
 }
@@ -353,10 +375,13 @@ select:focus {
 .review-button:hover {
     background-color: #ddaf36;
     color: white;
+}
+
+label .review-label {
+	padding-bottom: 40px !important;
 }
 
 .review_list {
-	margin: 5% 10%;
 	padding-inline-start: 0px;
 	font-family: "Lato", sans-serif;
 }
@@ -523,9 +548,22 @@ select:focus {
 	}
     .review_input{
         width: auto;
-        align-self: flex-start;
+		align-self: flex-start;
+		resize: none;
     }
     .rightContainer{
         display: none;
     }
 }
+.review_input {
+	resize: none;
+}
+
+.review_input:active {
+	outline: none;
+}
+
+.review_input:focus {
+	outline: none;
+}
+
