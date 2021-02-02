@@ -1,27 +1,31 @@
 window.addEventListener('DOMContentLoaded', () => {
     const sidebarContainer = document.querySelector('.sidebar-container__playlists-selections');
-    sidebarContainer.addEventListener('click', async e => {
-        const selection = e.target;
 
-        const playlistClass = selection.classList[0];
-        // const index = playlistClass.indexOf('-');
+    const firstPlaylist = document.querySelector('.playlist-1');
+    selectPlaylist(firstPlaylist);
+    sidebarContainer.addEventListener('click', async e => {
+        selectPlaylist(e.target);
+    });
+
+    async function selectPlaylist(playlist) {
+        const playlistClass = playlist.classList[0];
         const id = getIdFromBEMClass(playlistClass)
-        //parseInt(playlistClass.slice(index + 1))
-        if(id) {
+        if (id) {
             try {
                 const res = await fetch(`/playlists/${id}`);
                 const json = await res.json();
                 const { title } = json;
                 const data = json.PlaylistPodcastJoins;
-    
-                makeActive(selection);
+
+                makeActive(playlist);
                 populatePodcastContent(data);
-                updatePlaylistTitle(title);
+                // updatePlaylistTitle(title);
             } catch (e) {
+                console.error(e)
                 throw new Error('Uh oh. Something went wrong...')
             }
         }
-    });
+    }
 
     function makeActive(selection) {
         for (let i = 0; i < sidebarContainer.childNodes.length; i++) {
@@ -39,7 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
         contentContainer.innerHTML = '';
 
         for (let i = 0; i < data.length; i++) {
-            const { duration, hostName, id, podcastImage, title } = data[i].Podcast;
+            const { hostName, id, podcastImage, title } = data[i].Podcast;
             let { description } = data[i].Podcast;
             if (description.length > 200) {
                 description = shortenDescription(description);
@@ -87,10 +91,10 @@ window.addEventListener('DOMContentLoaded', () => {
         return shortenedString;
     }
 
-    function updatePlaylistTitle(title) {
-        const playlistTitle = document.querySelector('.main-container__playlist-title');
-        playlistTitle.innerHTML = title;
-    }
+    // function updatePlaylistTitle(title) {
+    //     // const playlistTitle = document.querySelector('.main-container__playlist-title');
+    //     // playlistTitle.innerHTML = title;
+    // }
 
     function getIdFromBEMClass(classString) {
         const index = classString.indexOf('-');
