@@ -8,6 +8,11 @@ module.exports = {
       { playlistId: 1, podcastId: 3, createdAt: new Date(), updatedAt: new Date() },
       { playlistId: 1, podcastId: 4, createdAt: new Date(), updatedAt: new Date() },
       { playlistId: 1, podcastId: 5, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 1, podcastId: 6, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 1, podcastId: 7, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 1, podcastId: 8, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 1, podcastId: 9, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 1, podcastId: 10, createdAt: new Date(), updatedAt: new Date() },
     ], {});
   },
 
