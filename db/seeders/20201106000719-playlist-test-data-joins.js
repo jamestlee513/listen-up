@@ -10,11 +10,21 @@ module.exports = {
       */
     return queryInterface.bulkInsert('PlaylistPodcastJoins', [
       //Demo's
-      { playlistId: 2, podcastId: 1, createdAt: new Date(), updatedAt: new Date() },
       { playlistId: 2, podcastId: 2, createdAt: new Date(), updatedAt: new Date() },
-      { playlistId: 3, podcastId: 3, createdAt: new Date(), updatedAt: new Date() },
-      { playlistId: 3, podcastId: 4, createdAt: new Date(), updatedAt: new Date() },
-      { playlistId: 4, podcastId: 5, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 2, podcastId: 5, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 2, podcastId: 3, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 2, podcastId: 1, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 2, podcastId: 4, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 3, podcastId: 7, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 3, podcastId: 9, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 3, podcastId: 8, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 3, podcastId: 6, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 4, podcastId: 10, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 4, podcastId: 13, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 4, podcastId: 11, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 4, podcastId: 12, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 4, podcastId: 14, createdAt: new Date(), updatedAt: new Date() },
+      { playlistId: 4, podcastId: 17, createdAt: new Date(), updatedAt: new Date() },
       //James Lee's
       { playlistId: 5, podcastId: 2, createdAt: new Date(), updatedAt: new Date() },
       { playlistId: 5, podcastId: 4, createdAt: new Date(), updatedAt: new Date() },
