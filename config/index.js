@@ -1,4 +1,5 @@
-require("dotenv").config();
+// comment in for development
+// require("dotenv").config();
 
 module.exports = {
   environment: process.env.NODE_ENV || "development",
