@@ -14,7 +14,13 @@ html
         link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.1/css/all.css' integrity='sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp' crossorigin='anonymous')
         link(rel='stylesheet' href='/stylesheets/podcast.css')
         link(rel='stylesheet' href='/stylesheets/login.css')
-      
+        meta(name='description' content='Find your next favorite podcast')
+        meta(name='title' property='og:title' content=title)
+        meta(property='og:type' content='Website')
+        meta(name='image' property='og:image' content='https://user-images.githubusercontent.com/43125443/107971959-5ea7af00-6f70-11eb-90fc-7386adbf229f.png')
+        meta(name='description' property='og:description' content='Find your next favorite podcast')
+        meta(name='author' content='Julia Richards, James Lee, Miguel Coria, Carlos Molero')
+
   body
         if locals.authenticated
          section(class="navbar_main-section")
